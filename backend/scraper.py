@@ -3,32 +3,68 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
 
-# Browser-options
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+# Function to create a browser and get access to distrowatch
+def create_browser():
+    # Browser-options
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
-# Start browser
-driver = webdriver.Chrome(options=chrome_options)
+    # Start browser
+    driver = webdriver.Chrome(options=chrome_options)
 
-url = "https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simpleresults"
-driver.get(url)
+    return driver
+
+# --- Part 1: Scrape os-name and detail-URL ---
+os_names_url = "https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simpleresults"
+browser = create_browser()
+browser.get(os_names_url)
 
 # Waiting time for scripts to load
 time.sleep(3)
 
 # Give the loaded html code to our soup
-soup = BeautifulSoup(driver.page_source, "html.parser")
-driver.quit()
+soup = BeautifulSoup(browser.page_source, "html.parser")
 
 os_list = []
 cells = soup.select("td.NewsText b a")
+
+# Add the os-names and urls to the os_list
 for cell in cells:
     name = cell.get_text(strip=True)
-    if name and not name.isdigit():
-        os_list.append(name)
+    href = cell.get('href')  # href is e.g. 'table.php?distribution=cachyos'
 
-os_list.remove("popularity")
+    if name and not name.isdigit() and name.lower() != "popularity":
+        os_list.append({
+            "name": name,
+            "url": "https://distrowatch.com/" + href
+        })
 
-print(f"Found: {len(os_list)} systems")
+# --- Part 2: Detail-Scraping ---
+for os in os_list:
+    browser.get(os["url"])
+    time.sleep(2)
+
+    detail_soup = BeautifulSoup(browser.page_source, "html.parser")
+
+    info_container = detail_soup.select_one("td.TablesTitle")
+
+    if info_container:
+        items = info_container.select("ul li")
+
+        for li in items:
+            label_tag = li.find("b")
+            if label_tag:
+                key = label_tag.get_text(strip=True).replace(":", "")
+                full_text = li.get_text(strip=True)
+                value = full_text.replace(label_tag.get_text(strip=True), "").strip()
+
+                if key == "Popularity":
+                    # Change '1 (4,557 hits per day)' to '1'
+                    value = value.split("(")[0].strip()
+
+                if value:
+                    os[key] = value
+
+browser.quit()
 print(os_list)
