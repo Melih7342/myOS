@@ -1,3 +1,5 @@
+from operator import truediv
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -14,6 +16,19 @@ def create_browser():
     driver = webdriver.Chrome(options=chrome_options)
 
     return driver
+
+beginner_friendly_os = [
+    "Linux Mint",
+    "Ubuntu",
+    "Zorin OS",
+    "Pop!_OS",
+    "MX Linux",
+    "elementary OS",
+    "Linux Lite",
+    "Manjaro Linux",
+    "Kubuntu",
+    "EndeavourOS"
+]
 
 # --- Part 1: Scrape os-name and detail-URL ---
 os_names_url = "https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simpleresults"
@@ -41,7 +56,7 @@ for cell in cells:
         })
 
 # --- Part 2: Detail-Scraping ---
-for os in os_list:
+for os in os_list[:2]:
     browser.get(os["url"])
     time.sleep(2)
 
@@ -65,6 +80,11 @@ for os in os_list:
 
                 if value:
                     os[key] = value
+
+    # Setting beginner friendliness with custom list
+    if os["name"] in beginner_friendly_os:
+        os["Beginner-friendly"] = True
+    else: os["Beginner-friendly"] = False
 
 browser.quit()
 print(os_list)
