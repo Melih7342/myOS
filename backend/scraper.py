@@ -36,7 +36,7 @@ browser = create_browser()
 browser.get(os_names_url)
 
 # Waiting time for scripts to load
-time.sleep(3)
+time.sleep(2)
 
 # Give the loaded html code to our soup
 soup = BeautifulSoup(browser.page_source, "html.parser")
