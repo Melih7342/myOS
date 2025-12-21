@@ -1,5 +1,3 @@
-from operator import truediv
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -30,6 +28,8 @@ beginner_friendly_os = [
     "EndeavourOS"
 ]
 
+table_features = ["Price (US$)", "Image Size (MB)"]
+
 # --- Part 1: Scrape os-name and detail-URL ---
 os_names_url = "https://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=All&notbasedon=None&desktop=All&architecture=All&package=All&rolling=All&isosize=All&netinstall=All&language=All&defaultinit=All&status=Active#simpleresults"
 browser = create_browser()
@@ -56,7 +56,7 @@ for cell in cells:
         })
 
 # --- Part 2: Detail-Scraping ---
-for os in os_list[:2]:
+for os in os_list:
     browser.get(os["url"])
     time.sleep(2)
 
@@ -81,10 +81,38 @@ for os in os_list[:2]:
                 if value:
                     os[key] = value
 
+    # Scrape the description
+    description_container = detail_soup.select_one("td.TablesTitle")
+    if description_container:
+        text_parts = [
+            str(child).strip()
+            for child in description_container.children
+            if isinstance(child, str) and child.strip()
+        ]
+        if text_parts:
+            os["description"] = text_parts[0]
+
+
     # Setting beginner friendliness with custom list
     if os["name"] in beginner_friendly_os:
         os["Beginner-friendly"] = True
     else: os["Beginner-friendly"] = False
+
+    # Scrape the needed table infos (Price, Image Size, Installation-link)
+    rows = detail_soup.find_all("tr")
+
+    for row in rows:
+        th = row.find("th")
+        td = row.find("td")
+
+        if th and td:
+            key = th.get_text(strip=True)
+            if key in table_features:
+                value = td.get_text(strip=True)
+                os[key] = value
+            if key == "Free Download":
+                a = td.select_one("a")
+                os["Download"] = a.get("href")
 
 browser.quit()
 print(os_list)
