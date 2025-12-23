@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Database
+backend/database.db
+
+# VS Code
+.vscode/
