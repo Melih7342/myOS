@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User
+from recommend_distros import recommend_distros
+from load_distros import load_distros_from_db
 
 app = Flask(__name__)
 # Enable CORS so React app (usually port 3000) can talk to this port (3100)
@@ -48,6 +50,21 @@ def login():
         }), 200
     
     return jsonify({"message": "Invalid username or password"}), 401
+
+
+@app.route('/quiz/submit', methods=['POST'])
+def handle_submit():
+    data = request.get_json()
+
+    user_answers = data.get('answers')
+    all_distros = load_distros_from_db()
+
+    recommendations = recommend_distros(user_answers, all_distros)
+
+    return jsonify({
+                    "status": "success",
+                    "recommendations": recommendations
+    })
 
 if __name__ == "__main__":
     # Set port to 3100 to match React fetch URLs
