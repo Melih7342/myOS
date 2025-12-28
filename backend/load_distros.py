@@ -6,7 +6,7 @@ def load_distros_from_db():
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM distributions")
+    cursor.execute("SELECT * FROM distribution")
     rows = cursor.fetchall()
 
     all_distros = [dict(row) for row in rows]
