@@ -1,5 +1,5 @@
 def recommend_distros(user_answers, all_distros):
-    recommendations = []
+    scored_results = []
 
     for distro in all_distros:
         score = 0
@@ -11,50 +11,65 @@ def recommend_distros(user_answers, all_distros):
         # Nice to have --> 5 points
         # 100 points are the maximum
 
-        # Use Case
-        if user_answers['use_case'].lower() in distro['Category'].lower():
+        category = distro.get('Category', '').lower()
+        price = distro.get('Price', '').lower()
+        size_str = distro.get('Image Size (MB)')
+
+        # 1. Use Case
+        user_case = user_answers.get('use_case', '').lower()
+        if user_case and user_case in category:
             score += 20
 
-        # Experience
-        if user_answers['experience'] == 'Beginner' and distro['is_beginner_friendly']:
+        # 2. Experience
+        exp = user_answers.get('experience')
+        if exp == 'Beginner' and distro.get('is_beginner_friendly'):
             score += 15
-        elif user_answers['experience'] == 'Intermediate' and distro['is_intermediate_friendly']:
+        elif exp == 'Intermediate' and distro.get('is_intermediate_friendly'):
             score += 5
 
-        # Popularity
-        if user_answers['popularity'] == "Very Important" and distro['Popularity'] <= 20:
+        # 3. Popularity
+        pop_pref = user_answers.get('popularity')
+        pop_value = distro.get('Popularity')
+        if pop_pref == "Very Important" and pop_value <= 20:
             score += 15
-        elif user_answers['popularity'] == "Would be nice" and distro['Popularity'] <= 20:
+        elif pop_pref == "Would be nice" and pop_value <= 20:
             score += 5
 
-        # Hardware
-        if user_answers['hardware'] == 'Old' and 'old computers' in distro['Category'].lower():
+        # 4. Hardware
+        if user_answers.get('hardware') == 'Old' and 'old computers' in category:
             score += 15
 
-        # GUI
-        if user_answers['GUI'] == True and 'desktop' in distro['Category'].lower():
+        # 5. GUI
+        if user_answers.get('GUI') == True and 'desktop' in category:
             score += 15
 
-        # Light Weight
-        if user_answers['light_weight'] == True and get_avg_size(distro['Image Size (MB)']) <= 1000:
+        # 6. Light Weight
+        if user_answers.get('light_weight') == True and get_avg_size(size_str) <= 1000:
             score += 10
 
-        # Live Medium
-        if user_answers['live_medium'] == True and 'live medium' in distro['Category'].lower():
+        # 7. Live Medium
+        if user_answers.get('live_medium') == True and 'live medium' in category:
             score += 10
 
-        # Knockout Criterion: Price
-        if user_answers['price'] == True and distro['Price'].lower() != 'free':
+        # 8. Knockout: Price
+        if user_answers.get('price') == True and 'free' not in price:
             score = 0
 
-        # Save total score in object
-        distro['match_score'] = score
-        recommendations.append(distro)
+        # Only add if Score > 0
+        if score > 0:
+            scored_results.append({
+                "name": distro.get("name"),
+                "description": distro.get("description", "No description"),
+                "match_score": score,
+                "match_percent": min(score, 100),
+                "category": distro.get("Category"),
+                "price": distro.get("Price")
+            })
 
-    # Sort the list: Highes score first
-    recommendations.sort(key=lambda x: x['match_score'], reverse=True)
+        # Sort: Highest value first
+    scored_results.sort(key=lambda x: x['match_score'], reverse=True)
 
-    return recommendations[:3]  # Return top 3
+    return scored_results[:3]
 
 
 def get_avg_size(size_string):

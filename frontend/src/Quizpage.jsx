@@ -61,6 +61,7 @@ const questions = [
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [results, setResults] = useState([]);
 
   const question = questions[currentQuestion];
 
@@ -100,8 +101,9 @@ export default function Quiz() {
 
       if (response.ok) {
         alert("Quiz submitted successfully!");
-        console.log("Backend response:", data);
-        handleRedirectHome("/");
+        setResults(data.recommendations)
+        console.log("Top 3 Recommendations", data.recommendations);
+        // handleRedirectHome("/");
       } else {
         alert(data.message || "Submission failed");
       }
