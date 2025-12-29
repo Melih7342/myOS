@@ -18,6 +18,7 @@ class Distribution(db.Model):
     image_size = db.Column(db.String(50))
     download_url = db.Column(db.String(255))
     beginner_friendly = db.Column(db.Boolean, default=False)
+    youtube_link = db.Column(db.String(500), nullable=True)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
