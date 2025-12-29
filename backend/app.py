@@ -105,7 +105,7 @@ def handle_submit():
     # Add YouTube links to each recommendation
     for distro in recommendations:
         distro['install_video'] = get_yt_link(distro['name'])
-
+    
     return jsonify({
                     "status": "success",
                     "recommendations": recommendations

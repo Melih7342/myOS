@@ -65,12 +65,27 @@ export default function Quiz() {
 
   const question = questions[currentQuestion];
 
-  const toggleOption = (option) => {
-    const currentAnswers = answers[question.genre] || [];
-    const updated = currentAnswers.includes(option)
-      ? currentAnswers.filter((o) => o !== option)
-      : [...currentAnswers, option];
+  const hasAnswer = (answers[question.genre]?.length || 0) > 0;
 
+  const toggleOption = (option) => {
+    let updated = [];
+    if (question.options.length === 2) {
+      updated = [option];
+    } else {
+      const currentAnswers = answers[question.genre] || [];
+      if (currentAnswers.includes(option)) {
+        for (let i = 0; i < currentAnswers.length; i++) {
+          if (currentAnswers[i] !== option) {
+            updated.push(currentAnswers[i]);
+          }
+        }
+      } else {
+        for (let i = 0; i < currentAnswers.length; i++) {
+          updated.push(currentAnswers[i]);
+        }
+        updated.push(option);
+      }
+    }
     setAnswers({
       ...answers,
       [question.genre]: updated,
@@ -101,7 +116,7 @@ export default function Quiz() {
 
       if (response.ok) {
         alert("Quiz submitted successfully!");
-        setResults(data.recommendations)
+        setResults(data.recommendations);
         console.log("Top 3 Recommendations: ", data.recommendations);
       } else {
         alert(data.message || "Submission failed");
@@ -178,13 +193,18 @@ export default function Quiz() {
               </button>
 
               {currentQuestion === questions.length - 1 ? (
-                <button className="btn btn-success" onClick={submitQuiz}>
+                <button
+                  className="btn btn-success"
+                  onClick={submitQuiz}
+                  disabled={!hasAnswer}
+                >
                   Finish
                 </button>
               ) : (
                 <button
                   className="btn btn-primary"
                   onClick={() => setCurrentQuestion((prev) => prev + 1)}
+                  disabled={!hasAnswer}
                   style={{ background: "#004e72", color: "#FEFEFE" }}
                 >
                   Next
