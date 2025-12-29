@@ -102,8 +102,7 @@ export default function Quiz() {
       if (response.ok) {
         alert("Quiz submitted successfully!");
         setResults(data.recommendations)
-        console.log("Top 3 Recommendations", data.recommendations);
-        // handleRedirectHome("/");
+        console.log("Top 3 Recommendations: ", data.recommendations);
       } else {
         alert(data.message || "Submission failed");
       }
