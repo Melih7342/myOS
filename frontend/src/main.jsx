@@ -7,8 +7,6 @@ import Homepage from './Homepage.jsx'
 import Authpage from './Authpage.jsx'
 import Quizpage from './Quizpage.jsx'
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>

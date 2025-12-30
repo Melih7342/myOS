@@ -12,18 +12,16 @@ function Homepage() {
 
   return (
     <nav className="navbar navbar-light bg-white shadow-sm myContainer">
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center" onClick={() => navigate("/")}>
         <img
           src={logo}
           alt="myOS logo"
           className="me-2"
           style={{ width: 40, height: 40 }}
-          onClick={() => navigate("/")}
         />
         <span
           className="navbar-brand fw-bold mb-0"
           style={{ color: "#4FC3f7" }}
-          onClick={() => navigate("/")}
         >
           myOS
         </span>
