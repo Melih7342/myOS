@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./css/Homepage.css";
 
-import NAVBAR from "./components/Navbar.jsx";
+import NAVBAR from "./components/NavbarComponent.jsx";
 
 import { submitQuiz } from "./services/QuizRequests.js";
 
@@ -101,9 +101,9 @@ function Quizpage() {
     const result = await submitQuiz(answers);
 
     if (result.ok) {
-      alert("Quiz submitted successfully!");
+      //alert("Quiz submitted successfully!");
       setResults(result.data.recommendations);
-      console.log("Top 3 Recommendations: ", result.data.recommendations);
+      navigate("/result", { state: { results: result.data.recommendations } });
     } else {
       alert("Submission failed");
     }

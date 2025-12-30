@@ -1,16 +1,16 @@
-import NAVBAR from "./components/Navbar.jsx";
-import HERO from "./components/Heroblock.jsx";
-import TopOS from "./components/TopOS+ForumBlock.jsx";
+import NAVBAR from "./components/NavbarComponent.jsx";
+import HERO from "./components/HeroblockComponent.jsx";
+import TopOS from "./components/TopOS+ForumBlockComponents.jsx";
 
 function Homepage() {
   return (
-    <div>
+    <>
       <NAVBAR />
 
       <HERO />
 
       <TopOS />
-    </div>
+    </>
   );
 }
 

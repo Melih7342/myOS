@@ -11,7 +11,13 @@ from googleapiclient.discovery import build
 load_dotenv()
 app = Flask(__name__)
 # Enable CORS so React app (usually port 3000) can talk to this port (3100)
-CORS(app)
+CORS(
+        app,
+        origins=["http://localhost:8080", "http://127.0.0.1:8080"],  # Add both common variants
+        supports_credentials=True,
+        allow_headers=["Content-Type", "Authorization"],  # Explicitly allow headers
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]  # Specify allowed methods
+    )
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

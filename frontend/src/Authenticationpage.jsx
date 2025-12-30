@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./css/Homepage.css";
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./components/NavbarComponent.jsx";
 import AuthComponent from "./components/AuthComponent.jsx";
 
 import { login, register } from "./services/AuthRequests.js";
+import { validateAuthInput } from "./services/AuthValidator.js";
 
 function AuthPage() {
   const navigate = useNavigate();
@@ -17,13 +18,9 @@ function AuthPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!username || !password) {
-      alert("You need to give your username AND your password!");
-      return;
-    }
-
-    if (!isLogin && password.length < 6) {
-      alert("Password must be at least 6 characters long!");
+    const validation = validateAuthInput(username, password, isLogin);
+    if (!validation.ok) {
+      alert(validation.message);
       return;
     }
 
@@ -51,7 +48,7 @@ function AuthPage() {
     <>
       <Navbar />
 
-       <AuthComponent
+      <AuthComponent
         isLogin={isLogin}
         username={username}
         setUsername={setUsername}
