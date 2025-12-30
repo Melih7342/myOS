@@ -1,73 +1,71 @@
 import React, { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 
 import "./css/Homepage.css";
-import logo from "./pictures/homepage/logo.png";
+import Navbar from "./components/Navbar.jsx";
 
-function Loginpage() {
+import { login, register } from "./services/AuthRequests.js";
+
+function AuthPage() {
   const navigate = useNavigate();
+
+  const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRedirectHomepage = () => {
-    navigate("/");
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!username || !password) {
       alert("You need to give your username AND your password!");
       return;
     }
 
-    try {
-      const response = await fetch("http://localhost:3100/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+    if (!isLogin && password.length < 6) {
+      alert("Password must be at least 6 characters long!");
+      return;
+    }
 
-      const data = await response.json();
+    let result;
+    if (isLogin) {
+      result = await login(username, password);
+    } else {
+      result = await register(username, password);
+    }
 
-      if (response.ok) {
-        alert(`Login successful: ${data.username}`);
+    if (result.ok) {
+      if (isLogin) {
+        alert("Login successful: " + result.data.username);
         navigate("/");
       } else {
-        alert(`Error: ${data.message}`);
+        alert("Registration successful: " + result.data.username);
+        navigate("/login");
       }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Something went wrong!");
+    } else {
+      alert("Error: " + result.data.message);
     }
   };
 
+  let title = "";
+  let description = "";
+  let submitLabel = "";
+  let switchLabel = "";
+
+  if (isLogin) {
+    title = "Log in";
+    description = "If you already have an account, you need just to log in.";
+    submitLabel = "Log in";
+    switchLabel = "Create an account, if you don't have";
+  } else {
+    title = "Register";
+    description = "If you don't have an account, you can create one.";
+    submitLabel = "Register";
+    switchLabel = "Have an Account already?";
+  }
+
   return (
     <>
-      <nav className="navbar navbar-light bg-white shadow-sm myContainer">
-        <div className="d-flex align-items-center">
-          <img
-            src={logo}
-            alt="myOS logo"
-            className="me-2"
-            style={{ width: 40, height: 40 }}
-          />
-          <span
-            className="navbar-brand fw-bold mb-0"
-            style={{ color: "#4FC3f7" }}
-          >
-            myOS
-          </span>
-        </div>
-
-        <button
-          className="btn ms-auto"
-          onClick={() => handleRedirectLogin("/login")}
-          style={{ background: "#004e72", color: "#FEFEFE" }}
-        >
-          Log in
-        </button>
-      </nav>
+      <Navbar />
 
       <div
         className="container-fluid d-flex align-items-center justify-content-center"
@@ -79,10 +77,8 @@ function Loginpage() {
         <div className="row w-100 justify-content-center">
           <div className="col-md-5 col-lg-4">
             <div className="card shadow-lg border-0 rounded-4 p-4">
-              <h3 className="fw-bold mb-2">Log in</h3>
-              <p className="text-muted mb-4">
-                If you already have an account, you need just to log in.
-              </p>
+              <h3 className="fw-bold mb-2">{title}</h3>
+              <p className="text-muted mb-4">{description}</p>
 
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
@@ -110,16 +106,16 @@ function Loginpage() {
                   className="btn btn-primary w-100 mb-3"
                   style={{ background: "#004e72", color: "#FEFEFE" }}
                 >
-                  Log in
+                  {submitLabel}
                 </button>
               </form>
 
               <div className="text-center">
                 <button
                   className="btn btn-link p-0"
-                  onClick={() => navigate("/register")}
+                  onClick={() => setIsLogin(!isLogin)}
                 >
-                  Create an account, if you don't have
+                  {switchLabel}
                 </button>
               </div>
             </div>
@@ -130,4 +126,4 @@ function Loginpage() {
   );
 }
 
-export default Loginpage;
+export default AuthPage;

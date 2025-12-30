@@ -3,8 +3,11 @@ import React from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import logo from "./pictures/homepage/logo.png";
 import "./css/Homepage.css";
+
+import NAVBAR from "./components/Navbar.jsx";
+
+import { submitQuiz } from "./services/QuizRequests.js";
 
 const questions = [
   {
@@ -58,10 +61,12 @@ const questions = [
   },
 ];
 
-export default function Quiz() {
+function Quizpage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [results, setResults] = useState([]);
+
+  const navigate = useNavigate();
 
   const question = questions[currentQuestion];
 
@@ -92,69 +97,22 @@ export default function Quiz() {
     });
   };
 
-  const navigate = useNavigate();
+  const handleQuizSubmit = async () => {
+    const result = await submitQuiz(answers);
 
-  const handleRedirectHome = () => {
-    navigate("/");
-  };
-
-  const handleRedirectLogin = () => {
-    navigate("/login");
-  };
-
-  const submitQuiz = async () => {
-    try {
-      const response = await fetch("http://localhost:3100/quiz/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ answers }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert("Quiz submitted successfully!");
-        setResults(data.recommendations);
-        console.log("Top 3 Recommendations: ", data.recommendations);
-      } else {
-        alert(data.message || "Submission failed");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      handleRedirectHome("/");
-      alert("Something went wrong!");
+    if (result.ok) {
+      alert("Quiz submitted successfully!");
+      setResults(result.data.recommendations);
+      console.log("Top 3 Recommendations: ", result.data.recommendations);
+    } else {
+      alert("Submission failed");
     }
   };
 
   return (
     <>
       <div className="backgroundForHomepage">
-        <nav className="navbar navbar-light bg-white shadow-sm myContainer">
-          <div className="d-flex align-items-center">
-            <img
-              src={logo}
-              alt="myOS logo"
-              className="me-2"
-              style={{ width: 40, height: 40 }}
-            />
-            <span
-              className="navbar-brand fw-bold mb-0"
-              style={{ color: "#4FC3f7" }}
-            >
-              myOS
-            </span>
-          </div>
-
-          <button
-            className="btn ms-auto"
-            onClick={() => handleRedirectLogin("/login")}
-            style={{ background: "#004e72", color: "#FEFEFE" }}
-          >
-            Log in
-          </button>
-        </nav>
+        <NAVBAR />
 
         <div className="container d-flex align-items-center justify-content-center min-vh-100">
           <div className="w-100" style={{ maxWidth: "700px" }}>
@@ -195,7 +153,7 @@ export default function Quiz() {
               {currentQuestion === questions.length - 1 ? (
                 <button
                   className="btn btn-success"
-                  onClick={submitQuiz}
+                  onClick={handleQuizSubmit}
                   disabled={!hasAnswer}
                 >
                   Finish
@@ -217,3 +175,5 @@ export default function Quiz() {
     </>
   );
 }
+
+export default Quizpage;
