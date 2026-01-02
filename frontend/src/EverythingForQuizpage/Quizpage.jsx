@@ -1,0 +1,109 @@
+import { useNavigate } from "react-router-dom";
+import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import { submitQuiz } from "./QuizRequests.js";
+import { useQuiz } from "./useQuiz.js";
+
+import { QuestionHeader, QuestionOptions, QuestionButtons } from "./QuizComponents.jsx";
+
+
+const questions = [
+    {
+      id: 1,
+      genre: "popularity",
+      question: "Do you prefer current and popular operating systems?",
+      options: ["Absolutely", "Would be nice", "Not Important"],
+    },
+    {
+      id: 2,
+      genre: "price",
+      question: "Does the operating system have to be free",
+      options: ["Yes", "No"],
+    },
+    {
+      id: 3,
+      genre: "experience",
+      question: "Which level of experience do you have?",
+      options: ["Beginner", "Intermediate", "Advanced"],
+    },
+    {
+      id: 4,
+      genre: "gui",
+      question: "Do you prefer a graphical user interface?",
+      options: ["Yes", "No"],
+    },
+    {
+      id: 5,
+      genre: "hardware",
+      question: "Which Hardware are you using?",
+      options: ["Old", "Mid-Range", "High"],
+    },
+    {
+      id: 6,
+      genre: "use_case",
+      question: "What do you want to use the operating system for?",
+      options: ["Gaming", "Server", "Everyday Use", "Security", "Raspberry Py"],
+    },
+    {
+      id: 7,
+      genre: "weight",
+      question: "Do you want the operating system to be light weight?",
+      options: ["Yes", "No"],
+    },
+    {
+      id: 8,
+      genre: "livetest",
+      question:
+        "Should the operating system have the possibility to try it on a live medium (e.g. USB-Stick)?",
+      options: ["Yes", "No"],
+    },
+  ];
+
+function Quizpage() {
+  const navigate = useNavigate();
+  const quiz = useQuiz(questions);
+
+  const handleQuizSubmit = async () => {
+    const result = await submitQuiz(quiz.answers);
+
+    if (result.ok) {
+      navigate("/result", {
+        state: { results: result.data.recommendations },
+      });
+    } else {
+      alert("Submission failed");
+    }
+  };
+
+  return (
+    <div className="backgroundForHomepage">
+      <NAVBAR />
+
+      <div className="container d-flex align-items-center justify-content-center min-vh-100">
+        <div className="w-100" style={{ maxWidth: "700px" }}>
+          <QuestionHeader
+            question={quiz.question}
+            currentQuestion={quiz.currentQuestion}
+            questions={questions}
+          />
+
+          <QuestionOptions
+            question={quiz.question}
+            answers={quiz.answers}
+            onToggleOption={quiz.toggleOption}
+          />
+
+          <QuestionButtons
+            hasAnswer={quiz.hasAnswer}
+            isLastQuestion={quiz.isLastQuestion}
+            onNext={quiz.nextQuestion}
+            onBack={quiz.prevQuestion}
+            onFinish={handleQuizSubmit}
+            questions={questions}
+            currentQuestion={quiz.currentQuestion}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+export default Quizpage;

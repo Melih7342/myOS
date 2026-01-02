@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import NAVBAR from "./components/NavbarComponent.jsx";
-import Results from "./components/ResultBlockComponent.jsx";
+import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import Results from "./ResultBlockComponent.jsx";
 
 function ResultPage() {
   const location = useLocation();

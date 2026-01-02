@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import React from "react";
-import "../css/Homepage.css";
+import "../pictures/css/Homepage.css";
 import logo from "../pictures/homepage/logo.png";
 
 import { useNavigate } from "react-router-dom";

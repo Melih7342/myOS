@@ -8,6 +8,9 @@ function AuthForm({
   setPassword,
   handleSubmit,
   toggleMode,
+  isSubmitting,
+  errorMessage,
+  successMessage,
 }) {
   let title = "";
   let description = "";
@@ -18,7 +21,7 @@ function AuthForm({
     title = "Log in";
     description = "If you already have an account, you need just to log in.";
     submitLabel = "Log in";
-    switchLabel = "Create an account, if you don't have";
+    switchLabel = "Create an account, if you don't have already.";
   } else {
     title = "Register";
     description = "If you don't have an account, you can create one.";
@@ -35,6 +38,16 @@ function AuthForm({
         <div className="card shadow-lg border-0 rounded-4 p-4">
           <h3 className="fw-bold mb-2">{title}</h3>
           <p className="text-muted mb-4">{description}</p>
+          {errorMessage && (
+            <div className="alert alert-danger" role="alert">
+              {errorMessage}
+            </div>
+          )}
+          {successMessage && (
+            <div className="alert alert-success" role="alert">
+              {successMessage}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -63,6 +76,7 @@ function AuthForm({
               type="submit"
               className="btn btn-primary w-100 mb-3"
               style={{ background: "#004e72", color: "#FEFEFE" }}
+              disabled={isSubmitting}
             >
               {submitLabel}
             </button>
