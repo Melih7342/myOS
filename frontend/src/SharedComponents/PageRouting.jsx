@@ -7,6 +7,7 @@ const Homepage = lazy(() => import("../EverythingForHomepage/Homepage"));
 const Authpage = lazy(() => import("../EverythingForAuthentication/Authenticationpage"));
 const Quizpage = lazy(() => import("../EverythingForQuizpage/Quizpage"));
 const Resultpage = lazy(() => import("../EverythingForResultpage/Resultpage"));
+const Accountpage = lazy(() => import("../EverythingForAccountpage/Accountpage"));
 const NotFound = lazy(() => import("./NotFound"));
 
 function PageRouting() {
@@ -18,6 +19,7 @@ function PageRouting() {
           <Route path="/auth" element={<Authpage />} />
           <Route path="/quizpage" element={<Quizpage />} />
           <Route path="/result" element={<Resultpage />} />
+          <Route path="/account" element={<Accountpage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
