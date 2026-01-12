@@ -117,6 +117,22 @@ def handle_submit():
                     "recommendations": recommendations
     })
 
+
+@app.route('/auth/delete/<username>', methods=['DELETE'])
+def delete_account(username):
+    user = User.query.filter_by(username=username).first()
+
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    try:
+        db.session.delete(user)
+        db.session.commit()
+        return jsonify({"message": "Account deleted successfully"}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"message": "Error deleting account"}), 500
+
 if __name__ == "__main__":
     # Set port to 3100 to match React fetch URLs
     app.run(debug=True, port=3100)

@@ -1,80 +1,92 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AuthForm from "./AuthComponent";
+import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
 
-import "../pictures/css/Homepage.css";
-import Navbar from "../SharedComponents/NavbarComponent.jsx";
-import AuthComponent from "./AuthComponent.jsx";
-
-import { auth } from "./AuthRequests.js";
-import { validateAuthInput } from "./AuthValidator.js";
-
-function AuthPage() {
-  const navigate = useNavigate();
-
+function Authenticationpage() {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();
 
-    const validation = validateAuthInput(username, password, isLogin);
-    if (!validation.ok) {
-      setErrorMessage(validation.message);
-      return;
-    }
-
-    setIsSubmitting(true);
+  const toggleMode = () => {
+    setIsLogin(!isLogin);
     setErrorMessage("");
     setSuccessMessage("");
+  };
 
-    const result = await auth(username, password, isLogin);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+    setIsSubmitting(true);
 
-    if (result.ok) {
-      if (isLogin) {
-        setSuccessMessage("Login successful: " + result.data.username);
-        navigate("/");
+    // Bestimmung des Endpoints basierend auf dem Modus
+    const endpoint = isLogin ? "/auth/login" : "/auth/register";
+    const url = `http://localhost:3100${endpoint}`;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        if (isLogin) {
+          setSuccessMessage("Login successful! Redirecting...");
+
+          localStorage.setItem("user", JSON.stringify({
+            username: data.username,
+            isLoggedIn: true
+          }));
+
+          setTimeout(() => navigate("/account"), 1500);
+        } else {
+          // --- REGISTER LOGIK ---
+          setSuccessMessage("Registration successful! You can now log in.");
+          setIsLogin(true);
+          setPassword("");
+        }
       } else {
-        setSuccessMessage("Registration successful: " + result.data.username);
-        setIsLogin(true);
+        setErrorMessage(data.message || "An error occurred.");
       }
-    } else {
-      setErrorMessage("Error: " + result.data.message);
+    } catch (error) {
+      setErrorMessage("Connection to server failed. Is the Backend running?");
+      console.error("Auth Error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
 
   return (
     <>
-      {/*
-      Navbar: Is at the top of every single page.
-
-      AuthComponent: This is the component that handles both Login and Registration forms. This is just a block
-      that is centered in the middle of the page, where we can either log in or register, depending on the "isLogin" state.
-
-      We pass down all necessary states and functions as props to the AuthComponent.
-      */}
-      <Navbar />
-
-      <AuthComponent
-        isLogin={isLogin}
-        username={username}
-        setUsername={setUsername}
-        password={password}
-        setPassword={setPassword}
-        handleSubmit={handleSubmit}
-        toggleMode={() => setIsLogin(!isLogin)}
-        isSubmitting={isSubmitting}
-        errorMessage={errorMessage}
-        successMessage={successMessage}
-      />
+      <NAVBAR />
+      <div className="container">
+        <AuthForm
+          isLogin={isLogin}
+          username={username}
+          setUsername={setUsername}
+          password={password}
+          setPassword={setPassword}
+          handleSubmit={handleSubmit}
+          toggleMode={toggleMode}
+          isSubmitting={isSubmitting}
+          errorMessage={errorMessage}
+          successMessage={successMessage}
+        />
+      </div>
     </>
   );
 }
 
-export default AuthPage;
+export default Authenticationpage;
