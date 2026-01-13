@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 import dateutil
 from flask_sqlalchemy import SQLAlchemy
@@ -32,7 +32,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.column(db.String(200), nullable=False)
     content = db.column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now())
+    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     author = db.relationship('User', backref=db.backref('posts', lazy=True))
@@ -40,7 +40,7 @@ class Post(db.Model):
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now())
+    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))
 
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
