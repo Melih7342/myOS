@@ -17,7 +17,7 @@ function Homepage() {
           src={logo}
           alt="myOS logo"
           className="me-2"
-          style={{ width: 40, height: 40 }}
+          style={{ width: 50}}
         />
         <span
           className="navbar-brand fw-bold mb-0"
