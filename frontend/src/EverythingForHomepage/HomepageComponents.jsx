@@ -69,7 +69,7 @@ export function Heroblock() {
         <div className="d-flex justify-content-center gap-3">
           <button
             className="btn btn-primary px-4"
-            onClick={() => navigate("/katalog")}
+            onClick={() => navigate("/quizpage")}
             style={{ background: "#004e72", color: "#FEFEFE" }}
           >
             Get Started
