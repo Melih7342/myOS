@@ -9,7 +9,7 @@ db.init_app(app)
 
 def seed():
     # 1. Load the JSON data
-    with open('distros.json', 'r') as f:
+    with open('os.json', 'r') as f:
         distros_data = json.load(f)
 
     with app.app_context():
