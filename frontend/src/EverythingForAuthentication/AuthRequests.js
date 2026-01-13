@@ -17,6 +17,7 @@ export async function auth(username, password, isLogin) {
         const response = await fetch(base, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
+            credentials: "include",
             body: JSON.stringify({ username, password }),
         });
 
