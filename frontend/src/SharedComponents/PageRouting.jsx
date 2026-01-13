@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import ErrorBoundary from "./ErrorBoundary";
 
 const Homepage = lazy(() => import("../EverythingForHomepage/Homepage"));
@@ -9,6 +8,7 @@ const Quizpage = lazy(() => import("../EverythingForQuizpage/Quizpage"));
 const Resultpage = lazy(() => import("../EverythingForResultpage/Resultpage"));
 const Accountpage = lazy(() => import("../EverythingForAccountpage/Accountpage"));
 const Detailpage = lazy(() => import("../EverythingForDetailpage/Detailpage"));
+const Katalogpage = lazy(() => import("../EverythingForKatalogpage/Katalogpage"));
 const NotFound = lazy(() => import("./NotFound"));
 
 function PageRouting() {
@@ -22,10 +22,11 @@ function PageRouting() {
           <Route path="/result" element={<Resultpage />} />
           <Route path="/account" element={<Accountpage />} />
           <Route path="/detail" element={<Detailpage />} />
+          <Route path="/katalog" element={<Katalogpage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-    </ErrorBoundary>
+    </ErrorBoundary> 
   );
 }
 

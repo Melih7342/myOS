@@ -2,9 +2,7 @@ import { useNavigate } from "react-router-dom";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
 import { submitQuiz } from "./QuizRequests.js";
 import { useQuiz } from "./useQuiz.js";
-
 import { QuestionHeader, QuestionOptions, QuestionButtons } from "./QuizComponents.jsx";
-
 
 const questions = [
     {

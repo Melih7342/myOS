@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User, Distribution
@@ -7,9 +7,12 @@ from recommend_distros import recommend_distros
 from load_distros import load_distros_from_db
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
+from datetime import timedelta
+import secrets
 
 load_dotenv()
 app = Flask(__name__)
+app.secret_key = os.getenv('SECRET_KEY', secrets.token_hex(32))
 # Enable CORS so React app (usually port 3000) can talk to this port (3100)
 CORS(
         app,
@@ -21,6 +24,8 @@ CORS(
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SESSION_PERMANENT"] = True
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(hours=1)
 db.init_app(app)
 
 YT_KEY = os.getenv("YOUTUBE_API_KEY")
@@ -91,6 +96,10 @@ def login():
 
     # Check if user exists and password is correct
     if user and check_password_hash(user.password, password):
+        session.clear()
+        session["user_id"] = user.id
+        session["username"] = user.username
+
         return jsonify({
             "username": user.username,
             "message": "Login successful"
@@ -98,6 +107,37 @@ def login():
     
     return jsonify({"message": "Invalid username or password"}), 401
 
+
+@app.route('/auth/logout', methods=['POST'])
+def logout():
+    session.clear()
+    return jsonify({"message": "Logged out"}), 200
+
+@app.route('/distros', methods=['GET'])
+def get_all_distros():
+    try:
+        # Fetch all distros from the DB
+        distros = Distribution.query.all()
+        
+        # Convert objects to a list of dictionaries
+        output = []
+        for d in distros:
+            output.append({
+                "id": d.id,
+                "name": d.name,
+                "os_type": d.os_type,
+                "based_on": d.based_on,
+                "desktop": d.desktop,
+                "category": d.category,
+                "description": d.description,
+                "price": d.price,
+                "beginner_friendly": d.beginner_friendly,
+                "youtube_link": d.youtube_link
+            })
+            
+        return jsonify(output), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/quiz/submit', methods=['POST'])
 def handle_submit():
@@ -117,9 +157,23 @@ def handle_submit():
                     "recommendations": recommendations
     })
 
+@app.route('/auth/check', methods=['GET'])
+def check_auth():
+    # Überprüfen ob Benutzer in der Session ist
+    if "user_id" in session:
+        user = User.query.get(session["user_id"])
+        if user:
+            return jsonify({
+                "username": user.username,
+                "id": user.id
+            }), 200
+    
+    return jsonify({"message": "Not authenticated"}), 401
+
 
 @app.route('/auth/delete/<username>', methods=['DELETE'])
 def delete_account(username):
+    session.clear()
     user = User.query.filter_by(username=username).first()
 
     if not user:

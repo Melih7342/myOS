@@ -80,6 +80,12 @@ export function Heroblock() {
           >
             Log in
           </button>
+          <button
+            className="btn btn-outline-primary px-4"
+            onClick={() => navigate("/katalog")}
+          >
+            Look at Catalog
+          </button>
         </div>
       </div>
     </div>
