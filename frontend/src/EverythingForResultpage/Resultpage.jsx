@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import Navbar from "../SharedComponents/NavbarComponent.jsx";
 import Results from "./ResultBlockComponent.jsx";
 
 function ResultPage() {
@@ -12,7 +12,7 @@ function ResultPage() {
 
   return (
     <>
-      <NAVBAR />
+      <Navbar />
 
       <div className="container mt-5">
         <h2>Top 3 Recommendations</h2>
