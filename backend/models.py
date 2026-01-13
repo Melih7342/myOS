@@ -30,8 +30,8 @@ class User(db.Model):
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.column(db.String(200), nullable=False)
-    content = db.column(db.Text, nullable=False)
+    title = db.Column(db.String(200), nullable=False)
+    content = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
