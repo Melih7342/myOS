@@ -2,12 +2,12 @@ import os
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import db, User, Distribution
+from models import db, User, Distribution, Post, Comment
 from recommend_distros import recommend_distros
 from load_distros import load_distros_from_db
 from dotenv import load_dotenv
 from googleapiclient.discovery import build
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
 import secrets
 
 load_dotenv()
@@ -159,7 +159,6 @@ def handle_submit():
 
 @app.route('/auth/check', methods=['GET'])
 def check_auth():
-    # Überprüfen ob Benutzer in der Session ist
     if "user_id" in session:
         user = User.query.get(session["user_id"])
         if user:
@@ -186,6 +185,150 @@ def delete_account(username):
     except Exception as e:
         db.session.rollback()
         return jsonify({"message": "Error deleting account"}), 500
+
+# Get all posts
+@app.route('/forum/posts', methods=['GET'])
+def get_posts():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    output = []
+    for post in posts:
+        output.append({
+            "id": post.id,
+            "title": post.title,
+            "content": post.content,
+            "author": post.author.username,
+            "date": post.timestamp.strftime("%Y-%m-%d %H:%M")
+        })
+    return jsonify(output)
+
+
+# Create new post
+@app.route('/forum/posts', methods=['POST'])
+def create_post():
+    data = request.get_json()
+    username = data.get('username')
+
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+
+    new_post = Post(
+        title=data.get('title'),
+        content=data.get('content'),
+        user_id=user.id
+    )
+
+    db.session.add(new_post)
+    db.session.commit()
+    return jsonify({"message": "Post created!", "post_id": new_post.id}), 201
+
+# Post a comment under a post
+@app.route('/forum/posts/<int:post_id>/comments', methods=['POST'])
+def add_comment(post_id):
+    data = request.get_json()
+    user = User.query.filter_by(username=data.get('username')).first()
+
+    if not user:
+        return jsonify({"message": "Login required"}), 401
+
+    new_comment = Comment(
+        content=data.get('content'),
+        post_id=post_id,
+        user_id=user.id
+    )
+
+    db.session.add(new_comment)
+    db.session.commit()
+
+    return jsonify({"message": "Reply sent!"}), 201
+
+
+# Get all comments to a post
+@app.route('/forum/posts/<int:post_id>/comments', methods=['GET'])
+def get_comments(post_id):
+    post = Post.query.get_or_404(post_id)
+
+    comments = Comment.query.filter_by(post_id=post_id).order_by(Comment.timestamp.asc()).all()
+
+    output = []
+    for comment in comments:
+        output.append({
+            "id": comment.id,
+            "content": comment.content,
+            "author": comment.author.username,
+            "date": comment.timestamp.strftime("%Y-%m-%d %H:%M")
+        })
+
+    return jsonify({
+        "post_title": post.title,
+        "comments": output
+    })
+
+# Update post
+@app.route('/forum/posts/<int:post_id>', methods=['PUT'])
+def edit_post(post_id):
+    data = request.get_json()
+    post = Post.query.get_or_404(post_id)
+
+    # Ownership Check
+    if post.author.username != data.get('username'):
+        return jsonify({"message": "You can only edit your own posts!"}), 403
+
+    post.title = data.get('title', post.title)
+    post.content = data.get('content', post.content)
+    db.session.commit()
+
+    return jsonify({"message": "Post updated successfully"})
+
+# Delete post
+@app.route('/forum/posts/<int:post_id>', methods=['DELETE'])
+def delete_post(post_id):
+    data = request.get_json()
+    post = Post.query.get_or_404(post_id)
+
+    if post.author.username != data.get('username'):
+        return jsonify({"message": "Unauthorized"}), 403
+
+    db.session.delete(post)
+    db.session.commit()
+    return jsonify({"message": "Post deleted"})
+
+# Delete comment
+@app.route('/forum/comments/<int:comment_id>', methods=['DELETE'])
+def delete_comment(comment_id):
+    data = request.get_json()
+    comment = Comment.query.get_or_404(comment_id)
+
+    if comment.author.username != data.get('username'):
+        return jsonify({"message": "Unauthorized"}), 403
+
+    db.session.delete(comment)
+    db.session.commit()
+    return jsonify({"message": "Comment removed"})
+
+
+# Update comment
+@app.route('/forum/comments/<int:comment_id>', methods=['PUT'])
+def edit_comment(comment_id):
+    data = request.get_json()
+    comment = Comment.query.get_or_404(comment_id)
+
+    if comment.author.username != data.get('username'):
+        return jsonify({"message": "You can only edit your own comments!"}), 403
+
+    new_content = data.get('content')
+    if not new_content:
+        return jsonify({"message": "Content cannot be empty"}), 400
+
+    comment.content = new_content
+    comment.edited_at = datetime.now(timezone.utc)
+    db.session.commit()
+
+    return jsonify({
+        "message": "Comment updated successfully",
+        "content": comment.content,
+        "date": comment.edited_at.strftime("%Y-%m-%d %H:%M")
+    }), 200
 
 if __name__ == "__main__":
     # Set port to 3100 to match React fetch URLs
