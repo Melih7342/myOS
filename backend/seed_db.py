@@ -14,12 +14,14 @@ def seed():
 
     with app.app_context():
         # 2. Optional: Clear the table so you don't get duplicates while testing
-        # db.drop_all() 
-        # db.create_all()
+        db.drop_all() 
+        db.create_all()
 
         for item in distros_data:
             # Check if distro already exists to avoid errors
             exists = Distribution.query.filter_by(name=item.get('name')).first()
+            url = item.get('url', '') 
+            logo_name = url.strip('/').split('/')[-1]
             if not exists:
                 new_distro = Distribution(
                     name=item.get('name'),
@@ -35,7 +37,8 @@ def seed():
                     price=item.get('Price (US$)'),
                     image_size=item.get('Image Size (MB)'),
                     download_url=item.get('Download'),
-                    beginner_friendly=item.get('Beginner-friendly', False)
+                    beginner_friendly=item.get('Beginner-friendly', False),
+                    logo_name=logo_name
                 )
                 db.session.add(new_distro)
         
