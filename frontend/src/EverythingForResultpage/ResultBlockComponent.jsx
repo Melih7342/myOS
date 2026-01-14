@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 function Results({distro}) {
   const navigate = useNavigate();
-  const cleanName = distro.name.toLowerCase().replace(/\s/g, "");
-  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${cleanName}.png`;
+  const identifier = distro.logo_name || distro.name.toLowerCase().replace(/\s/g, "");
+  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
 
   return (
     <div className="card-body">

@@ -68,6 +68,7 @@ def recommend_distros(user_answers, all_distros):
                 "name": distro.get("name"),
                 "description": distro.get("description", "No description"),
                 "match_score": score,
+                "logo_name": distro.get("logo_name"),
                 "match_percent": min(score, 100),
                 "category": distro.get("category"),
                 "price": distro.get("price")
