@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import Navbar from "../SharedComponents/NavbarComponent.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Katalogpage() {
   const [distros, setDistros] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3100/distros", { credentials: "include" })
@@ -56,7 +59,14 @@ function Katalogpage() {
 
         <div className="row">
           {filteredDistros.map((distro) => (
-            <div key={distro.id} className="col-md-4 col-sm-6 mb-3">
+            <div
+              key={distro.id}
+              className="col-md-4 col-sm-6 mb-3"
+              onClick={() =>
+                navigate(`/detail/${distro.id}`, { state: { distro } })
+              }
+              style={{ cursor: "pointer" }}
+            >
               <div className="card h-100 shadow-sm">
                 <div className="card-body d-flex align-items-center justify-content-center">
                   <h5 className="card-title mb-0 text-center">{distro.name}</h5>

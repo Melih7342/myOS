@@ -7,9 +7,11 @@ import AuthComponent from "./AuthComponent.jsx";
 
 import { auth } from "./AuthRequests.js";
 import { validateAuthInput } from "./AuthValidator.js";
+import { useAuth } from "../SharedComponents/authContext";
 
 function AuthPage() {
   const navigate = useNavigate();
+  const { refreshAuth } = useAuth();
 
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
@@ -37,6 +39,7 @@ function AuthPage() {
     if (result.ok) {
       if (isLogin) {
         setSuccessMessage("Login successful: " + result.data.username);
+         await refreshAuth();
         navigate("/");
       } else {
         setSuccessMessage("Registration successful: " + result.data.username);
