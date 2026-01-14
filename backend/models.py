@@ -28,22 +28,26 @@ class User(db.Model):
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
 
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.column(db.String(200), nullable=False)
-    content = db.column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))
-
+    title = db.Column(db.String(200), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    timestamp = db.Column(db.DateTime, index=True, default=lambda: datetime.now(timezone.utc))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
     author = db.relationship('User', backref=db.backref('posts', lazy=True))
+    comments = db.relationship('Comment', back_populates='parent_post', cascade="all, delete-orphan")
+
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.now(timezone.utc))
+    timestamp = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    edited_at = db.Column(db.DateTime, nullable=True)
 
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
-    author = db.relationship('User', backref=db.backref('comments', lazy=True))
-    post = db.relationship('Post', backref='comments', lazy=True)
+    author = db.relationship('User', backref=db.backref('comments_made', lazy=True))
+    parent_post = db.relationship('Post', back_populates='comments')
