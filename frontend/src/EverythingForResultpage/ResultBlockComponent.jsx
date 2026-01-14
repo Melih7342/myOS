@@ -47,6 +47,12 @@ function Results({distro}) {
       <p>
         <strong>Match Score:</strong> {distro.match_score}%
       </p>
+      <button 
+        className="btn btn-primary mt-3"
+        onClick={() => navigate(`/detail/${distro.id}`, { state: { distro } })}
+      >
+        Mehr Details
+      </button>
     </div>
   );
 }

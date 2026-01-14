@@ -7,52 +7,29 @@ import {
   ForumPart,
 } from "./AccountpageComponents.jsx";
 
+import { useAuth } from "../SharedComponents/authContext";
 
 function Accountpage() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { user, loading, logout } = useAuth();
 
-  // Check session & load user
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        // RICHTIG: Check-Auth Route verwenden, nicht Logout!
-        const response = await fetch("http://localhost:3100/auth/check", {
-          method: "GET",
-          credentials: "include", // Wichtig für Cookies/Session
-        });
-
-        if (!response.ok) {
-          navigate("/login");
-          return;
-        }
-
-        const data = await response.json();
-        setUser(data);
-      } catch (error) {
-        console.error("Auth check failed:", error);
-        navigate("/login");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchUser();
-  }, [navigate]);
-
-  // Logout
-  const handleLogout = async () => {
-    try {
-      await fetch(`http://localhost:3100/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-      });
-    } catch (err) {
-      console.error("Logout error:", err);
-    } finally {
+    if (!loading && !user) {
       navigate("/");
     }
+  }, [loading, user, navigate]);
+
+  if (loading) {
+    return <div className="text-center mt-5">Loading...</div>;
+  }
+
+  if (!user) {
+    return null;
+  }
+
+  const handleLogout = async () => {
+    await logout();
+    navigate("/");
   };
 
   // Delete account
@@ -75,6 +52,7 @@ function Accountpage() {
       );
 
       if (response.ok) {
+        await logout();
         alert("Account deleted.");
         navigate("/");
       } else {

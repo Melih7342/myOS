@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import "../pictures/css/Homepage.css";
 
@@ -15,8 +15,23 @@ import forum from "../pictures/homepage/forum.png";
 
 import { useNavigate } from "react-router-dom";
 
+import { useAuth } from "../SharedComponents/authContext";
+
 export function Heroblock() {
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="container mt-5">
+        <div className="text-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mt-5">
@@ -44,7 +59,7 @@ export function Heroblock() {
           <div className="col-md-4">
             <img
               src={step2}
-              alt="Create account"
+              alt="Answer questions"
               className="d-block mx-auto mb-3"
               style={{ width: 80, height: 80 }}
             />
@@ -56,7 +71,7 @@ export function Heroblock() {
           <div className="col-md-4">
             <img
               src={step3}
-              alt="Create account"
+              alt="Get OS suggestions"
               className="d-block mx-auto mb-3"
               style={{ width: 80, height: 80 }}
             />
@@ -67,19 +82,27 @@ export function Heroblock() {
         </div>
 
         <div className="d-flex justify-content-center gap-3">
-          <button
+           <button
             className="btn btn-primary px-4"
             onClick={() => navigate("/quizpage")}
             style={{ background: "#004e72", color: "#FEFEFE" }}
           >
             Get Started
           </button>
+
           <button
             className="btn btn-outline-primary px-4"
-            onClick={() => navigate("/auth")}
+            onClick={() => {
+              if (user) {
+                navigate("/account");
+              } else {
+                navigate("/auth");
+              }
+            }}
           >
-            Log in
+            {user ? "My Account" : "Log In"}
           </button>
+
           <button
             className="btn btn-outline-primary px-4"
             onClick={() => navigate("/katalog")}
@@ -95,6 +118,14 @@ export function Heroblock() {
 export function TopOS_Forum() {
   const navigate = useNavigate();
 
+  const topDistros = [
+    { id: 378, name: "Windows 11", img: windows11 },
+    { id: 9, name: "Ubuntu", img: ubuntu },
+    { id: 379, name: "Windows 10", img: windows10 },
+    { id: 1, name: "CachyOS", img: cachyos },
+    { id: 2, name: "Linux Mint", img: mint },
+  ];
+
   return (
     <div className="container mt-5">
       <h4 className="mb-4">Top 5 popular operating systems</h4>
@@ -102,16 +133,12 @@ export function TopOS_Forum() {
       <div className="row align-items-center">
         <div className="col-md-8">
           <div className="row text-center">
-            {[
-              { name: "Windows 11", img: windows11 },
-              { name: "Ubuntu", img: ubuntu },
-              { name: "Windows 10", img: windows10 },
-              { name: "CachyOS", img: cachyos },
-              { name: "Linux Mint", img: mint },
-            ].map((os, index) => (
+            {topDistros.map((os, index) => (
               <div
                 className="col-6 col-md-2 mb-4 d-flex flex-column align-items-center"
-                key={os.name}
+                key={os.id}
+                onClick={() => navigate(`/detail/${os.id}`)}
+                style={{ cursor: "pointer" }}
               >
                 <div
                   className="bg-light rounded d-flex justify-content-center align-items-center mb-2"

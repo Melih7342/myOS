@@ -2,38 +2,43 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../pictures/css/Homepage.css";
 import logo from "../pictures/homepage/logo.png";
+import { useAuth } from "../SharedComponents/authContext";
 
 function Navbar() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { user, loading } = useAuth();
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const res = await fetch("http://localhost:3100/auth/check", {
-          credentials: "include",
-        });
-
-        if (!res.ok) {
-          setUser(null);
-          return;
-        }
-
-        const data = await res.json();
-        setUser(data);
-      } catch (err) {
-        console.error("Auth check failed:", err);
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    checkAuth();
-  }, []);
-
-  if (loading) return null;
+  if (loading) {
+    return (
+      <nav className="navbar navbar-light bg-white shadow-sm myContainer">
+        <div
+          className="d-flex align-items-center"
+          style={{ cursor: "pointer" }}
+        >
+          <img
+            src={logo}
+            alt="myOS logo"
+            className="me-2"
+            style={{ width: 50 }}
+          />
+          <span
+            className="navbar-brand fw-bold mb-0"
+            style={{ color: "#4FC3f7" }}
+          >
+            myOS
+          </span>
+        </div>
+        <div className="ms-auto">
+          <div
+            className="spinner-border spinner-border-sm text-primary"
+            role="status"
+          >
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   return (
     <nav className="navbar navbar-light bg-white shadow-sm myContainer">
@@ -46,7 +51,7 @@ function Navbar() {
           src={logo}
           alt="myOS logo"
           className="me-2"
-          style={{ width: 50}}
+          style={{ width: 50 }}
         />
         <span
           className="navbar-brand fw-bold mb-0"
@@ -57,17 +62,20 @@ function Navbar() {
       </div>
 
       {user ? (
-        <button
-          className="btn ms-auto"
-          onClick={() => navigate("/account")}
-          style={{
-            background: "transparent",
-            color: "#004e72",
-            fontWeight: "bold",
-          }}
-        >
-          {user.username}
-        </button>
+        <div className="d-flex align-items-center gap-3">
+          <button
+            className="btn"
+            onClick={() => navigate("/account")}
+            style={{
+              background: "transparent",
+              color: "#004e72",
+              fontWeight: "bold",
+            }}
+          >
+            {user.username}
+          </button>
+          {/* Optional: Logout Button */}
+        </div>
       ) : (
         <button
           className="btn ms-auto"

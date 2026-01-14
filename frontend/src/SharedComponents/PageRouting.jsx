@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
+import { AuthProvider } from "./authContext";
 
 const Homepage = lazy(() => import("../EverythingForHomepage/Homepage"));
 const Authpage = lazy(() => import("../EverythingForAuthentication/Authenticationpage"));
@@ -15,16 +16,18 @@ function PageRouting() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/auth" element={<Authpage />} />
-          <Route path="/quizpage" element={<Quizpage />} />
-          <Route path="/result" element={<Resultpage />} />
-          <Route path="/account" element={<Accountpage />} />
-          <Route path="/detail" element={<Detailpage />} />
-          <Route path="/katalog" element={<Katalogpage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/auth" element={<Authpage />} />
+            <Route path="/quizpage" element={<Quizpage />} />
+            <Route path="/result" element={<Resultpage />} />
+            <Route path="/account" element={<Accountpage />} />
+            <Route path="/detail/:id" element={<Detailpage />} />
+            <Route path="/katalog" element={<Katalogpage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </Suspense>
     </ErrorBoundary> 
   );

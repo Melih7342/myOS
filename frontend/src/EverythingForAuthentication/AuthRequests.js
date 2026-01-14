@@ -1,8 +1,6 @@
 const URLS = {
     login: "http://localhost:3100/auth/login",
     register: "http://localhost:3100/auth/register",
-    delete: "http://localhost:3100/auth/delete",
-    logout: "http://localhost:3100/auth/logout",
 };
 
 export async function auth(username, password, isLogin) {
