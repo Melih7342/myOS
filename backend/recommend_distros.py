@@ -1,3 +1,5 @@
+from security_utils import get_security_info
+
 def recommend_distros(user_answers, all_distros):
     scored_results = []
 
@@ -64,6 +66,8 @@ def recommend_distros(user_answers, all_distros):
             score = 0
 
         if score > 0:
+            security_info = get_security_info(distro)
+            
             scored_results.append({
                 "name": distro.get("name"),
                 "description": distro.get("description", "No description"),
@@ -71,6 +75,7 @@ def recommend_distros(user_answers, all_distros):
                 "logo_name": distro.get("logo_name"),
                 "match_percent": min(score, 100),
                 "category": distro.get("category"),
+                "security_info": security_info,
                 "price": distro.get("price")
             })
 

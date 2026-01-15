@@ -34,6 +34,18 @@ function Results({distro}) {
       <p>
         <strong>Price:</strong> {distro.price}
       </p>
+      {distro.security_info && (
+        <p>
+          <strong>Security Hardening: </strong>
+          <a
+            href={distro.security_info.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {distro.security_info.label}
+          </a>
+        </p>
+      )}
       <p>
         <strong>Installation Video: </strong>
         <a
