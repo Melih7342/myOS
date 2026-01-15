@@ -166,8 +166,8 @@ def check_auth():
                 "username": user.username,
                 "id": user.id
             }), 200
-    
-    return jsonify({"message": "Not authenticated"}), 401
+
+    return jsonify({"message": "Not authenticated"}), 200
 
 
 @app.route('/auth/delete/<username>', methods=['DELETE'])
@@ -348,6 +348,25 @@ def edit_comment(comment_id):
         "content": comment.content,
         "date": comment.edited_at.strftime("%Y-%m-%d %H:%M")
     }), 200
+
+@app.route('/distros/<int:distro_id>', methods=['GET'])
+def get_distro_by_id(distro_id):
+    try:
+        distro = Distribution.query.get_or_404(distro_id)
+        return jsonify({
+            "id": distro.id,
+            "name": distro.name,
+            "os_type": distro.os_type,
+            "based_on": distro.based_on,
+            "desktop": distro.desktop,
+            "category": distro.category,
+            "description": distro.description,
+            "price": distro.price,
+            "beginner_friendly": distro.beginner_friendly,
+            "youtube_link": distro.youtube_link
+        }), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     # Set port to 3100 to match React fetch URLs

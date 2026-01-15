@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 
@@ -6,20 +6,51 @@ function Detailpage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
-  
-  const distro = location.state?.distro;
+
+  const [distro, setDistro] = useState(location.state?.distro || null);
+  const [loading, setLoading] = useState(!distro);
+
+  useEffect(() => {
+    if (!distro) {
+      fetch(`http://localhost:3100/distros/${id}`)
+        .then(res => res.json())
+        .then(data => {
+          setDistro(data);
+          setLoading(false);
+        })
+        .catch(err => {
+          console.error("Fetch error:", err);
+          setLoading(false);
+        });
+    }
+  }, [id, distro]);
+
+  const getEmbedId = (link) => {
+    if (!link) return null;
+    if (link.includes("v=")) return link.split("v=")[1].split("&")[0];
+    if (link.includes("be/")) return link.split("be/")[1];
+    return link;
+  };
+
+  if (loading) {
+    return (
+      <>
+        <NAVBAR />
+        <div className="container" style={{ marginTop: '8rem', textAlign: 'center' }}>
+          <div className="spinner-border text-primary" role="status"></div>
+          <p>Loading Operating System...</p>
+        </div>
+      </>
+    );
+  }
 
   if (!distro) {
     return (
       <>
         <NAVBAR />
         <div className="container mt-5">
-          <div className="alert alert-warning">
-            Please pick a distro from the catalog first.
-          </div>
-          <button className="btn btn-primary" onClick={() => navigate('/katalog')}>
-            To Catalog
-          </button>
+          <div className="alert alert-warning">Distro not found.</div>
+          <button className="btn btn-primary" onClick={() => navigate('/katalog')}>Back to Catalog</button>
         </div>
       </>
     );
@@ -53,10 +84,11 @@ function Detailpage() {
               <span>beginner friendly: {distro.beginner_friendly ? 'Yes' : 'No'}</span>
             </div>
           </div>
+
           <div className='col d-flex justify-content-center align-items-center'>
-            <div style={{ 
-              width: '15rem', 
-              height: '15rem', 
+            <div style={{
+              width: '15rem',
+              height: '15rem',
               backgroundColor: '#e0e0e0',
               display: 'flex',
               alignItems: 'center',
@@ -67,6 +99,7 @@ function Detailpage() {
             </div>
           </div>
         </div>
+
         <div className='row justify-content-between gap-5 pb-5'>
           <div className='col'>
             <p>How to Install the OS?</p>
@@ -75,8 +108,9 @@ function Detailpage() {
                 <iframe
                   width='560'
                   height='315'
-                  src={`https://www.youtube.com/embed/${distro.youtube_link}`}
+                  src={`https://www.youtube.com/embed/${getEmbedId(distro.youtube_link)}`}
                   title='YouTube video player'
+                  frameBorder="0"
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                   allowFullScreen
                 ></iframe>
@@ -86,9 +120,9 @@ function Detailpage() {
             </div>
           </div>
         </div>
-        
+
         <button className="btn btn-primary mb-5" onClick={() => navigate('/katalog')}>
-        Back to Catalog
+          Back to Catalog
         </button>
       </div>
     </>
