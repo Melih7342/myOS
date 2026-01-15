@@ -222,6 +222,25 @@ def create_post():
     db.session.commit()
     return jsonify({"message": "Post created!", "post_id": new_post.id}), 201
 
+
+@app.route('/forum/users/<username>/posts', methods=['GET'])
+def get_user_posts(username):
+    user = User.query.filter_by(username=username).first_or_404()
+
+    user_posts = Post.query.filter_by(user_id=user.id).order_by(Post.timestamp.desc()).all()
+
+    output = []
+    for post in user_posts:
+        output.append({
+            "id": post.id,
+            "title": post.title,
+            "content": post.content,
+            "date": post.timestamp.strftime("%Y-%m-%d %H:%M"),
+            "comment_count": len(post.comments)
+        })
+
+    return jsonify(output)
+
 # Post a comment under a post
 @app.route('/forum/posts/<int:post_id>/comments', methods=['POST'])
 def add_comment(post_id):
