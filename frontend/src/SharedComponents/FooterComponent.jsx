@@ -14,7 +14,7 @@ function Footer() {
 
           <div className="col-md-6 text-center text-md-end">
             <Link 
-              to="/katalog" 
+              to="/catalog"
               className="text-decoration-none text-muted me-4"
             >
               <i className="bi bi-grid-3x3-gap me-1"></i> Catalog

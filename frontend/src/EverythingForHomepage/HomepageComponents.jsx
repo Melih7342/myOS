@@ -170,7 +170,7 @@ export function TopOS_Forum() {
               className="d-block mx-auto mb-3"
               style={{ width: 80, height: 80 }}
             />
-            <h5>Make a forum</h5>
+            <h5>Forum</h5>
           </div>
         </div>
       </div>
