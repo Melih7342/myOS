@@ -4,6 +4,19 @@ import "../pictures/css/Homepage.css";
 import logo from "../pictures/homepage/logo.png";
 import { useAuth } from "../SharedComponents/authContext";
 
+const DiscordLink = ({ className }) => (
+  <a
+    href="https://discord.gg/JjKvRccAsH"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`btn d-flex align-items-center gap-2 ${className}`}
+    style={{ background: "#5865F2", color: "#fff", fontWeight: "500" }}
+  >
+    <i className="bi bi-discord"></i>
+    <span className="d-none d-md-inline">Join MyOS Discord</span>
+  </a>
+);
+
 function Navbar() {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
@@ -61,6 +74,7 @@ function Navbar() {
         </span>
       </div>
 
+      <div className="ms-auto d-flex align-items-center gap-2">
       {user ? (
         <div className="d-flex align-items-center gap-3">
           <button
@@ -85,6 +99,9 @@ function Navbar() {
           Log in
         </button>
       )}
+      
+      <DiscordLink />
+        </div>
     </nav>
   );
 }
