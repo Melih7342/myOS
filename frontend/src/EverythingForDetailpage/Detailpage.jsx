@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from "../SharedComponents/authContext";
+import {getDistroLogo} from "../SharedComponents/LogoURL.jsx";
 
 function Detailpage() {
   const navigate = useNavigate();
@@ -13,27 +14,8 @@ function Detailpage() {
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
 
-  let logoUrl = ""
-  if (distro) {
-      const name = distro.name.toLowerCase();
+  let logoUrl = getDistroLogo(distro)
 
-      if (distro.os_type?.toLowerCase() === "windows") {
-          if (name.includes("11")) {
-              logoUrl = "/windows_logos/windows_11.png";
-          } else if (name.includes("10")) {
-              logoUrl = "/windows_logos/windows_10.svg";
-          } else if (name.includes("2022")) {
-              logoUrl = "/windows_logos/Windows_Server_2022.png";
-          }
-        }
-      else {
-              const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
-              logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
-          }
-      }
-
-
-  
   const handleBackClick = () => {
   if (origin === 'catalog') {
     navigate('/catalog');

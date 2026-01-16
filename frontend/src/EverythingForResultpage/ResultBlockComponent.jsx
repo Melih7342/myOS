@@ -1,10 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {getDistroLogo} from "../SharedComponents/LogoURL.jsx";
 
 function Results({distro}) {
   const navigate = useNavigate();
-  const identifier = distro.logo_name || distro.name.toLowerCase().replace(/\s/g, "");
-  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
+
+  let logoUrl = getDistroLogo(distro)
 
   return (
     <div className="card-body">
