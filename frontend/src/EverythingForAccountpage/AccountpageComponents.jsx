@@ -58,17 +58,6 @@ export function AccountButtons({ logout, deleteAccount }) {
   return (
     <>
       <div className="d-flex flex-row gap-4 mb-4">
-        <button
-          className="btn btn-primary px-4 py-2"
-          style={{
-            background: "#004E72",
-            color: "#FEFEFE",
-            borderRadius: "0.6rem",
-          }}
-          disabled
-        >
-          Change Password
-        </button>
 
         <button
           onClick={logout}
