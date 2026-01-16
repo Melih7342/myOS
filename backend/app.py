@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from datetime import timedelta, datetime, timezone
 import secrets
+from security_utils import get_security_info
 
 load_dotenv()
 app = Flask(__name__)
@@ -31,39 +32,39 @@ db.init_app(app)
 YT_KEY = os.getenv("YOUTUBE_API_KEY")
 
 def get_yt_link(distro_name):
-    # 1. Look for the distro in the DB to check the 'youtube_link' column
+    # 1. DB Check
     distro_obj = Distribution.query.filter_by(name=distro_name).first()
-    
     if distro_obj and distro_obj.youtube_link:
         return distro_obj.youtube_link
 
-    # 2. Not in DB? Search in YouTube
+    search_fallback = f"https://www.youtube.com/results?search_query={distro_name.replace(' ', '+')}+installation+tutorial"
+
     try:
+        if not YT_KEY:
+            return search_fallback
+
         youtube = build("youtube", "v3", developerKey=YT_KEY)
-        search_query = f"{distro_name} installation tutorial"
-        
         request = youtube.search().list(
-            q=search_query,
+            q=f"{distro_name} installation tutorial",
             part="snippet",
             maxResults=1,
             type="video"
         )
         response = request.execute()
 
-        if response['items']:
+        if response.get('items'):
             video_id = response['items'][0]['id']['videoId']
             link = f"https://www.youtube.com/watch?v={video_id}"
-            
-            # 3. Save to DB if the object exists
+
             if distro_obj:
                 distro_obj.youtube_link = link
                 db.session.commit()
             return link
-            
+
     except Exception as e:
-        print(f"YouTube API Error for {distro_name}: {e}")
-    
-    return "https://www.youtube.com"
+        print(f"YouTube API not reachable for {distro_name}: {e}")
+
+    return search_fallback
 
 # Register route
 @app.route('/auth/register', methods=['POST'])
@@ -116,15 +117,13 @@ def logout():
 @app.route('/distros', methods=['GET'])
 def get_all_distros():
     try:
-        # Fetch all distros from the DB
         distros = Distribution.query.all()
-        
-        # Convert objects to a list of dictionaries
         output = []
         for d in distros:
             output.append({
                 "id": d.id,
                 "name": d.name,
+                "url": d.download_url,
                 "os_type": d.os_type,
                 "based_on": d.based_on,
                 "desktop": d.desktop,
@@ -132,11 +131,12 @@ def get_all_distros():
                 "description": d.description,
                 "price": d.price,
                 "beginner_friendly": d.beginner_friendly,
-                "youtube_link": d.youtube_link
+                "youtube_link": d.youtube_link,
+                "security_info": get_security_info(d)
             })
-            
         return jsonify(output), 200
     except Exception as e:
+        print(f"Catalog Error: {e}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/quiz/submit', methods=['POST'])
@@ -377,21 +377,26 @@ def edit_comment(comment_id):
         "date": comment.edited_at.strftime("%Y-%m-%d %H:%M")
     }), 200
 
+
 @app.route('/distros/<int:distro_id>', methods=['GET'])
 def get_distro_by_id(distro_id):
     try:
-        distro = Distribution.query.get_or_404(distro_id)
+        d = Distribution.query.get_or_404(distro_id)
+        yt_link = d.youtube_link or get_yt_link(d.name)
+
         return jsonify({
-            "id": distro.id,
-            "name": distro.name,
-            "os_type": distro.os_type,
-            "based_on": distro.based_on,
-            "desktop": distro.desktop,
-            "category": distro.category,
-            "description": distro.description,
-            "price": distro.price,
-            "beginner_friendly": distro.beginner_friendly,
-            "youtube_link": distro.youtube_link
+            "id": d.id,
+            "name": d.name,
+            "url": d.download_url,
+            "os_type": d.os_type,
+            "based_on": d.based_on,
+            "desktop": d.desktop,
+            "category": d.category,
+            "description": d.description,
+            "price": d.price,
+            "beginner_friendly": d.beginner_friendly,
+            "youtube_link": yt_link,
+            "security_info": get_security_info(d)
         }), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
