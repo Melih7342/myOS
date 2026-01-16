@@ -12,21 +12,18 @@ export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
 
       {favoriteOS ? (
         <div className="d-flex flex-row align-items-center gap-2 mb-5">
-          
           <button
             onClick={() => navigate(`/detail/${favoriteId}`)}
             className="btn btn-sm"
             style={{
               background: "#e6b400",
               color: "#ffffff",
-              
               borderRadius: "0.5rem",
               fontSize: "1.2rem",
               padding: "0.3rem 0.8rem",
               fontWeight: "800"
             }}
           >
-
             {favoriteOS}
           </button>
 
@@ -46,9 +43,24 @@ export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
           </button>
         </div>
       ) : (
-        <p className="mb-5">
-          <b>not set yet</b>
-        </p>
+        <div className="mb-5">
+          <p className="mb-2 text-muted" style={{ fontSize: "0.9rem" }}>
+            <i>No favorite operating system selected yet.</i>
+          </p>
+          <button
+            onClick={() => navigate("/katalog")}
+            className="btn btn-sm"
+            style={{
+              background: "#004E72",
+              color: "#ffffff",
+              borderRadius: "0.5rem",
+              padding: "0.4rem 1rem",
+              fontWeight: "600"
+            }}
+          >
+            + Choose from Catalog
+          </button>
+        </div>
       )}
     </>
   );
