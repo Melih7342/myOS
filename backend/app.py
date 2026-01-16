@@ -312,6 +312,20 @@ def get_comments(post_id):
         "comments": output
     })
 
+
+# Get single post by ID
+@app.route('/forum/posts/<int:post_id>', methods=['GET'])
+def get_single_post(post_id):
+    post = Post.query.get_or_404(post_id)
+
+    return jsonify({
+        "id": post.id,
+        "title": post.title,
+        "content": post.content,
+        "author": post.author.username,
+        "date": post.timestamp.strftime("%Y-%m-%d %H:%M")
+    }), 200
+
 # Update post
 @app.route('/forum/posts/<int:post_id>', methods=['PUT'])
 def edit_post(post_id):
