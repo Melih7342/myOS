@@ -98,7 +98,7 @@ function Detailpage() {
                 className={`btn ms-3 ${isFavorite ? 'btn-warning fw-bold' : 'btn-outline-warning'}`}
                 style={{ borderRadius: '0.8rem', transition: '0.3s' }}
               >
-                {isFavorite ? "Favorited" : "Set as Favorite"}
+                {isFavorite ? "Favored" : "Set as Favorite"}
               </button>
             </h3>
             <div className='row gap-3 pb-3' style={{ fontSize: '13pt' }}>

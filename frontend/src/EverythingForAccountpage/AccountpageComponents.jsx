@@ -48,7 +48,7 @@ export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
             <i>No favorite operating system selected yet.</i>
           </p>
           <button
-            onClick={() => navigate("/katalog")}
+            onClick={() => navigate("/catalog")}
             className="btn btn-sm"
             style={{
               background: "#004E72",

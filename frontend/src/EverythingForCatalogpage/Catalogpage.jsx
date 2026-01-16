@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../SharedComponents/NavbarComponent.jsx";
 import { useNavigate } from "react-router-dom";
 
-function Katalogpage() {
+function Catalogpage() {
   const [distros, setDistros] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
@@ -80,4 +80,4 @@ function Katalogpage() {
   );
 }
 
-export default Katalogpage;
+export default Catalogpage;

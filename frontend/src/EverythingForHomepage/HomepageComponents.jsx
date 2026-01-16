@@ -105,7 +105,7 @@ export function Heroblock() {
 
           <button
             className="btn btn-outline-primary px-4"
-            onClick={() => navigate("/katalog")}
+            onClick={() => navigate("/catalog")}
           >
             Look at Catalog
           </button>
@@ -166,7 +166,7 @@ export function TopOS_Forum() {
           <div className="card shadow-sm p-4 text-center bg-primary text-white rounded-4">
             <img
               src={forum}
-              alt="Make forum"
+              alt="Forum"
               className="d-block mx-auto mb-3"
               style={{ width: 80, height: 80 }}
             />

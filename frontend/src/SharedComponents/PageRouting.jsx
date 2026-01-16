@@ -9,7 +9,7 @@ const Quizpage = lazy(() => import("../EverythingForQuizpage/Quizpage"));
 const Resultpage = lazy(() => import("../EverythingForResultpage/Resultpage"));
 const Accountpage = lazy(() => import("../EverythingForAccountpage/Accountpage"));
 const Detailpage = lazy(() => import("../EverythingForDetailpage/Detailpage"));
-const Katalogpage = lazy(() => import("../EverythingForKatalogpage/Katalogpage"));
+const Catalogpage = lazy(() => import("../EverythingForCatalogpage/Catalogpage.jsx"));
 const Postpage = lazy(() => import('../EverythingForPostpage/Postpage'));
 const PostReviewpage = lazy(() => import('../EverythingForPostReviewpage/PostReviewpage'));
 const Commentpage = lazy(() => import('../EverythingForCommentpage/Commentpage'));
@@ -27,7 +27,7 @@ function PageRouting() {
             <Route path='/result' element={<Resultpage />} />
             <Route path='/account' element={<Accountpage />} />
             <Route path='/detail/:id' element={<Detailpage />} />
-            <Route path='/katalog' element={<Katalogpage />} />
+            <Route path='/catalog' element={<Catalogpage />} />
             <Route path='/post' element={<Postpage />} />
             <Route path='/postReview' element={<PostReviewpage />} />
             <Route path='/comment' element={<Commentpage />} />
