@@ -12,8 +12,12 @@ function Detailpage() {
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
 
-  const isFavorite = (user && distro?.id) 
-  ? Number(user.favorite_distro_id) === Number(distro.id) 
+  // Logo-Logik (exakt wie in der Results-Komponente)
+  const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
+  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
+
+  const isFavorite = (user && distro?.id)
+  ? Number(user.favorite_distro_id) === Number(distro.id)
   : false;
 
   const handleToggleFavorite = async () => {
@@ -21,7 +25,6 @@ function Detailpage() {
         alert("Please log in first to set a favorite OS.");
         return;
     }
-
     try {
       const response = await fetch("http://localhost:3100/api/user/favorite", {
         method: "POST",
@@ -29,13 +32,8 @@ function Detailpage() {
         credentials: "include",
         body: JSON.stringify({ distro_id: distro.id }),
       });
-
-      if (response.ok) {
-        await refreshAuth();
-      }
-    } catch (err) {
-      console.error("Toggle Favorite Error:", err);
-    }
+      if (response.ok) { await refreshAuth(); }
+    } catch (err) { console.error("Toggle Favorite Error:", err); }
   };
 
   useEffect(() => {
@@ -55,9 +53,9 @@ function Detailpage() {
 
   const getEmbedId = (link) => {
     if (!link) return null;
-    if (link.includes("v=")) return link.split("v=")[1].split("&")[0];
-    if (link.includes("be/")) return link.split("be/")[1];
-    return link;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = link.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : link;
   };
 
   if (loading) {
@@ -72,92 +70,92 @@ function Detailpage() {
     );
   }
 
-  if (!distro) {
-    return (
-      <>
-        <NAVBAR />
-        <div className="container mt-5">
-          <div className="alert alert-warning">Distro not found.</div>
-          <button className="btn btn-primary" onClick={() => navigate('/katalog')}>Back to Catalog</button>
-        </div>
-      </>
-    );
-  }
-
   return (
     <>
       <NAVBAR />
-
       <div className='container' style={{ color: '#004E72', marginTop: '8rem' }}>
         <div className='row justify-content-between gap-5 pb-5'>
-          <div className='col'>
+          <div className='col-md-7'>
             <h3 className='pb-4'>
               <b>{distro.name}</b>
-              <button 
+              <button
                 onClick={handleToggleFavorite}
                 className={`btn ms-3 ${isFavorite ? 'btn-warning fw-bold' : 'btn-outline-warning'}`}
                 style={{ borderRadius: '0.8rem', transition: '0.3s' }}
               >
-                {isFavorite ? "Favored" : "Set as Favorite"}
+                {isFavorite ? "⭐ Favored" : "☆ Set as Favorite"}
               </button>
             </h3>
+
             <div className='row gap-3 pb-3' style={{ fontSize: '13pt' }}>
-              <p className='col'>
-                OS type: <b>{distro.os_type || 'N/A'}</b>
-              </p>
-              <p className='col'>
-                category: <b>{distro.category || 'N/A'}</b>
-              </p>
+              <p className='col'>OS type: <b>{distro.os_type || 'N/A'}</b></p>
+              <p className='col'>Category: <b>{distro.category || 'N/A'}</b></p>
             </div>
+
             <p style={{ fontSize: '10pt' }}>{distro.description || 'No description available'}</p>
+
             <div className='d-flex gap-5 pb-3'>
-              <span>based on: {distro.based_on || 'N/A'}</span>
-              <span>desktop: {distro.desktop || 'N/A'}</span>
+              <span>Based on: {distro.based_on || 'N/A'}</span>
+              <span>Desktop: {distro.desktop || 'N/A'}</span>
             </div>
             <div className='d-flex gap-5 pb-3'>
-              <span>price: {distro.price || 'Free'}</span>
-              <span>beginner friendly: {distro.beginner_friendly ? 'Yes' : 'No'}</span>
+              <span>Price: {distro.price || 'Free'}</span>
+              <span>Beginner friendly: {distro.beginner_friendly ? 'Yes' : 'No'}</span>
             </div>
           </div>
 
-          <div className='col d-flex justify-content-center align-items-center'>
+          <div className='col-md-4 d-flex justify-content-center align-items-center'>
             <div style={{
               width: '15rem',
               height: '15rem',
-              backgroundColor: '#e0e0e0',
+              backgroundColor: '#f8f9fa',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              borderRadius: '8px'
+              borderRadius: '1rem',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
             }}>
-              <span style={{ color: '#888' }}>Image placeholder</span>
+              <img
+                src={logoUrl}
+                alt={`${distro.name} logo`}
+                referrerPolicy="no-referrer"
+                style={{
+                  maxWidth: "80%",
+                  maxHeight: "80%",
+                  objectFit: "contain",
+                }}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/150?text=OS+Logo";
+                }}
+              />
             </div>
           </div>
         </div>
 
-        <div className='row justify-content-between gap-5 pb-5'>
-          <div className='col'>
-            <p>How to Install the OS?</p>
-            <div className='text-center'>
-              {distro.youtube_link ? (
+        <div className='row justify-content-center gap-5 pb-5'>
+          <div className='col-12 text-center'>
+            <h4 className="mb-4">How to Install {distro.name}?</h4>
+            <div className='ratio ratio-16x9 mx-auto' style={{ maxWidth: '800px' }}>
+              {distro.youtube_link || distro.install_video ? (
                 <iframe
-                  width='560'
-                  height='315'
-                  src={`https://www.youtube.com/embed/${getEmbedId(distro.youtube_link)}`}
+                  src={`https://www.youtube.com/embed/${getEmbedId(distro.youtube_link || distro.install_video)}`}
                   title='YouTube video player'
-                  frameBorder="0"
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                   allowFullScreen
+                  style={{ borderRadius: '1rem', border: 'none' }}
                 ></iframe>
               ) : (
-                <p className='text-muted'>No installation video available</p>
+                <div className="bg-light d-flex align-items-center justify-content-center rounded-4">
+                  <p className='text-muted'>No installation video available</p>
+                </div>
               )}
             </div>
           </div>
         </div>
 
-        <button className="btn btn-primary mb-5" onClick={() => navigate('/katalog')}>
-          Back to Catalog
+        <button className="btn btn-primary mb-5 px-4" onClick={() => navigate('/catalog')}>
+          ← Back to Catalog
         </button>
       </div>
     </>
