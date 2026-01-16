@@ -13,11 +13,42 @@ function Accountpage() {
   const navigate = useNavigate();
   const { user, loading, logout, refreshAuth } = useAuth();
 
+  const [userPosts, setUserPosts] = useState([]);
+  const [postsLoading, setPostsLoading] = useState(true);
+  const [postsError, setPostsError] = useState(null);
+
+  // Fetch user posts when user is available
+  const fetchUserPosts = async () => {
+    if (!user || !user.username) return;
+
+    setPostsLoading(true);
+    setPostsError(null);
+
+    try {
+      const response = await fetch(`http://localhost:3100/forum/users/${user.username}/posts`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch posts: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setUserPosts(data);
+    } catch (error) {
+      console.error('Error fetching user posts:', error);
+      setPostsError('Could not load your posts. Please try again later.');
+    } finally {
+      setPostsLoading(false);
+    }
+  };
+
   const handleRemoveFavorite = async () => {
-    await fetch("http://localhost:3100/api/user/favorite", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
+    await fetch('http://localhost:3100/api/user/favorite', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({ distro_id: user.favorite_distro_id }),
     });
     await refreshAuth();
@@ -25,12 +56,17 @@ function Accountpage() {
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate("/");
+      navigate('/');
+    }
+
+    // Fetch posts when user is available
+    if (user && user.username) {
+      fetchUserPosts();
     }
   }, [loading, user, navigate]);
 
   if (loading) {
-    return <div className="text-center mt-5">Loading...</div>;
+    return <div className='text-center mt-5'>Loading...</div>;
   }
 
   if (!user) {
@@ -39,38 +75,31 @@ function Accountpage() {
 
   const handleLogout = async () => {
     await logout();
-    navigate("/");
+    navigate('/');
   };
 
   // Delete account
   const handleDeleteAccount = async () => {
-    if (
-      !window.confirm(
-        "Are you sure you want to delete your account? This cannot be undone."
-      )
-    ) {
+    if (!window.confirm('Are you sure you want to delete your account? This cannot be undone.')) {
       return;
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:3100/auth/delete/${user.username}`,
-        {
-          method: "DELETE",
-          credentials: "include",
-        }
-      );
+      const response = await fetch(`http://localhost:3100/auth/delete/${user.username}`, {
+        method: 'DELETE',
+        credentials: 'include',
+      });
 
       if (response.ok) {
         await logout();
-        alert("Account deleted.");
-        navigate("/");
+        alert('Account deleted.');
+        navigate('/');
       } else {
-        alert("Error deleting account.");
+        alert('Error deleting account.');
       }
     } catch (error) {
-      console.error("Delete Error:", error);
-      alert("Network error.");
+      console.error('Delete Error:', error);
+      alert('Network error.');
     }
   };
 
@@ -81,10 +110,7 @@ function Accountpage() {
     <>
       <NAVBAR />
 
-      <div
-        className="container"
-        style={{ color: "#004E72", marginTop: "8rem" }}
-      >
+      <div className='container' style={{ color: '#004E72', marginTop: '8rem' }}>
         <AccountHeader
           username={user.username}
           favoriteOS={user.favorite_os_name}
@@ -92,12 +118,9 @@ function Accountpage() {
           onRemove={handleRemoveFavorite}
         />
 
-        <AccountButtons
-          logout={handleLogout}
-          deleteAccount={handleDeleteAccount}
-        />
+        <AccountButtons logout={handleLogout} deleteAccount={handleDeleteAccount} />
 
-        <ForumPart />
+        <ForumPart posts={userPosts} loading={postsLoading} error={postsError} />
       </div>
     </>
   );
