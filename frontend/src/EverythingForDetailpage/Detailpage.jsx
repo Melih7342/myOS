@@ -12,46 +12,9 @@ function Detailpage() {
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
 
-  // State für die Logo-Varianten (um bei 404 auf den nächsten Namen zu springen)
-  const [variantIndex, setVariantIndex] = useState(0);
-
-  // Hilfsfunktion: Extrahiert den Slug (z.B. "mx") aus der URL
-  const getIdentifierFromUrl = (url) => {
-    if (!url || typeof url !== 'string') return null;
-    const parts = url.trim().split('/').filter(Boolean);
-    return parts.length > 0 ? parts[parts.length - 1] : null;
-  };
-
-  // Erstellt die Liste der Namens-Varianten für das Bild
-  const getLogoVariants = (d) => {
-    if (!d) return [];
-    const variants = [];
-
-    // 1. PRIORITÄT: Der Teil aus der URL (z.B. "mx" bei MX Linux)
-    const fromUrl = getIdentifierFromUrl(d.url);
-    if (fromUrl) variants.push(fromUrl);
-
-    // 2. PRIORITÄT: logo_name aus DB
-    if (d.logo_name && !variants.includes(d.logo_name)) {
-        variants.push(d.logo_name);
-    }
-
-    // 3. PRIORITÄT: Name ohne Leerzeichen
-    const fromName = d.name?.toLowerCase().replace(/\s/g, "");
-    if (fromName && !variants.includes(fromName)) {
-        variants.push(fromName);
-    }
-
-    return variants;
-  };
-
-  const variants = getLogoVariants(distro);
-  const currentIdentifier = variants[variantIndex];
-
-  // Proxy-URL, um den Hotlinking-Schutz (403) zu umgehen
-  const logoUrl = currentIdentifier
-    ? `http://localhost:3100/api/proxy-image?url=${encodeURIComponent(`https://distrowatch.com/images/yvzhuwbpy/${currentIdentifier}.png`)}`
-    : "";
+  const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
+  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
+  
 
   const isFavorite = (user && distro?.id)
     ? Number(user.favorite_distro_id) === Number(distro.id)
