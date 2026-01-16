@@ -74,21 +74,20 @@ function Detailpage() {
   };
 
   useEffect(() => {
-    // Wenn distro fehlt oder die URL nicht vorhanden ist, vom Backend laden
-    if (!distro || !distro.url) {
-      setLoading(true);
-      fetch(`http://localhost:3100/distros/${id}`)
-        .then(res => res.json())
-        .then(data => {
-          setDistro(data);
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error("Fetch error:", err);
-          setLoading(false);
-        });
-    }
-  }, [id, distro]);
+  if (!distro || !distro.url || !distro.youtube_link) {
+    setLoading(true);
+    fetch(`http://localhost:3100/distros/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        setDistro(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        setLoading(false);
+      });
+  }
+}, [id, distro]);
 
   if (loading || !distro) {
     return (
