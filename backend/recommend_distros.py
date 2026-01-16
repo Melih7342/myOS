@@ -69,6 +69,7 @@ def recommend_distros(user_answers, all_distros):
             security_info = get_security_info(distro)
             
             scored_results.append({
+                "id": distro.get("id"),
                 "name": distro.get("name"),
                 "description": distro.get("description", "No description"),
                 "match_score": score,

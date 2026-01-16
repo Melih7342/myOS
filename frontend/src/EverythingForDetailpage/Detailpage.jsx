@@ -12,7 +12,9 @@ function Detailpage() {
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
 
-  const isFavorite = user?.favorite_distro_id === distro?.id;
+  const isFavorite = (user && distro?.id) 
+  ? Number(user.favorite_distro_id) === Number(distro.id) 
+  : false;
 
   const handleToggleFavorite = async () => {
     if (!user) {
