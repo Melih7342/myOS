@@ -163,11 +163,17 @@ def check_auth():
         user = User.query.get(session["user_id"])
         if user:
             return jsonify({
-                "username": user.username,
-                "id": user.id
+                "loggedIn": True,
+                "user": {
+                    "username": user.username,
+                    "id": user.id
+                }
             }), 200
 
-    return jsonify({"message": "Not authenticated"}), 200
+    return jsonify({
+        "loggedIn": False,
+        "user": None
+    }), 200
 
 
 @app.route('/auth/delete/<username>', methods=['DELETE'])

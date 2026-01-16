@@ -11,16 +11,16 @@ export function AuthProvider({ children }) {
       const res = await fetch("http://localhost:3100/auth/check", {
         credentials: "include",
       });
+      const data = await res.json();
 
-      if (!res.ok) {
+      if (res.ok && data.loggedIn) {
+        setUser(data.user);
+        return data.user;
+      } else {
         setUser(null);
         return null;
       }
-
-      const data = await res.json();
-      setUser(data);
-      return data;
-    } catch {
+    } catch (error) {
       setUser(null);
       return null;
     }
