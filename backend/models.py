@@ -28,6 +28,8 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    favorite_distro_id = db.Column(db.Integer, db.ForeignKey('distribution.id'), nullable=True)
+    favorite_distro = db.relationship('Distribution', backref='users_who_favorited')
 
 
 class Post(db.Model):

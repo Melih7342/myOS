@@ -166,7 +166,9 @@ def check_auth():
                 "loggedIn": True,
                 "user": {
                     "username": user.username,
-                    "id": user.id
+                    "id": user.id,
+                    "favorite_os_name": user.favorite_distro.name if user.favorite_distro else None,
+                    "favorite_distro_id": user.favorite_distro_id
                 }
             }), 200
 
@@ -174,6 +176,26 @@ def check_auth():
         "loggedIn": False,
         "user": None
     }), 200
+
+
+@app.route('/api/user/favorite', methods=['POST'])
+def toggle_favorite():
+    if "user_id" not in session:
+        return jsonify({"message": "Not authenticated"}), 401
+
+    data = request.get_json()
+    distro_id = data.get('distro_id')
+    user = User.query.get(session["user_id"])
+
+    if user.favorite_distro_id == distro_id:
+        user.favorite_distro_id = None
+        status = "removed"
+    else:
+        user.favorite_distro_id = distro_id
+        status = "added"
+
+    db.session.commit()
+    return jsonify({"status": status})
 
 
 @app.route('/auth/delete/<username>', methods=['DELETE'])

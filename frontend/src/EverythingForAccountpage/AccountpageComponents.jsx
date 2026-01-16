@@ -1,15 +1,55 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export function AccountHeader({ username }) {
+export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <h2 className="mb-4">{username}</h2>
-      <p>
-        My favourite OS is <b>Ubuntu</b>.
-      </p>
-      <p style={{ marginBottom: "8rem" }}>
-        My profession is <b>managing servers</b>.
-      </p>
+      
+      <p className="mb-2"> My favorite OS is:</p>
+
+      {favoriteOS ? (
+        <div className="d-flex flex-row align-items-center gap-2 mb-5">
+          
+          <button
+            onClick={() => navigate(`/detail/${favoriteId}`)}
+            className="btn btn-sm"
+            style={{
+              background: "#e6b400",
+              color: "#ffffff",
+              
+              borderRadius: "0.5rem",
+              fontSize: "1.2rem",
+              padding: "0.3rem 0.8rem",
+              fontWeight: "800"
+            }}
+          >
+
+            {favoriteOS}
+          </button>
+
+          <button
+            onClick={onRemove}
+            className="btn btn-sm"
+            style={{
+              background: "transparent",
+              color: "#FF2132",
+              borderColor: "#FF2132",
+              borderRadius: "0.5rem",
+              fontSize: "0.8rem",
+              padding: "0.3rem 0.8rem",
+            }}
+          >
+            Remove
+          </button>
+        </div>
+      ) : (
+        <p className="mb-5">
+          <b>not set yet</b>
+        </p>
+      )}
     </>
   );
 }

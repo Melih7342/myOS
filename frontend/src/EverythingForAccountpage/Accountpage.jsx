@@ -11,7 +11,17 @@ import { useAuth } from "../SharedComponents/authContext";
 
 function Accountpage() {
   const navigate = useNavigate();
-  const { user, loading, logout } = useAuth();
+  const { user, loading, logout, refreshAuth } = useAuth();
+
+  const handleRemoveFavorite = async () => {
+    await fetch("http://localhost:3100/api/user/favorite", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({ distro_id: user.favorite_distro_id }),
+    });
+    await refreshAuth();
+  };
 
   useEffect(() => {
     if (!loading && !user) {
@@ -75,7 +85,12 @@ function Accountpage() {
         className="container"
         style={{ color: "#004E72", marginTop: "8rem" }}
       >
-        <AccountHeader username={user.username} />
+        <AccountHeader
+          username={user.username}
+          favoriteOS={user.favorite_os_name}
+          favoriteId={user.favorite_distro_id}
+          onRemove={handleRemoveFavorite}
+        />
 
         <AccountButtons
           logout={handleLogout}

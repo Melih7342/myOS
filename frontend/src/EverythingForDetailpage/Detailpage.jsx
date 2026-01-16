@@ -1,14 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
+import { useAuth } from "../SharedComponents/authContext";
 
 function Detailpage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { id } = useParams();
+  const { user, refreshAuth } = useAuth();
 
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
+
+  const isFavorite = user?.favorite_distro_id === distro?.id;
+
+  const handleToggleFavorite = async () => {
+    if (!user) {
+        alert("Please log in first to set a favorite OS.");
+        return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:3100/api/user/favorite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ distro_id: distro.id }),
+      });
+
+      if (response.ok) {
+        await refreshAuth();
+      }
+    } catch (err) {
+      console.error("Toggle Favorite Error:", err);
+    }
+  };
 
   useEffect(() => {
     if (!distro) {
@@ -65,6 +91,13 @@ function Detailpage() {
           <div className='col'>
             <h3 className='pb-4'>
               <b>{distro.name}</b>
+              <button 
+                onClick={handleToggleFavorite}
+                className={`btn ms-3 ${isFavorite ? 'btn-warning fw-bold' : 'btn-outline-warning'}`}
+                style={{ borderRadius: '0.8rem', transition: '0.3s' }}
+              >
+                {isFavorite ? "Favorited" : "Set as Favorite"}
+              </button>
             </h3>
             <div className='row gap-3 pb-3' style={{ fontSize: '13pt' }}>
               <p className='col'>
