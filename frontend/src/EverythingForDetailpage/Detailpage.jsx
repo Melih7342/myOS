@@ -146,19 +146,19 @@ function Detailpage() {
                 }}>
                     {logoUrl ? (
                       <img
-                          key={logoUrl}
+                          //key={logoUrl}
                           src={logoUrl}
                           alt={`${distro.name} logo`}
+                          referrerPolicy="no-referrer"
                           style={{
                               maxWidth: "70%",
                               maxHeight: "70%",
                               objectFit: "contain",
                           }}
-                          onError={() => {
-                              if (variantIndex < variants.length - 1) {
-                                  setVariantIndex(variantIndex + 1);
-                              }
-                          }}
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            }}
+                          
                       />
                     ) : (
                       <span className="text-muted">No Logo Found</span>
