@@ -61,9 +61,9 @@ function Results({distro}) {
       </p>
       <button 
         className="btn btn-primary mt-3"
-        onClick={() => navigate(`/detail/${distro.id}`, { state: { distro } })}
+        onClick={() => navigate(`/detail/${distro.id}`, { state: { distro, from: 'results' } })}
       >
-        Mehr Details
+        More Details
       </button>
     </div>
   );

@@ -62,9 +62,7 @@ function Catalogpage() {
             <div
               key={distro.id}
               className="col-md-4 col-sm-6 mb-3"
-              onClick={() =>
-                navigate(`/detail/${distro.id}`, { state: { distro } })
-              }
+              onClick={() => navigate(`/detail/${distro.id}`, { state: { distro, from: 'catalog' } })} // Cristina
               style={{ cursor: "pointer" }}
             >
               <div className="card h-100 shadow-sm">

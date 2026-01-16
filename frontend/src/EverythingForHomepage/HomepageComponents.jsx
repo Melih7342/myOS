@@ -137,7 +137,7 @@ export function TopOS_Forum() {
               <div
                 className="col-6 col-md-2 mb-4 d-flex flex-column align-items-center"
                 key={os.id}
-                onClick={() => navigate(`/detail/${os.id}`)}
+                onClick={() => navigate(`/detail/${os.id}`, { state: { from: 'home' } })}
                 style={{ cursor: "pointer" }}
               >
                 <div

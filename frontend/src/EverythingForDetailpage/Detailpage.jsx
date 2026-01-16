@@ -8,6 +8,7 @@ function Detailpage() {
   const location = useLocation();
   const { id } = useParams();
   const { user, refreshAuth } = useAuth();
+  const origin = location.state?.from;
 
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
@@ -15,6 +16,15 @@ function Detailpage() {
   const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
   const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
   
+  const handleBackClick = () => {
+  if (origin === 'catalog') {
+    navigate('/catalog');
+  } else if (origin === 'results' || origin === 'home') {
+    navigate(-1); // This goes back to the exact results or home
+  } else {
+    navigate('/catalog'); // Default fallback
+  }
+};
 
   const isFavorite = (user && distro?.id)
     ? Number(user.favorite_distro_id) === Number(distro.id)
@@ -168,10 +178,13 @@ function Detailpage() {
         </div>
 
         <div className="mt-5 pb-5">
-            <button className="btn btn-primary px-4 py-2" onClick={() => navigate('/catalog')}
-                    style={{borderRadius: '0.6rem'}}>
-                ← Back to Catalog
-            </button>
+            <button 
+              className="btn btn-primary px-4 py-2" 
+              onClick={handleBackClick}
+              style={{borderRadius: '0.6rem'}}
+            >
+              {origin === 'catalog' ? "← Back to Catalog" : "← Back"}
+          </button>
         </div>
       </div>
     </>
