@@ -132,6 +132,7 @@ def get_all_distros():
                 "description": d.description,
                 "price": d.price,
                 "beginner_friendly": d.beginner_friendly,
+                "logo_name": d.logo_name,
                 "youtube_link": d.youtube_link
             })
             
@@ -390,6 +391,7 @@ def get_distro_by_id(distro_id):
             "category": distro.category,
             "description": distro.description,
             "price": distro.price,
+            "logo_name": distro.logo_name,
             "beginner_friendly": distro.beginner_friendly,
             "youtube_link": distro.youtube_link
         }), 200
