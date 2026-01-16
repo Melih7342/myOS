@@ -13,8 +13,26 @@ function Detailpage() {
   const [distro, setDistro] = useState(location.state?.distro || null);
   const [loading, setLoading] = useState(!distro);
 
-  const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
-  const logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
+  let logoUrl = ""
+  if (distro) {
+      const name = distro.name.toLowerCase();
+
+      if (distro.os_type?.toLowerCase() === "windows") {
+          if (name.includes("11")) {
+              logoUrl = "/windows_logos/windows_11.png";
+          } else if (name.includes("10")) {
+              logoUrl = "/windows_logos/windows_10.svg";
+          } else if (name.includes("2022")) {
+              logoUrl = "/windows_logos/Windows_Server_2022.png";
+          }
+        }
+      else {
+              const identifier = distro?.logo_name || distro?.name?.toLowerCase().replace(/\s/g, "");
+              logoUrl = `https://distrowatch.com/images/yvzhuwbpy/${identifier}.png`;
+          }
+      }
+
+
   
   const handleBackClick = () => {
   if (origin === 'catalog') {
