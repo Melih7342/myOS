@@ -100,8 +100,7 @@ export function AccountButtons({ logout, deleteAccount }) {
   );
 }
 
-export function ForumPart({ posts, loading, error }) {
-  console.log(posts);
+export function ForumPart({ posts, loading, error, deletePost, navigate }) {
 
   return (
     <>
@@ -135,19 +134,17 @@ export function ForumPart({ posts, loading, error }) {
               >
                 <h5>{post.title}</h5>
                 {post.date && <p>Posted on: {post.date}</p>}
-                <p>
-                  {post.content}
-                </p>
+                <p>{post.content}</p>
                 <div className='d-flex justify-content-end gap-2'>
                   <button
                     className='btn btn-outline-primary btn-sm'
-                    onClick={() => navigate(`/post/${post.id || post._id}`)}
+                    onClick={() => navigate(`/post/${post.id}`)}
                   >
                     View
                   </button>
                   <button
                     className='btn btn-outline-danger btn-sm'
-                    onClick={() => handleDeletePost(post.id || post._id)}
+                    onClick={() => deletePost(post.id)}
                   >
                     Delete
                   </button>
