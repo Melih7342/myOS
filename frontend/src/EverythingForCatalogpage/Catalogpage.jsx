@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../SharedComponents/NavbarComponent.jsx";
 import { useNavigate } from "react-router-dom";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 
 function Catalogpage() {
   const [distros, setDistros] = useState([]);
@@ -46,6 +47,7 @@ function Catalogpage() {
   return (
     <>
       <Navbar />
+      <main>
       <div className="container mt-5">
         <h2 className="mb-3">Distro Library</h2>
 
@@ -73,7 +75,10 @@ function Catalogpage() {
             </div>
           ))}
         </div>
+        
       </div>
+      </main>
+      <Footer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from "../SharedComponents/authContext";
 import {getDistroLogo} from "../SharedComponents/LogoURL.jsx";
 import InfoTooltip from '../SharedComponents/InfoTooltip.jsx';
+import Footer from "../SharedComponents/FooterComponent.jsx";
 
 function Detailpage() {
   const navigate = useNavigate();
@@ -78,6 +79,7 @@ function Detailpage() {
   return (
     <>
       <NAVBAR />
+      <main>
       <div className='container' style={{ color: '#004E72', marginTop: '8rem' }}>
         <div className='row justify-content-between gap-5 pb-4'>
             <div className='col-md-7'>
@@ -210,6 +212,8 @@ function Detailpage() {
           </button>
         </div>
       </div>
+      </main>
+      <Footer />
     </>
   );
 }
