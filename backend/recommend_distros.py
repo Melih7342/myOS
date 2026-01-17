@@ -77,6 +77,8 @@ def recommend_distros(user_answers, all_distros):
                 "match_percent": min(score, 100),
                 "category": distro.get("category"),
                 "security_info": security_info,
+                "image_size": distro.get("image_size"),
+                "download_url": distro.get("download_url"),
                 "price": distro.get("price")
             })
 

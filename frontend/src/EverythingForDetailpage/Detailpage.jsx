@@ -47,7 +47,7 @@ function Detailpage() {
   };
 
   useEffect(() => {
-  if (!distro || !distro.url || !distro.youtube_link) {
+  if (!distro || !distro.download_url || !distro.youtube_link) {
     setLoading(true);
     fetch(`http://localhost:3100/distros/${id}`)
       .then(res => res.json())
@@ -93,7 +93,7 @@ function Detailpage() {
 
                 <div className='row gap-3 pb-3' style={{fontSize: '13pt'}}>
                     <p className='col'>OS type: <b>{distro.os_type || 'N/A'}</b></p>
-                    <p className='col'>Category: <b>{distro.category || 'N/A'}</b></p>
+                    <p className='col'>Category: <b>{distro.category ? distro.category.split(',').join(', ') : 'N/A'}</b></p>
                 </div>
 
                 <p style={{fontSize: '11pt', lineHeight: '1.6'}}>
@@ -101,12 +101,17 @@ function Detailpage() {
                 </p>
 
                 <div className='d-flex gap-5 pb-2'>
-                    <span>Based on: <b>{distro.based_on || 'N/A'}</b></span>
-                    <span>Desktop: <b>{distro.desktop || 'N/A'}</b></span>
+                  <span>Based on: <b>{distro.based_on ? distro.based_on.split(',').join(', ') : 'N/A'}</b></span>
+                  <span>Desktop: <b>{distro.desktop ? distro.desktop.split(',').join(', ') : 'N/A'}</b></span>
                 </div>
                 <div className='d-flex gap-5 pb-4'>
                     <span>Price: <b>{distro.price || 'Free'}</b></span>
                     <span>Beginner friendly: <b>{distro.beginner_friendly ? 'Yes' : 'No'}</b></span>
+                    {distro.image_size && (
+                    <span>Image size: <b>{distro.image_size.toLowerCase().includes('b') 
+                    ? distro.image_size : `${distro.image_size} MB`
+                    }</b></span>
+                  )}
                 </div>
 
                 <div className="p-4 rounded-4" style={{ backgroundColor: '#f0f7fa' }}>
@@ -127,7 +132,7 @@ function Detailpage() {
                     </p>
 
                     {distro.security_info && (
-                        <p className="mb-0">
+                        <p className="mb-2">
                             <strong>Security Hardening: </strong>
                             <a
                                 href={distro.security_info.url}
@@ -139,6 +144,18 @@ function Detailpage() {
                             </a>
                         </p>
                     )}
+                    {distro.download_url && (
+                    <p className="mb-0">
+                    <strong>Download OS: </strong>
+                    <a href={distro.download_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-decoration-none"
+                    >
+                Download Link ↗
+            </a>
+        </p>
+    )}
                 </div>
             </div>
 

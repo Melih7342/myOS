@@ -123,7 +123,7 @@ def get_all_distros():
             output.append({
                 "id": d.id,
                 "name": d.name,
-                "url": d.download_url,
+                "download_url": d.download_url,
                 "os_type": d.os_type,
                 "based_on": d.based_on,
                 "desktop": d.desktop,
@@ -133,6 +133,7 @@ def get_all_distros():
                 "beginner_friendly": d.beginner_friendly,
                 "logo_name": d.logo_name,
                 "youtube_link": d.youtube_link,
+                "image_size": d.image_size,
                 "security_info": get_security_info(d)
             })
         return jsonify(output), 200
@@ -402,7 +403,7 @@ def get_distro_by_id(distro_id):
         return jsonify({
             "id": d.id,
             "name": d.name,
-            "url": d.download_url,
+            "download_url": d.download_url,
             "os_type": d.os_type,
             "based_on": d.based_on,
             "desktop": d.desktop,
@@ -411,6 +412,7 @@ def get_distro_by_id(distro_id):
             "price": d.price,
             "beginner_friendly": d.beginner_friendly,
             "logo_name": d.logo_name,
+            "image_size": d.image_size,
             "youtube_link": yt_link,
             "security_info": get_security_info(d)
         }), 200
