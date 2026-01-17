@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from '../SharedComponents/authContext';
 
-
 function Postpage() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -123,31 +122,48 @@ function Postpage() {
               <span>{post.date}</span>
             </div>
             <p>{post.content}</p>
-            <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
-              <button
-                className='btn btn-primary px-4 py-2'
-                style={{
-                  background: 'transparent',
-                  color: '#004E72',
-                  borderColor: '#004E72',
-                  borderRadius: '0.6rem',
-                }}
-              >
-                Edit
-              </button>
-              <button
-                className='btn btn-primary px-4 py-2'
-                style={{
-                  background: 'transparent',
-                  color: '#FF2132',
-                  borderColor: '#FF2132',
-                  borderRadius: '0.6rem',
-                }}
-                onClick={() => handleDeletePost(post.id)}
-              >
-                Delete
-              </button>
-            </div>
+            {user.username === post.author ? (
+              <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
+                <button
+                  className='btn btn-primary px-4 py-2'
+                  style={{
+                    background: 'transparent',
+                    color: '#004E72',
+                    borderColor: '#004E72',
+                    borderRadius: '0.6rem',
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  className='btn btn-primary px-4 py-2'
+                  style={{
+                    background: 'transparent',
+                    color: '#FF2132',
+                    borderColor: '#FF2132',
+                    borderRadius: '0.6rem',
+                  }}
+                  onClick={() => handleDeletePost(post.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            ) : (
+              <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
+                <button
+                  className='btn btn-primary px-4 py-2'
+                  style={{
+                    background: 'transparent',
+                    color: '#004E72',
+                    borderColor: '#004E72',
+                    borderRadius: '0.6rem',
+                  }}
+                  onClick={() => navigate(`/post/${post.id}/comment`)}
+                >
+                  Comment
+                </button>
+              </div>
+            )}
           </div>
         )}
         {commentsLoading ? (
@@ -163,44 +179,17 @@ function Postpage() {
           <div className='d-flex flex-column gap-2'>
             <h5>Comments</h5>
             <div className='d-flex flex-column gap-4'>
-              <div>
-                <div className='d-flex gap-3 mb-3'>
-                  <span className='me-5'>Maisam</span>
-                  <span>17.01.2026</span>
-                  <span>17:30</span>
+              {comments.map((comment) => (
+                <div>
+                  <div className='d-flex gap-3 mb-3'>
+                    <span className='me-5'>{comment.author}</span>
+                    <span>{comment.date}</span>
+                  </div>
+                  <p>
+                    {comment.content}
+                  </p>
                 </div>
-                <p>
-                  Im looking for a distribution that works best with Steam and Nvidia drivers. Any
-                  suggestions?
-                </p>
-              </div>
-              <div>
-                <div className='d-flex gap-3 mb-3'>
-                  <span className='me-5'>Adis</span>
-                  <span>17.01.2026</span>
-                  <span>17:30</span>
-                </div>
-                <p>You should try Ubuntu!</p>
-              </div>
-              <div>
-                <div className='d-flex gap-3 mb-3'>
-                  <span className='me-5'>Maisam</span>
-                  <span>17.01.2026</span>
-                  <span>17:30</span>
-                </div>
-                <p>
-                  Im looking for a distribution that works best with Steam and Nvidia drivers. Any
-                  suggestions?
-                </p>
-              </div>
-              <div>
-                <div className='d-flex gap-3 mb-3'>
-                  <span className='me-5'>Adis</span>
-                  <span>17.01.2026</span>
-                  <span>17:30</span>
-                </div>
-                <p>You should try Ubuntu!</p>
-              </div>
+              ))}
             </div>
           </div>
         )}
