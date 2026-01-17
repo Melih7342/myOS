@@ -163,7 +163,7 @@ export function TopOS_Forum() {
         </div>
 
         <div className="col-md-4">
-          <div className="card shadow-sm p-4 text-center bg-primary text-white rounded-4">
+          <div className="card shadow-sm p-4 text-center bg-primary text-white rounded-4" onClick={() => navigate("/forum")}>
             <img
               src={forum}
               alt="Forum"

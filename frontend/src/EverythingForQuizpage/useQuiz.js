@@ -11,8 +11,9 @@ export function useQuiz(questions) {
 
     const toggleOption = (option) => {
         let updated = [];
+        const multiChoiceIds = [6, 10, 12];
 
-        if (question.options.length === 2) {
+        if (!multiChoiceIds.includes(question.id)) {
             updated = [option];
         } else {
             const currentAnswers = answers[question.genre] || [];

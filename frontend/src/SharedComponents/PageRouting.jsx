@@ -15,6 +15,7 @@ const PostReviewpage = lazy(() => import('../EverythingForPostReviewpage/PostRev
 const Commentpage = lazy(() => import('../EverythingForCommentpage/Commentpage'));
 const NotFound = lazy(() => import("./NotFound"));
 const Glossarypage = lazy(() => import("../EverythingForGlossaryPage/GlossaryPage"));
+const Forumpage = lazy(() => import("../EverythingForForumpage/Forumpage"));
 
 function PageRouting() {
   return (
@@ -35,6 +36,7 @@ function PageRouting() {
             <Route path='/post/:postId/comment' element={<Commentpage />} />
             <Route path='*' element={<NotFound />} />
             <Route path='/glossary' element={<Glossarypage />} />
+            <Route path='/forum' element={<Forumpage />} />
           </Routes>
         </AuthProvider>
       </Suspense>
