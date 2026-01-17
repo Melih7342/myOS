@@ -41,7 +41,7 @@ class Post(db.Model):
     title = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     timestamp = db.Column(db.DateTime, index=True, default=lambda: datetime.now(timezone.utc))
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
 
     author = db.relationship('User', backref=db.backref('posts', lazy=True))
     comments = db.relationship('Comment', back_populates='parent_post', cascade="all, delete-orphan")
@@ -54,7 +54,7 @@ class Comment(db.Model):
     edited_at = db.Column(db.DateTime, nullable=True)
 
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='SET NULL'), nullable=True)
 
     author = db.relationship('User', backref=db.backref('comments_made', lazy=True))
     parent_post = db.relationship('Post', back_populates='comments')

@@ -226,7 +226,7 @@ def get_posts():
             "id": post.id,
             "title": post.title,
             "content": post.content,
-            "author": post.author.username,
+            "author": post.author.username if post.author else None,
             "date": post.timestamp.strftime("%Y-%m-%d %H:%M")
         })
     return jsonify(output)
@@ -327,8 +327,8 @@ def get_comments(post_id):
             "post_id": comment.post_id,
             "user_id": comment.user_id,
             "author": {
-                "id": comment.author.id,
-                "username": comment.author.username
+                "id": comment.author.id if comment.author else None,
+                "username": comment.author.username if comment.author else None
             }
         })
 
@@ -347,8 +347,8 @@ def get_single_post(post_id):
         "timestamp": post.timestamp.isoformat(),
         "user_id": post.user_id,
         "author": {
-            "id": post.author.id,
-            "username": post.author.username
+            "id": post.author.id if post.author else None,
+            "username": post.author.username if post.author else None
         }
     }), 200
 
@@ -358,8 +358,8 @@ def edit_post(post_id):
     data = request.get_json()
     post = Post.query.get_or_404(post_id)
 
-    # Ownership Check
-    if post.author.username != data.get('username'):
+    # Ownership Check - handle deleted users
+    if not post.author or post.author.username != data.get('username'):
         return jsonify({"message": "You can only edit your own posts!"}), 403
 
     post.title = data.get('title', post.title)
@@ -374,7 +374,7 @@ def delete_post(post_id):
     data = request.get_json()
     post = Post.query.get_or_404(post_id)
 
-    if post.author.username != data.get('username'):
+    if not post.author or post.author.username != data.get('username'):
         return jsonify({"message": "Unauthorized"}), 403
 
     db.session.delete(post)
@@ -387,7 +387,7 @@ def delete_comment(comment_id):
     data = request.get_json()
     comment = Comment.query.get_or_404(comment_id)
 
-    if comment.author.username != data.get('username'):
+    if not comment.author or comment.author.username != data.get('username'):
         return jsonify({"message": "Unauthorized"}), 403
 
     db.session.delete(comment)
@@ -401,7 +401,7 @@ def edit_comment(comment_id):
     data = request.get_json()
     comment = Comment.query.get_or_404(comment_id)
 
-    if comment.author.username != data.get('username'):
+    if not comment.author or comment.author.username != data.get('username'):
         return jsonify({"message": "You can only edit your own comments!"}), 403
 
     new_content = data.get('content')

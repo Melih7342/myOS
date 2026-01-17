@@ -7,7 +7,7 @@ function Forumpage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedPosts, setExpandedPosts] = useState(new Set());
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchPosts();
@@ -66,7 +66,10 @@ function Forumpage() {
       <div className="container py-4">
         <div className="row justify-content-center">
           <div className="col-lg-8">
-            <h1 className="mb-4 fw-bold">Forum</h1>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h1 className="mb-4 fw-bold">Forum</h1>
+              <button className="btn btn-sm btn-outline-primary" onClick={() => navigate("/post")}>Create Post</button>
+            </div>
 
             {posts.length === 0 ? (
               <div className="card text-center p-4 text-muted">
@@ -83,7 +86,7 @@ function Forumpage() {
                     <div className="d-flex gap-3 text-muted small mb-3">
                       <div className="d-flex align-items-center gap-1">
                         <User size={14} />
-                        <span>{post.author}</span>
+                        <span>{post.author || "Deleted User"}</span>
                       </div>
                       <div className="d-flex align-items-center gap-1">
                         <Calendar size={14} />
@@ -99,9 +102,7 @@ function Forumpage() {
                       onClick={() => navigate("/post/" + post.id)}
                       className="btn btn-sm btn-outline-primary"
                     >
-                      <MessageCircle size={16} className="me-1" />
-                      {post.comments.length}{" "}
-                      {post.comments.length === 1 ? "Comment" : "Comments"}
+                      Check Comments
                     </button>
                   </div>
 
@@ -115,7 +116,7 @@ function Forumpage() {
                           <div className="d-flex align-items-center gap-2 text-muted small mb-1">
                             <User size={12} />
                             <strong className="text-dark">
-                              {comment.author.username}
+                              {comment.author?.username || "Deleted User"}
                             </strong>
                             <span>•</span>
                             <span>

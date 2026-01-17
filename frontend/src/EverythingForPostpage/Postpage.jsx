@@ -117,7 +117,7 @@ function Postpage() {
         navigate(`/post/${id}`);
       } else {
         // If creating new, go to account or forum
-        navigate('/account');
+        navigate('/forum');
       }
     } catch (error) {
       console.error('Error saving post:', error);

@@ -157,13 +157,13 @@ function PostReviewpage() {
           <div className='d-flex flex-column gap-2'>
             <h4>{post.title}</h4>
             <div className='d-flex gap-3 mb-3'>
-              <span className='me-5'>{post.author.username}</span>
+              <span className='me-5'>{post.author?.username || "Deleted User"}</span>
               <span>{postDate.date}</span>
               <span>{postDate.time}</span>
             </div>
             <p>{post.content}</p>
 
-            {user.username === post.author.username ? (
+            {user && post.author && user.username === post.author.username ? (
               <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
                 <button
                   className='btn btn-primary px-4 py-2'
@@ -227,12 +227,12 @@ function PostReviewpage() {
                 return (
                   <div key={comment.id}>
                     <div className='d-flex gap-3 mb-3'>
-                      <span className='me-5'>{comment.author.username}</span>
+                      <span className='me-5'>{comment.author?.username || "Deleted User"}</span>
                       <span>{commentDate.date}</span>
                       <span>{commentDate.time}</span>
                     </div>
                     <p>{comment.content}</p>
-                    {user.username === comment.author.username ? (
+                    {user && comment.author && user.username === comment.author.username ? (
                       <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
                         <button
                           className='btn btn-primary px-4 py-2'
