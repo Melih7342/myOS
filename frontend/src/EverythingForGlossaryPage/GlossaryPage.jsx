@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
 import { categories, desktops } from "./glossaryData";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 
 function GlossaryPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,6 +26,7 @@ function GlossaryPage() {
   return (
     <>
       <NAVBAR />
+      <main>
       <div
         className="container"
         style={{ color: "#004E72", marginTop: "8rem", marginBottom: "5rem" }}
@@ -125,6 +127,8 @@ function GlossaryPage() {
           </div>
         </div>
       </div>
+      </main>
+      <Footer />
     </>
   );
 }

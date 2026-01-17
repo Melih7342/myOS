@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 
 import Navbar from "../SharedComponents/NavbarComponent.jsx";
 import Results from "./ResultBlockComponent.jsx";
@@ -27,6 +28,7 @@ function ResultPage() {
   return (
     <>
       <Navbar />
+      <main>
 
       <div className="container mt-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
@@ -75,6 +77,8 @@ function ResultPage() {
           </button>
         </div>
       </div>
+      </main>
+      <Footer />
     </>
   );
 }
