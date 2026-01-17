@@ -54,6 +54,47 @@ const questions = [
         "Should the operating system have the possibility to try it on a live medium (e.g. USB-Stick)?",
       options: ["Yes", "No"],
     },
+    {
+      id: 9,
+      genre: "update_frequency",
+      question: "How do you feel about system updates?",
+      options: [
+        "Rolling Release",
+        "Stable Release",
+        "A mix of both"
+      ],
+    },
+    {
+      id: 10,
+      genre: "design",
+      question: "Which desktop layout do you prefer?",
+      options: [
+        "Classic (like Windows)",
+        "Modern (like macOS/Gnome)",
+        "Minimalist / I don't care"
+      ],
+    },
+    {
+      id: 11,
+      genre: "philosophy",
+      question: "Are you okay with using proprietary software (e.g. Nvidia drivers)?",
+      options: [
+        "Proprietary is fine",
+        "Open Source only",
+        "Only if necessary"
+      ],
+    },
+    {
+      id: 12,
+      genre: "system_base",
+      question: "Do you have a preference for the underlying system base?",
+      options: [
+        "Debian / Ubuntu based",
+        "Arch based",
+        "Fedora based",
+        "No preference"
+      ],
+    }
   ];
 
 function Quizpage() {

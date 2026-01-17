@@ -14,7 +14,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3000",
-        "Download": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/"
+        "Download": "https://sourceforge.net/projects/cachyos-arch/files/gui-installer/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linux Mint",
@@ -31,7 +35,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-2900",
-        "Download": "https://www.linuxmint.com/download_lmde.php"
+        "Download": "https://www.linuxmint.com/download_lmde.php",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": true
     },
     {
         "name": "MX Linux",
@@ -48,7 +56,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-3200",
-        "Download": "https://sourceforge.net/projects/mx-linux/files/"
+        "Download": "https://sourceforge.net/projects/mx-linux/files/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Debian",
@@ -65,7 +77,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://www.debian.org/CD"
+        "Download": "http://www.debian.org/CD",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "EndeavourOS",
@@ -82,7 +98,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "https://mirror.accum.se/mirror/endeavouros/iso/"
+        "Download": "https://mirror.accum.se/mirror/endeavouros/iso/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Pop!_OS",
@@ -99,7 +119,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3500",
-        "Download": "https://system76.com/pop/pop-beta"
+        "Download": "https://system76.com/pop/pop-beta",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Zorin OS",
@@ -116,7 +140,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-7700",
-        "Download": "https://distro.ibiblio.org/zorinos/18/"
+        "Download": "https://distro.ibiblio.org/zorinos/18/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": true
     },
     {
         "name": "Manjaro Linux",
@@ -133,7 +161,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "https://sourceforge.net/projects/manjarolinux/files/"
+        "Download": "https://sourceforge.net/projects/manjarolinux/files/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": true
     },
     {
         "name": "Ubuntu",
@@ -150,7 +182,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://cdimage.ubuntu.com/daily-live/current/"
+        "Download": "http://cdimage.ubuntu.com/daily-live/current/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Fedora",
@@ -167,7 +203,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "https://fedoraproject.org/wiki/Releases/Rawhide?rd=Rawhide"
+        "Download": "https://fedoraproject.org/wiki/Releases/Rawhide?rd=Rawhide",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": false
     },
     {
         "name": "AnduinOS",
@@ -184,7 +224,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://download.anduinos.com/1.3/"
+        "Download": "https://download.anduinos.com/1.3/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "openSUSE",
@@ -201,7 +245,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://software.opensuse.org/"
+        "Download": "http://software.opensuse.org/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Nobara Project",
@@ -218,7 +266,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3900-4800",
-        "Download": "https://nobaraproject.org/download-nobara/"
+        "Download": "https://nobaraproject.org/download-nobara/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bluestar Linux",
@@ -235,7 +287,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5700-5800",
-        "Download": "https://sourceforge.net/projects/bluestarlinux/files/distro/"
+        "Download": "https://sourceforge.net/projects/bluestarlinux/files/distro/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "NixOS",
@@ -252,7 +308,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "--",
-        "Download": "https://channels.nixos.org/"
+        "Download": "https://channels.nixos.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Arch Linux",
@@ -269,7 +329,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://www.archlinux.org/download/"
+        "Download": "http://www.archlinux.org/download/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "elementary OS",
@@ -286,7 +350,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-2800",
-        "Download": "https://elementary.io"
+        "Download": "https://elementary.io",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": false
     },
     {
         "name": "KDE neon",
@@ -303,7 +371,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-2900",
-        "Download": "https://files.kde.org/neon/images/user/"
+        "Download": "https://files.kde.org/neon/images/user/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BigLinux",
@@ -320,7 +392,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4300",
-        "Download": "https://iso.biglinux.com.br/"
+        "Download": "https://iso.biglinux.com.br/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "antiX",
@@ -337,7 +413,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-2200",
-        "Download": "https://sourceforge.net/projects/antix-linux/files/"
+        "Download": "https://sourceforge.net/projects/antix-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bazzite",
@@ -354,7 +434,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6700-7600",
-        "Download": "https://bazzite.gg/#image-picker"
+        "Download": "https://bazzite.gg/#image-picker",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Garuda Linux",
@@ -371,7 +455,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-4700",
-        "Download": "https://sourceforge.net/projects/garuda-linux/files/"
+        "Download": "https://sourceforge.net/projects/garuda-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PikaOS Linux",
@@ -388,7 +476,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2600-3700",
-        "Download": "http://pika-os.com/"
+        "Download": "http://pika-os.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SparkyLinux",
@@ -405,7 +497,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "900-2500",
-        "Download": "https://sourceforge.net/projects/sparkylinux/files/"
+        "Download": "https://sourceforge.net/projects/sparkylinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TUXEDO OS",
@@ -422,7 +518,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3700-3800",
-        "Download": "https://os.tuxedocomputers.com/"
+        "Download": "https://os.tuxedocomputers.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MiniOS",
@@ -439,7 +539,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-1800",
-        "Download": "https://github.com/minios-linux/minios-live/releases/"
+        "Download": "https://github.com/minios-linux/minios-live/releases/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kali Linux",
@@ -456,7 +560,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-4600",
-        "Download": "http://www.kali.org/downloads/"
+        "Download": "http://www.kali.org/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Puppy Linux",
@@ -473,7 +581,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1000-1100",
-        "Download": "https://sourceforge.net/projects/pb-gh-releases/files/"
+        "Download": "https://sourceforge.net/projects/pb-gh-releases/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PCLinuxOS",
@@ -489,7 +601,11 @@
         "description": "PCLinuxOS is a user-friendly Linux distribution with out-of-the-box support for many popular graphics and sound cards, as well as other peripheral devices. The bootable live DVD provides an easy-to-use graphical installer and the distribution sports a wide range of popular applications for the typical desktop user, including browser plugins and full multimedia playback. The intuitive system configuration tools include Synaptic for package management, Addlocale to add support to many languages and Mylivecd to create a customised live CD.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
-        "Image Size (MB)": ""
+        "Image Size (MB)": "",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Alpine Linux",
@@ -506,7 +622,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "300-1400",
-        "Download": "http://alpinelinux.org/downloads"
+        "Download": "http://alpinelinux.org/downloads",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AlmaLinux OS",
@@ -523,7 +643,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-8600",
-        "Download": "https://repo.almalinux.org/almalinux/"
+        "Download": "https://repo.almalinux.org/almalinux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "EasyOS",
@@ -540,7 +664,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "https://distro.ibiblio.org/easyos/amd64/releases/excalibur/"
+        "Download": "https://distro.ibiblio.org/easyos/amd64/releases/excalibur/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Tails",
@@ -557,7 +685,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "https://download.tails.net/tails/stable/"
+        "Download": "https://download.tails.net/tails/stable/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kubuntu",
@@ -574,7 +706,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "4700-4800",
-        "Download": "http://cdimage.ubuntu.com/kubuntu/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/kubuntu/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Voyager Live",
@@ -591,7 +727,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-4400",
-        "Download": "http://sourceforge.net/projects/voyagerlive/files/"
+        "Download": "http://sourceforge.net/projects/voyagerlive/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CentOS",
@@ -608,7 +748,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-7100",
-        "Download": "https://www.centos.org/centos-stream/"
+        "Download": "https://www.centos.org/centos-stream/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Devuan GNU+Linux",
@@ -625,7 +769,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "https://packages.devuan.org/merged/dists/unstable/"
+        "Download": "https://packages.devuan.org/merged/dists/unstable/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Exton Linux",
@@ -642,7 +790,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-1500",
-        "Download": "https://sourceforge.net/projects/puppex/files/"
+        "Download": "https://sourceforge.net/projects/puppex/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Solus",
@@ -659,7 +811,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3900",
-        "Download": "https://getsol.us/download/"
+        "Download": "https://getsol.us/download/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linuxfx",
@@ -676,7 +832,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5700-5800",
-        "Download": "https://sourceforge.net/projects/linuxfxdevil/files/"
+        "Download": "https://sourceforge.net/projects/linuxfxdevil/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AerynOS",
@@ -693,7 +853,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2300-2400",
-        "Download": "https://download.aerynos.com/"
+        "Download": "https://download.aerynos.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linux Lite",
@@ -710,7 +874,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3000",
-        "Download": "http://sourceforge.net/projects/linuxlite/files/"
+        "Download": "http://sourceforge.net/projects/linuxlite/files/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MocaccinoOS",
@@ -727,7 +895,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-2100",
-        "Download": "https://github.com/mocaccinoOS/mocaccino/releases/"
+        "Download": "https://github.com/mocaccinoOS/mocaccino/releases/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Omarchy",
@@ -744,7 +916,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6300-6400",
-        "Download": "https://iso.omarchy.org/omarchy-3.2.3-2.iso"
+        "Download": "https://iso.omarchy.org/omarchy-3.2.3-2.iso",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Artix Linux",
@@ -761,7 +937,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "900-3600",
-        "Download": "https://download.artixlinux.org/isos.php"
+        "Download": "https://download.artixlinux.org/isos.php",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Parrot",
@@ -778,7 +958,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-6800",
-        "Download": "https://download.parrot.sh/parrot/iso/"
+        "Download": "https://download.parrot.sh/parrot/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Void",
@@ -795,7 +979,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-1400",
-        "Download": "http://voidlinux.org/download/"
+        "Download": "http://voidlinux.org/download/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "FunOS",
@@ -812,7 +1000,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1800-1900",
-        "Download": "https://sourceforge.net/projects/funos/files/"
+        "Download": "https://sourceforge.net/projects/funos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Gentoo Linux",
@@ -829,7 +1021,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "https://www.gentoo.org/downloads/"
+        "Download": "https://www.gentoo.org/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ALT Linux",
@@ -846,7 +1042,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "",
-        "Download": "http://packages.altlinux.org/en/"
+        "Download": "http://packages.altlinux.org/en/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Peppermint OS",
@@ -863,7 +1063,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "https://sourceforge.net/projects/peppermintos/files/"
+        "Download": "https://sourceforge.net/projects/peppermintos/files/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": true
     },
     {
         "name": "Lubuntu",
@@ -880,7 +1084,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-3300",
-        "Download": "http://cdimage.ubuntu.com/lubuntu/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/lubuntu/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Slackware Linux",
@@ -897,7 +1105,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "--",
         "Image Size (MB)": "",
-        "Download": "http://www.slackware.com/getslack/"
+        "Download": "http://www.slackware.com/getslack/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DragonOS",
@@ -914,7 +1126,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3500-3600",
-        "Download": "https://sourceforge.net/projects/dragonos-focal/files/"
+        "Download": "https://sourceforge.net/projects/dragonos-focal/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AV Linux",
@@ -931,7 +1147,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3900-4000",
-        "Download": "https://downloads.bandshed.net/AVL_MXe_25/"
+        "Download": "https://downloads.bandshed.net/AVL_MXe_25/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Rocky Linux",
@@ -948,7 +1168,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-8000",
-        "Download": "https://download.rockylinux.org/pub/rocky/"
+        "Download": "https://download.rockylinux.org/pub/rocky/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MagOS Linux",
@@ -965,7 +1189,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3100-3200",
-        "Download": "http://ftp.magos-linux.ru/iso/"
+        "Download": "http://ftp.magos-linux.ru/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Commodore OS Vision",
@@ -982,7 +1210,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "36000",
-        "Download": "https://www.commodoreos.net/CommodoreOS.aspx"
+        "Download": "https://www.commodoreos.net/CommodoreOS.aspx",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Xubuntu",
@@ -999,7 +1231,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-4600",
-        "Download": "http://cdimage.ubuntu.com/xubuntu/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/xubuntu/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Linux Kodachi",
@@ -1016,7 +1252,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3000",
-        "Download": "https://sourceforge.net/projects/linuxkodachi/files/"
+        "Download": "https://sourceforge.net/projects/linuxkodachi/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MODICIA O.S.",
@@ -1033,7 +1273,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5100-5200",
-        "Download": "https://sourceforge.net/projects/modicia-o-s/files/"
+        "Download": "https://sourceforge.net/projects/modicia-o-s/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LastOSLinux",
@@ -1050,7 +1294,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4400-4500",
-        "Download": "https://sourceforge.net/projects/lastoslinux/files/ISOs/"
+        "Download": "https://sourceforge.net/projects/lastoslinux/files/ISOs/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ZimaOS",
@@ -1067,7 +1315,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1400",
-        "Download": "https://github.com/IceWhaleTech/ZimaOS/releases"
+        "Download": "https://github.com/IceWhaleTech/ZimaOS/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OpenMandriva Lx",
@@ -1083,7 +1335,11 @@
         "description": "The OpenMandriva distribution is a full-featured Linux desktop and server, sponsored by the OpenMandriva Association. It was based on ROSA, a Russian Linux distribution project which forked Mandriva Linux in 2012, incorporating many of Mandriva's original tools and utilities and adding in-house enhancements. The goal of OpenMandriva is to facilitate the creation, improvement, promotion and distribution of free and open-source software in general, and OpenMandriva projects in particular. OpenMandriva has traditionally been a fixed release distribution, but in 2023 the project began releasing an alternative rolling branch called ROME.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
-        "Image Size (MB)": "--"
+        "Image Size (MB)": "--",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "blendOS",
@@ -1100,7 +1356,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-2800",
-        "Download": "https://blendos.co/download/"
+        "Download": "https://blendos.co/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Gnoppix AI Linux",
@@ -1117,7 +1377,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5300-5400",
-        "Download": "https://sourceforge.net/projects/gnoppixng/files/"
+        "Download": "https://sourceforge.net/projects/gnoppixng/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Red Hat Enterprise Linux",
@@ -1134,7 +1398,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Pricing",
         "Image Size (MB)": "800-10000",
-        "Download": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it"
+        "Download": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "KDE Linux",
@@ -1151,7 +1419,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5200-5300",
-        "Download": "https://files.kde.org/kde-linux/"
+        "Download": "https://files.kde.org/kde-linux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ultramarine Linux",
@@ -1168,7 +1440,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3100-4000",
-        "Download": "https://ultramarine-linux.org/download"
+        "Download": "https://ultramarine-linux.org/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Qubes OS",
@@ -1185,7 +1461,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7700-7800",
-        "Download": "https://www.qubes-os.org/downloads/"
+        "Download": "https://www.qubes-os.org/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Expirion Linux",
@@ -1202,7 +1482,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2200-2700",
-        "Download": "https://sourceforge.net/projects/expirion-linux/files/"
+        "Download": "https://sourceforge.net/projects/expirion-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Mageia",
@@ -1219,7 +1503,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://mirrors.mageia.org/"
+        "Download": "http://mirrors.mageia.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Tiny Core Linux",
@@ -1236,7 +1524,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "18-280",
-        "Download": "http://www.tinycorelinux.net/16.x/"
+        "Download": "http://www.tinycorelinux.net/16.x/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "deepin",
@@ -1253,7 +1545,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6000-6100",
-        "Download": "https://www.deepin.org/en/download/"
+        "Download": "https://www.deepin.org/en/download/",
+        "rolling_release": false,
+        "classic_design": true,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "FydeOS",
@@ -1270,7 +1566,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2200-2300",
-        "Download": "https://fydeos.io/download/"
+        "Download": "https://fydeos.io/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Proxmox",
@@ -1287,7 +1587,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://enterprise.proxmox.com/iso/"
+        "Download": "https://enterprise.proxmox.com/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PorteuX",
@@ -1304,7 +1608,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-700",
-        "Download": "https://github.com/porteux/porteux/releases"
+        "Download": "https://github.com/porteux/porteux/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bodhi Linux",
@@ -1321,7 +1629,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://sourceforge.net/projects/bodhilinux/files/7.0.0/"
+        "Download": "https://sourceforge.net/projects/bodhilinux/files/7.0.0/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ultimate Edition",
@@ -1338,7 +1650,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2400-7700",
-        "Download": "http://sourceforge.net/projects/ultimateedition/files/"
+        "Download": "http://sourceforge.net/projects/ultimateedition/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Calculate Linux",
@@ -1355,7 +1671,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "900-4100",
-        "Download": "https://wiki.calculate-linux.org/download"
+        "Download": "https://wiki.calculate-linux.org/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Besgnulinux",
@@ -1372,7 +1692,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-3500",
-        "Download": "https://sourceforge.net/projects/besgnulinux/files/"
+        "Download": "https://sourceforge.net/projects/besgnulinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Archcraft",
@@ -1389,7 +1713,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://sourceforge.net/projects/archcraft/files/"
+        "Download": "https://sourceforge.net/projects/archcraft/files/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "4MLinux",
@@ -1406,7 +1734,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "16-1800",
-        "Download": "http://sourceforge.net/projects/linux4m/files/"
+        "Download": "http://sourceforge.net/projects/linux4m/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "KaOS",
@@ -1423,7 +1755,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3700-3800",
-        "Download": "http://sourceforge.net/projects/kaosx/files/"
+        "Download": "http://sourceforge.net/projects/kaosx/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Mabox Linux",
@@ -1440,7 +1776,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3100",
-        "Download": "https://sourceforge.net/projects/mabox-linux/files/"
+        "Download": "https://sourceforge.net/projects/mabox-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "GreenBANG",
@@ -1457,7 +1797,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1500-1600",
-        "Download": "http://sourceforge.net/projects/archbang/files/"
+        "Download": "http://sourceforge.net/projects/archbang/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Nitrux",
@@ -1474,7 +1818,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2300-3200",
-        "Download": "https://sourceforge.net/projects/nitruxos/files/"
+        "Download": "https://sourceforge.net/projects/nitruxos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Rhino Linux",
@@ -1491,7 +1839,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-2800",
-        "Download": "https://rhinolinux.org/download.html"
+        "Download": "https://rhinolinux.org/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AxOS",
@@ -1508,7 +1860,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3000",
-        "Download": "https://dl.axos-project.com/"
+        "Download": "https://dl.axos-project.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Oracle Linux",
@@ -1525,7 +1881,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1000-9800",
-        "Download": "https://yum.oracle.com/ISOS/OracleLinux/OL10/u0/x86_64/OracleLinux-R10-U0-x86_64-dvd.iso"
+        "Download": "https://yum.oracle.com/ISOS/OracleLinux/OL10/u0/x86_64/OracleLinux-R10-U0-x86_64-dvd.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TrueNAS",
@@ -1542,7 +1902,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://download.sys.truenas.net/"
+        "Download": "https://download.sys.truenas.net/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vanilla OS",
@@ -1559,7 +1923,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://github.com/vanilla-os/live-iso/releases/tag/2.0"
+        "Download": "https://github.com/vanilla-os/live-iso/releases/tag/2.0",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MakuluLinux",
@@ -1576,7 +1944,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6800-6900",
-        "Download": "https://sourceforge.net/projects/makulu/files/"
+        "Download": "https://sourceforge.net/projects/makulu/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Studio",
@@ -1593,7 +1965,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7400-7500",
-        "Download": "http://cdimage.ubuntu.com/ubuntustudio/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/ubuntustudio/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "GNOME OS",
@@ -1610,7 +1986,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-2800",
-        "Download": "https://os.gnome.org/download/latest/gnome_os_nightly.iso"
+        "Download": "https://os.gnome.org/download/latest/gnome_os_nightly.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Aurora",
@@ -1627,7 +2007,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6500-6600",
-        "Download": "https://getaurora.dev/"
+        "Download": "https://getaurora.dev/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Chimera Linux",
@@ -1644,7 +2028,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-2500",
-        "Download": "https://repo.chimera-linux.org/live/latest/"
+        "Download": "https://repo.chimera-linux.org/live/latest/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "HackerOS",
@@ -1661,7 +2049,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://sourceforge.net/projects/hackeros/files/"
+        "Download": "https://sourceforge.net/projects/hackeros/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Murena",
@@ -1678,7 +2070,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1400",
-        "Download": "https://doc.e.foundation/devices"
+        "Download": "https://doc.e.foundation/devices",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "GXDE OS",
@@ -1695,7 +2091,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://repo.gxde.top/ISO/"
+        "Download": "https://repo.gxde.top/ISO/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Br OS",
@@ -1712,7 +2112,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3900-4000",
-        "Download": "https://br-os.com/download/"
+        "Download": "https://br-os.com/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "GLF OS",
@@ -1729,7 +2133,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5900-6000",
-        "Download": "https://github.com/Gaming-Linux-FR/GLF-OS/releases"
+        "Download": "https://github.com/Gaming-Linux-FR/GLF-OS/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Feren OS",
@@ -1746,7 +2154,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2600-2700",
-        "Download": "https://sourceforge.net/projects/ferenoslinux/files/"
+        "Download": "https://sourceforge.net/projects/ferenoslinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SDesk",
@@ -1763,7 +2175,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-3600",
-        "Download": "https://stevestudios.net/downloads"
+        "Download": "https://stevestudios.net/downloads",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Regata OS",
@@ -1780,7 +2196,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6900-7000",
-        "Download": "https://sourceforge.net/projects/regataos/files/"
+        "Download": "https://sourceforge.net/projects/regataos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "wattOS",
@@ -1797,7 +2217,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://www.planetwatt.com/r13-downloads/"
+        "Download": "https://www.planetwatt.com/r13-downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kicksecure",
@@ -1814,7 +2238,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://www.kicksecure.com/download/iso/"
+        "Download": "https://www.kicksecure.com/download/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "RebornOS",
@@ -1831,7 +2259,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3100-3200",
-        "Download": "https://sourceforge.net/projects/rebornos/files/"
+        "Download": "https://sourceforge.net/projects/rebornos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Security Onion",
@@ -1848,7 +2280,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "14000-15000",
-        "Download": "https://github.com/Security-Onion-Solutions/securityonion/releases"
+        "Download": "https://github.com/Security-Onion-Solutions/securityonion/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LinuxHub Prime",
@@ -1865,7 +2301,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-2900",
-        "Download": "https://sourceforge.net/projects/linuxhub-prime/files/"
+        "Download": "https://sourceforge.net/projects/linuxhub-prime/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Mauna Linux",
@@ -1882,7 +2322,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2400-3600",
-        "Download": "https://sourceforge.net/projects/maunalinux/files/"
+        "Download": "https://sourceforge.net/projects/maunalinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Talos Linux",
@@ -1899,7 +2343,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "200-300",
-        "Download": "https://github.com/siderolabs/talos/releases"
+        "Download": "https://github.com/siderolabs/talos/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Gnuinos",
@@ -1916,7 +2364,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-3800",
-        "Download": "https://www.gnuinos.org/mirror/daedalus/installer-iso/"
+        "Download": "https://www.gnuinos.org/mirror/daedalus/installer-iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Porteus",
@@ -1933,7 +2385,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-600",
-        "Download": "http://dl.porteus.org/"
+        "Download": "http://dl.porteus.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Dr.Parted Live",
@@ -1950,7 +2406,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-900",
-        "Download": "https://sourceforge.net/projects/dr-parted-live/files/"
+        "Download": "https://sourceforge.net/projects/dr-parted-live/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "HeliumOS",
@@ -1967,7 +2427,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://www.heliumos.org/download/"
+        "Download": "https://www.heliumos.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu MATE",
@@ -1984,7 +2448,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "http://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/ubuntu-mate/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "ChromeOS Flex",
@@ -2001,7 +2469,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://chromiumdash.appspot.com/serving-builds?deviceCategory=ChromeOS%20Flex"
+        "Download": "https://chromiumdash.appspot.com/serving-builds?deviceCategory=ChromeOS%20Flex",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "extrox",
@@ -2018,11 +2490,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-3300",
-        "Download": "https://sourceforge.net/projects/extrox/files/"
+        "Download": "https://sourceforge.net/projects/extrox/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TROMjaro",
-        "url": "https://distrowatch.com/tromjaro"
+        "url": "https://distrowatch.com/tromjaro",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DietPi",
@@ -2039,11 +2519,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "100-700",
-        "Download": "http://dietpi.com/downloads/images/"
+        "Download": "http://dietpi.com/downloads/images/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Endless OS",
-        "url": "https://distrowatch.com/endless"
+        "url": "https://distrowatch.com/endless",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kiro",
@@ -2060,7 +2548,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4900-5000",
-        "Download": "https://sourceforge.net/projects/kiro/files/"
+        "Download": "https://sourceforge.net/projects/kiro/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Asmi Linux",
@@ -2077,7 +2569,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "https://github.com/teejee2008/asmi-linux/releases/tag/v25.10"
+        "Download": "https://github.com/teejee2008/asmi-linux/releases/tag/v25.10",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Volumio",
@@ -2094,7 +2590,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://volumio.org/get-started/"
+        "Download": "https://volumio.org/get-started/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "RefreshOS",
@@ -2111,7 +2611,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3100",
-        "Download": "https://sourceforge.net/projects/refreshos/files/"
+        "Download": "https://sourceforge.net/projects/refreshos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Shanios",
@@ -2128,7 +2632,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5200-5900",
-        "Download": "https://sourceforge.net/projects/shanios/files/"
+        "Download": "https://sourceforge.net/projects/shanios/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SliTaz GNU/Linux",
@@ -2145,7 +2653,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://mirror.slitaz.org/packages/cooking/"
+        "Download": "http://mirror.slitaz.org/packages/cooking/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CuerdOS",
@@ -2162,7 +2674,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-3000",
-        "Download": "https://sourceforge.net/projects/cuerdos/files/"
+        "Download": "https://sourceforge.net/projects/cuerdos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Oreon",
@@ -2179,7 +2695,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://boostyconnect.com/oreon-iso/"
+        "Download": "https://boostyconnect.com/oreon-iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Wifislax",
@@ -2196,7 +2716,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "http://www.wifislax.com/category/download/nuevas-versiones/"
+        "Download": "http://www.wifislax.com/category/download/nuevas-versiones/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "XIVA Studio",
@@ -2213,7 +2737,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4100-4200",
-        "Download": "https://iso.biglinux.com.br/"
+        "Download": "https://iso.biglinux.com.br/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "HydraPWK GNU/Linux",
@@ -2230,7 +2758,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5300-5400",
-        "Download": "https://sourceforge.net/projects/hydrapwk-gnu-linux/files/Image/"
+        "Download": "https://sourceforge.net/projects/hydrapwk-gnu-linux/files/Image/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Raspberry Pi OS",
@@ -2247,7 +2779,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-2000",
-        "Download": "https://downloads.raspberrypi.org/"
+        "Download": "https://downloads.raspberrypi.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "StormOS",
@@ -2264,7 +2800,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://sourceforge.net/projects/hackman-linux/files/"
+        "Download": "https://sourceforge.net/projects/hackman-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ROSA",
@@ -2281,10 +2821,14 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://mirror.rosa.ru/rosa/rosa13/iso/ROSA.FRESH.13/"
+        "Download": "https://mirror.rosa.ru/rosa/rosa13/iso/ROSA.FRESH.13/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
-        "name": "Emmabunt\u00fcs",
+        "name": "Emmabuntüs",
         "url": "https://distrowatch.com/emmabuntus",
         "OS Type": "Linux",
         "Based on": "Debian (Stable)",
@@ -2294,11 +2838,15 @@
         "Category": "Assistive,Beginners,Desktop,Live Medium,Old Computers",
         "Status": "Active",
         "Popularity": "144",
-        "description": "Emmabunt\u00fcs is a desktop Linux distribution with editions based on Debian's Stable branch with both the Xfce and LXQt desktop environments available. It strives to be beginner-friendly and reasonably light on resources so that it can be used on older computers. It also includes many modern features, such as large number of pre-configured programs for everyday use, dockbar for launching applications, easy installation of non-free software and media codecs, and quick setup through automated scripts. In addition, this distribution addresses accessibility issues, for both installation and day to day usage, and includes a large set of applications supporting visually impaired people. The distribution supports English, French, German, Italian, Portuguese and Spanish languages.",
+        "description": "Emmabuntüs is a desktop Linux distribution with editions based on Debian's Stable branch with both the Xfce and LXQt desktop environments available. It strives to be beginner-friendly and reasonably light on resources so that it can be used on older computers. It also includes many modern features, such as large number of pre-configured programs for everyday use, dockbar for launching applications, easy installation of non-free software and media codecs, and quick setup through automated scripts. In addition, this distribution addresses accessibility issues, for both installation and day to day usage, and includes a large set of applications supporting visually impaired people. The distribution supports English, French, German, Italian, Portuguese and Spanish languages.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-4400",
-        "Download": "http://sourceforge.net/projects/emmabuntus/files/"
+        "Download": "http://sourceforge.net/projects/emmabuntus/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Neptune",
@@ -2315,7 +2863,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "http://neptuneos.com/en/download.html"
+        "Download": "http://neptuneos.com/en/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "FreedomBox",
@@ -2332,7 +2884,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-800",
-        "Download": "https://freedombox.org/download/"
+        "Download": "https://freedombox.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Liya",
@@ -2349,7 +2905,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://sourceforge.net/projects/liya-2025/files/"
+        "Download": "https://sourceforge.net/projects/liya-2025/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "NebiOS",
@@ -2366,7 +2926,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4500-4600",
-        "Download": "https://sourceforge.net/projects/nebios-official-mirror/files/"
+        "Download": "https://sourceforge.net/projects/nebios-official-mirror/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Lingmo OS",
@@ -2383,7 +2947,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-3300",
-        "Download": "https://sourceforge.net/projects/lingmo-os/files/release/iso/helium/"
+        "Download": "https://sourceforge.net/projects/lingmo-os/files/release/iso/helium/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "openmamba GNU/Linux",
@@ -2400,7 +2968,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "http://www.openmamba.org/distribution/download.html"
+        "Download": "http://www.openmamba.org/distribution/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BunsenLabs Linux",
@@ -2417,7 +2989,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1800",
-        "Download": "https://ddl.bunsenlabs.org/ddl/"
+        "Download": "https://ddl.bunsenlabs.org/ddl/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ExTiX",
@@ -2434,7 +3010,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-2600",
-        "Download": "http://sourceforge.net/projects/extix/files/"
+        "Download": "http://sourceforge.net/projects/extix/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Cinnamon",
@@ -2451,7 +3031,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4700-4800",
-        "Download": "http://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/ubuntucinnamon/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Arkane Linux",
@@ -2468,7 +3052,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-2200",
-        "Download": "https://download.arkanelinux.org/iso/"
+        "Download": "https://download.arkanelinux.org/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "umbrelOS",
@@ -2485,7 +3073,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2900-3000",
-        "Download": "https://github.com/getumbrel/umbrel/releases/tag/1.5"
+        "Download": "https://github.com/getumbrel/umbrel/releases/tag/1.5",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Nyarch Linux",
@@ -2502,7 +3094,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4700",
-        "Download": "https://sourceforge.net/projects/nyarchlinux/files/"
+        "Download": "https://sourceforge.net/projects/nyarchlinux/files/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Whonix",
@@ -2519,7 +3115,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2400-2500",
-        "Download": "https://www.whonix.org/wiki/Download"
+        "Download": "https://www.whonix.org/wiki/Download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Luberri Linux",
@@ -2536,7 +3136,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6900-7000",
-        "Download": "https://luberrilinux.eus/deskargatu/"
+        "Download": "https://luberrilinux.eus/deskargatu/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Pardus",
@@ -2549,11 +3153,15 @@
         "Category": "Desktop,Live Medium,Server",
         "Status": "Active",
         "Popularity": "162",
-        "description": "Pardus is a Turkish Linux distribution developed by Software Technologies Research Institute (YTE) of the Scientific Technological Research Council of Turkey (T\u00dcB\u0130TAK). It is based on Debian's \"Stable\" branch. The project prioritises the adoption of open-source and free software within the public sector, aligning with Debian's guiding principles which promise to keep the distribution and all of its components free according to Debian Free Software Guidelines. Pardus provides two separate desktop variants with GNOME or Xfce desktop, as well as a specialist edition for server deployments.",
+        "description": "Pardus is a Turkish Linux distribution developed by Software Technologies Research Institute (YTE) of the Scientific Technological Research Council of Turkey (TÜBİTAK). It is based on Debian's \"Stable\" branch. The project prioritises the adoption of open-source and free software within the public sector, aligning with Debian's guiding principles which promise to keep the distribution and all of its components free according to Debian Free Software Guidelines. Pardus provides two separate desktop variants with GNOME or Xfce desktop, as well as a specialist edition for server deployments.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "700-2900",
-        "Download": "https://indir.pardus.org.tr/ISO/Pardus25/"
+        "Download": "https://indir.pardus.org.tr/ISO/Pardus25/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Athena OS",
@@ -2570,7 +3178,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://github.com/Athena-OS/athena/releases"
+        "Download": "https://github.com/Athena-OS/athena/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Mobian",
@@ -2587,7 +3199,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-2200",
-        "Download": "https://images.mobian.org/"
+        "Download": "https://images.mobian.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Xray_OS",
@@ -2604,7 +3220,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4100",
-        "Download": "https://sourceforge.net/projects/xray-os/files/"
+        "Download": "https://sourceforge.net/projects/xray-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "postmarketOS",
@@ -2621,7 +3241,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "100-2300",
-        "Download": "https://images.postmarketos.org/bpo/v25.12/"
+        "Download": "https://images.postmarketos.org/bpo/v25.12/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "spirit OS",
@@ -2638,11 +3262,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "300-400",
-        "Download": "https://sourceforge.net/projects/spirit-os/files/spiritOS-16.iso/download"
+        "Download": "https://sourceforge.net/projects/spirit-os/files/spiritOS-16.iso/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vinari OS",
-        "url": "https://distrowatch.com/vinari"
+        "url": "https://distrowatch.com/vinari",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Zephix",
@@ -2659,7 +3291,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1700",
-        "Download": "https://sourceforge.net/projects/zephix-linux/files/ISO/"
+        "Download": "https://sourceforge.net/projects/zephix-linux/files/ISO/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "iDeal OS",
@@ -2676,7 +3312,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://sourceforge.net/projects/ideal-os/files/"
+        "Download": "https://sourceforge.net/projects/ideal-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "arcOS",
@@ -2693,7 +3333,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4200-4300",
-        "Download": "https://sourceforge.net/projects/arcos-linux/files/"
+        "Download": "https://sourceforge.net/projects/arcos-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Slackel",
@@ -2710,7 +3354,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "http://sourceforge.net/projects/slackel/files/"
+        "Download": "http://sourceforge.net/projects/slackel/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "openKylin",
@@ -2727,7 +3375,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1500-7100",
-        "Download": "https://www.openkylin.top/downloads/index-en.html"
+        "Download": "https://www.openkylin.top/downloads/index-en.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Synex",
@@ -2744,7 +3396,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-2500",
-        "Download": "https://sourceforge.net/projects/synex/files/"
+        "Download": "https://sourceforge.net/projects/synex/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bluefin",
@@ -2761,7 +3417,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5300-5400",
-        "Download": "https://docs.projectbluefin.io/downloads/"
+        "Download": "https://docs.projectbluefin.io/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Damn Small Linux",
@@ -2778,7 +3438,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "660-670",
-        "Download": "https://www.damnsmalllinux.org/2024-download.html"
+        "Download": "https://www.damnsmalllinux.org/2024-download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linux Kamarada",
@@ -2795,7 +3459,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-2600",
-        "Download": "https://sourceforge.net/projects/kamarada/files/"
+        "Download": "https://sourceforge.net/projects/kamarada/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SUSE Linux Enterprise",
@@ -2808,11 +3476,15 @@
         "Category": "Desktop,Raspberry Pi,Server",
         "Status": "Active",
         "Popularity": "181",
-        "description": "SUSE Linux Enterprise is an interoperable platform for mission-critical computing. \u00a0SUSE Linux Enterprise Desktop is an enterprise-quality Linux desktop that's ready for routine business use. \u00a0It provides interoperability with existing systems and many office applications. \u00a0It also delivers flexibility for desktop and notebook clients, thin-client devices, and high-end technical workstations. \u00a0SUSE Linux Enterprise Server is designed to handle mission-critical workloads. It is an open, scalable, solution that comes with integrated Xen-based virtualization, application security, and systems management across a range of hardware architectures. \u00a0SUSE Linux Enterprise Server provides interoperability with Windows and other platforms, and it provides a secure foundation for a broad range of edge, departmental and data center needs.",
+        "description": "SUSE Linux Enterprise is an interoperable platform for mission-critical computing.  SUSE Linux Enterprise Desktop is an enterprise-quality Linux desktop that's ready for routine business use.  It provides interoperability with existing systems and many office applications.  It also delivers flexibility for desktop and notebook clients, thin-client devices, and high-end technical workstations.  SUSE Linux Enterprise Server is designed to handle mission-critical workloads. It is an open, scalable, solution that comes with integrated Xen-based virtualization, application security, and systems management across a range of hardware architectures.  SUSE Linux Enterprise Server provides interoperability with Windows and other platforms, and it provides a secure foundation for a broad range of edge, departmental and data center needs.",
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "8000-14000",
-        "Download": "https://www.suse.com/download-linux/"
+        "Download": "https://www.suse.com/download-linux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Tsurugi Linux",
@@ -2829,7 +3501,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "10000-16000",
-        "Download": "https://tsurugi-linux.org/downloads.php"
+        "Download": "https://tsurugi-linux.org/downloads.php",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ufficio Zero Linux OS",
@@ -2846,7 +3522,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://sourceforge.net/projects/ufficiozero/files/Anna-desktop-x86_64/"
+        "Download": "https://sourceforge.net/projects/ufficiozero/files/Anna-desktop-x86_64/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SysLinuxOS",
@@ -2863,10 +3543,14 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6000-6100",
-        "Download": "https://sourceforge.net/projects/syslinuxos/files/"
+        "Download": "https://sourceforge.net/projects/syslinuxos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
-        "name": "iod\u00e9OS",
+        "name": "iodéOS",
         "url": "https://distrowatch.com/iode",
         "OS Type": "Linux",
         "Based on": "LineageOS,Android",
@@ -2876,11 +3560,15 @@
         "Category": "Immutable,Mobile",
         "Status": "Active",
         "Popularity": "185",
-        "description": "iod\u00e9OS is an Android-based operating system (in the LineageOS family) which ships without Google trackers or proprietary software. iod\u00e9OS monitors, in real-time, connection attempts from applications and allows the user to see the identities of all recipients and the quantity of data they wish to collect, optionally block malicious recipients (advertisements, malware, spam, statistics and trackers), and measure how privacy-respectful the installed applications are.",
+        "description": "iodéOS is an Android-based operating system (in the LineageOS family) which ships without Google trackers or proprietary software. iodéOS monitors, in real-time, connection attempts from applications and allows the user to see the identities of all recipients and the quantity of data they wish to collect, optionally block malicious recipients (advertisements, malware, spam, statistics and trackers), and measure how privacy-respectful the installed applications are.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1500-1600",
-        "Download": "https://gitlab.iode.tech/ota/ota/-/tree/master/installer"
+        "Download": "https://gitlab.iode.tech/ota/ota/-/tree/master/installer",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Melawy Linux",
@@ -2897,7 +3585,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7400-12000",
-        "Download": "https://sourceforge.net/projects/melawy-linux/files/"
+        "Download": "https://sourceforge.net/projects/melawy-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linux From Scratch",
@@ -2914,7 +3606,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://www.linuxfromscratch.org/lfs/download.html"
+        "Download": "http://www.linuxfromscratch.org/lfs/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ElysiaOS",
@@ -2931,7 +3627,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://sourceforge.net/projects/elysiaos/files/ElysiaOS/"
+        "Download": "https://sourceforge.net/projects/elysiaos/files/ElysiaOS/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SystemRescue",
@@ -2948,11 +3648,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1000-1100",
-        "Download": "https://sourceforge.net/projects/systemrescuecd/files/"
+        "Download": "https://sourceforge.net/projects/systemrescuecd/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Budgie",
-        "url": "https://distrowatch.com/ubuntubudgie"
+        "url": "https://distrowatch.com/ubuntubudgie",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "GParted Live",
@@ -2969,7 +3677,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-600",
-        "Download": "http://sourceforge.net/projects/gparted/files/"
+        "Download": "http://sourceforge.net/projects/gparted/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vendefoul Wolf",
@@ -2986,7 +3698,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3700-3800",
-        "Download": "https://sourceforge.net/projects/vendefoul-wolf-linux/files/"
+        "Download": "https://sourceforge.net/projects/vendefoul-wolf-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LibreELEC",
@@ -3003,7 +3719,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "200-300",
-        "Download": "https://libreelec.tv/downloads/"
+        "Download": "https://libreelec.tv/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Rescuezilla",
@@ -3020,7 +3740,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-1500",
-        "Download": "https://github.com/rescuezilla/rescuezilla/releases"
+        "Download": "https://github.com/rescuezilla/rescuezilla/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Shebang",
@@ -3037,7 +3761,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://github.com/shebang-linux/shebang/releases"
+        "Download": "https://github.com/shebang-linux/shebang/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "siduction",
@@ -3054,7 +3782,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-3600",
-        "Download": "https://mirrors.dotsrc.org/siduction/iso/"
+        "Download": "https://mirrors.dotsrc.org/siduction/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Univention Corporate Server",
@@ -3071,7 +3803,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1700",
-        "Download": "http://updates.software-univention.de/download/ucs-cds/"
+        "Download": "http://updates.software-univention.de/download/ucs-cds/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "RELIANOID",
@@ -3088,7 +3824,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "700-800",
-        "Download": "https://www.relianoid.com/products/community/"
+        "Download": "https://www.relianoid.com/products/community/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Grml",
@@ -3105,7 +3845,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-1000",
-        "Download": "http://www.grml.org/download/"
+        "Download": "http://www.grml.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Refracta",
@@ -3122,7 +3866,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-1500",
-        "Download": "https://get.refracta.org/files/stable/"
+        "Download": "https://get.refracta.org/files/stable/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "StartOS",
@@ -3139,7 +3887,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1400",
-        "Download": "https://github.com/Start9Labs/start-os/releases"
+        "Download": "https://github.com/Start9Labs/start-os/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Trisquel GNU/Linux",
@@ -3156,7 +3908,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-3400",
-        "Download": "https://cdbuilds.trisquel.org/ecne/"
+        "Download": "https://cdbuilds.trisquel.org/ecne/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Unraid OS",
@@ -3173,7 +3929,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "49-249",
         "Image Size (MB)": "800-900",
-        "Download": "https://docs.unraid.net/unraid-os/download_list/"
+        "Download": "https://docs.unraid.net/unraid-os/download_list/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Archman Linux",
@@ -3190,7 +3950,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-2600",
-        "Download": "https://sourceforge.net/projects/archman-os/files/stable-iso/"
+        "Download": "https://sourceforge.net/projects/archman-os/files/stable-iso/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "RED OS",
@@ -3207,7 +3971,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5800-5900",
-        "Download": "https://files.red-soft.ru/redos/8.0/"
+        "Download": "https://files.red-soft.ru/redos/8.0/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MIRACLE LINUX",
@@ -3224,7 +3992,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "2500-11000",
-        "Download": "https://repo.dist.miraclelinux.net/miraclelinux/isos/"
+        "Download": "https://repo.dist.miraclelinux.net/miraclelinux/isos/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "openEuler",
@@ -3241,7 +4013,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "900-27000",
-        "Download": "https://www.openeuler.org/en/download/"
+        "Download": "https://www.openeuler.org/en/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Slint",
@@ -3258,7 +4034,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-4400",
-        "Download": "https://slackware.uk/slint/x86_64/slint-15.0/iso/"
+        "Download": "https://slackware.uk/slint/x86_64/slint-15.0/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AgarimOS",
@@ -3275,7 +4055,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://sourceforge.net/projects/agarimos/files/"
+        "Download": "https://sourceforge.net/projects/agarimos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Armbian",
@@ -3292,7 +4076,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "700-2200",
-        "Download": "https://fi.mirror.armbian.de/dl/"
+        "Download": "https://fi.mirror.armbian.de/dl/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Parch GNU/Linux",
@@ -3309,7 +4097,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-3200",
-        "Download": "https://mirror.parchlinux.ir/"
+        "Download": "https://mirror.parchlinux.ir/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Clonezilla Live",
@@ -3326,11 +4118,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-500",
-        "Download": "http://sourceforge.net/projects/clonezilla/files/"
+        "Download": "http://sourceforge.net/projects/clonezilla/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Debian Edu",
-        "url": "https://distrowatch.com/debianedu"
+        "url": "https://distrowatch.com/debianedu",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "GrapheneOS",
@@ -3347,7 +4147,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://grapheneos.org/install/web"
+        "Download": "https://grapheneos.org/install/web",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Loc-OS",
@@ -3364,7 +4168,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1600",
-        "Download": "https://sourceforge.net/projects/loc-os/files/"
+        "Download": "https://sourceforge.net/projects/loc-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Alien-OS",
@@ -3381,7 +4189,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4100",
-        "Download": "https://sourceforge.net/projects/alien-os-nano/files/"
+        "Download": "https://sourceforge.net/projects/alien-os-nano/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AUSTRUMI",
@@ -3398,7 +4210,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-500",
-        "Download": "https://ftp.linux.edu.lv/austrumi/"
+        "Download": "https://ftp.linux.edu.lv/austrumi/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TeaLinux",
@@ -3415,7 +4231,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-3100",
-        "Download": "https://pinguin.dinus.ac.id/iso/tealinuxos/TeaLinuxOS-Arch/2025/release/"
+        "Download": "https://pinguin.dinus.ac.id/iso/tealinuxos/TeaLinuxOS-Arch/2025/release/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AOSC OS",
@@ -3432,7 +4252,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7700-7800",
-        "Download": "https://releases.aosc.io/os-amd64/installer/"
+        "Download": "https://releases.aosc.io/os-amd64/installer/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DebLight OS",
@@ -3449,7 +4273,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-6700",
-        "Download": "https://sourceforge.net/projects/deblight-os/files/"
+        "Download": "https://sourceforge.net/projects/deblight-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DESERT OS Linux",
@@ -3466,7 +4294,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3100",
-        "Download": "https://sourceforge.net/projects/desert-os-linux/files/"
+        "Download": "https://sourceforge.net/projects/desert-os-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Exe GNU/Linux",
@@ -3483,7 +4315,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1000-1100",
-        "Download": "https://sourceforge.net/projects/exegnulinux/files/iso/"
+        "Download": "https://sourceforge.net/projects/exegnulinux/files/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MAX: Madrid_Linux",
@@ -3500,7 +4336,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6900-7000",
-        "Download": "https://ftp.rediris.es/mirror/MaX-Linux/MaXdesktop/ultima-version/"
+        "Download": "https://ftp.rediris.es/mirror/MaX-Linux/MaXdesktop/ultima-version/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "VailuxOS",
@@ -3517,7 +4357,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5300-5400",
-        "Download": "https://downloads.vailux.de/"
+        "Download": "https://downloads.vailux.de/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Finnix",
@@ -3534,7 +4378,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-600",
-        "Download": "https://www.finnix.org/Download"
+        "Download": "https://www.finnix.org/Download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "IPFire",
@@ -3551,7 +4399,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-600",
-        "Download": "https://www.ipfire.org/download"
+        "Download": "https://www.ipfire.org/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PakOS",
@@ -3568,7 +4420,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-3300",
-        "Download": "https://sourceforge.net/projects/pakos/files/"
+        "Download": "https://sourceforge.net/projects/pakos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Pisi Linux",
@@ -3585,7 +4441,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3500-3600",
-        "Download": "http://sourceforge.net/projects/pisilinux/files/"
+        "Download": "http://sourceforge.net/projects/pisilinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Soplos Linux",
@@ -3602,7 +4462,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://sourceforge.net/projects/soplos-linux/files/"
+        "Download": "https://sourceforge.net/projects/soplos-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Unity",
@@ -3619,7 +4483,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "http://cdimage.ubuntu.com/ubuntu-unity/releases/25.04/"
+        "Download": "http://cdimage.ubuntu.com/ubuntu-unity/releases/25.04/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Window Maker Live",
@@ -3636,7 +4504,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-2900",
-        "Download": "http://sourceforge.net/projects/wmlive/files/"
+        "Download": "http://sourceforge.net/projects/wmlive/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Macaroni OS",
@@ -3653,7 +4525,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-3600",
-        "Download": "https://macaronios.mirror.garr.it/iso/"
+        "Download": "https://macaronios.mirror.garr.it/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Batocera.linux",
@@ -3670,7 +4546,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-2200",
-        "Download": "https://batocera.org/download"
+        "Download": "https://batocera.org/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BlueOnyx",
@@ -3687,7 +4567,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "http://mirror.blueonyx.de/pub/BlueOnyx/ISO/"
+        "Download": "http://mirror.blueonyx.de/pub/BlueOnyx/ISO/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Slimbook OS",
@@ -3704,7 +4588,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4900-5000",
-        "Download": "https://cloud.slimbook.net/s/download?dir=/Operating%20systems/Slimbook%20OS/24"
+        "Download": "https://cloud.slimbook.net/s/download?dir=/Operating%20systems/Slimbook%20OS/24",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "T2 Linux SDE",
@@ -3721,7 +4609,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://www.t2-project.org/download/"
+        "Download": "http://www.t2-project.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vipnix LiveCD",
@@ -3738,7 +4630,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3900-4000",
-        "Download": "https://sourceforge.net/projects/vipnix-repo/files/"
+        "Download": "https://sourceforge.net/projects/vipnix-repo/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BackBox Linux",
@@ -3755,7 +4651,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6200-6400",
-        "Download": "https://mirror.backbox.org/"
+        "Download": "https://mirror.backbox.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LainOS",
@@ -3772,7 +4672,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://gitlab.com/lainos/lainOS/-/releases"
+        "Download": "https://gitlab.com/lainos/lainOS/-/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Planeta Tecno OS",
@@ -3789,7 +4693,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4500-4600",
-        "Download": "https://www.planetatecno.com.uy/programas/"
+        "Download": "https://www.planetatecno.com.uy/programas/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Kylin",
@@ -3806,10 +4714,14 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4500-4600",
-        "Download": "http://cdimage.ubuntu.com/ubuntukylin/releases/25.10/"
+        "Download": "http://cdimage.ubuntu.com/ubuntukylin/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
-        "name": "Ad\u00e9lie Linux",
+        "name": "Adélie Linux",
         "url": "https://distrowatch.com/adelie",
         "OS Type": "Linux",
         "Based on": "Independent",
@@ -3819,11 +4731,15 @@
         "Category": "Desktop,Live Medium,Server",
         "Status": "Active",
         "Popularity": "247",
-        "description": "Ad\u00e9lie Linux is an independently-developed Linux distribution for desktops and servers. It uses the musl standard C library, GNU Coreutils-based userland, the APK package manager (developed by Alpine Linux), and OpenRC and s6 init systems. The project's desktop edition offers a choice of four desktops - KDE Plasma, LXQt, MATE and Xfce, while the supported processor architectures include AArch64, armv7l, i386, PPC, PPC64 and x86_64. The distribution is developed by a Canadian IT services company called Cyberlogic, founded in 1995.",
+        "description": "Adélie Linux is an independently-developed Linux distribution for desktops and servers. It uses the musl standard C library, GNU Coreutils-based userland, the APK package manager (developed by Alpine Linux), and OpenRC and s6 init systems. The project's desktop edition offers a choice of four desktops - KDE Plasma, LXQt, MATE and Xfce, while the supported processor architectures include AArch64, armv7l, i386, PPC, PPC64 and x86_64. The distribution is developed by a Canadian IT services company called Cyberlogic, founded in 1995.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-1900",
-        "Download": "https://distfiles.adelielinux.org/adelie/"
+        "Download": "https://distfiles.adelielinux.org/adelie/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Clear NDR",
@@ -3840,7 +4756,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3200-4000",
-        "Download": "https://www.stamus-networks.com/clear-ndr-community"
+        "Download": "https://www.stamus-networks.com/clear-ndr-community",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Guix System",
@@ -3857,7 +4777,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "https://guix.gnu.org/en/download/latest/"
+        "Download": "https://guix.gnu.org/en/download/latest/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ObsidianOS",
@@ -3874,7 +4798,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-5000",
-        "Download": "https://files.obsidianos.xyz/"
+        "Download": "https://files.obsidianos.xyz/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OpenMediaVault",
@@ -3891,11 +4819,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1400",
-        "Download": "https://sourceforge.net/projects/openmediavault/files/"
+        "Download": "https://sourceforge.net/projects/openmediavault/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Snal Linux",
-        "url": "https://distrowatch.com/snal"
+        "url": "https://distrowatch.com/snal",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Zenwalk GNU Linux",
@@ -3912,7 +4848,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2600-2700",
-        "Download": "http://download.zenwalk.org/x86_64/current/"
+        "Download": "http://download.zenwalk.org/x86_64/current/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AcreetionOS",
@@ -3929,7 +4869,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2300-2400",
-        "Download": "https://darrengames.ddns.net:1500/acreetion/"
+        "Download": "https://darrengames.ddns.net:1500/acreetion/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "NethServer",
@@ -3946,7 +4890,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-3300",
-        "Download": "https://docs.nethserver.org/projects/ns8/en/latest/install.html#pre-built-image"
+        "Download": "https://docs.nethserver.org/projects/ns8/en/latest/install.html#pre-built-image",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Edubuntu",
@@ -3963,7 +4911,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "6400-6500",
-        "Download": "https://cdimage.ubuntu.com/edubuntu/releases/25.10/"
+        "Download": "https://cdimage.ubuntu.com/edubuntu/releases/25.10/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Redcore Linux",
@@ -3980,7 +4932,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4800-6100",
-        "Download": "http://mirror.math.princeton.edu/pub/redcorelinux/"
+        "Download": "http://mirror.math.princeton.edu/pub/redcorelinux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LazyLinux",
@@ -3997,7 +4953,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5400-5500",
-        "Download": "https://sourceforge.net/projects/lazylinux/files/"
+        "Download": "https://sourceforge.net/projects/lazylinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Obarun",
@@ -4014,7 +4974,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1800",
-        "Download": "https://web.obarun.org/download/"
+        "Download": "https://web.obarun.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Accessible-Coconut",
@@ -4031,7 +4995,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4700-4800",
-        "Download": "https://sourceforge.net/projects/accessible-coconut/files/"
+        "Download": "https://sourceforge.net/projects/accessible-coconut/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ATZ Linux",
@@ -4044,15 +5012,23 @@
         "Category": "Desktop",
         "Status": "Active",
         "Popularity": "263",
-        "description": "ATZ Linux (\u94dc\u8c4c\u8c46 Linux) is a Chinese Linux distribution based on Debian's \"Stable\" branch. The project's main goal is to package software that is commonly used in China for easy installation; some examples of such software include QQ instant messaging utility, WeChat social media application, Baidu Netdisk file sharing tool, Sogou input method, NetEase cloud music software, Youdao dictionary, WPS Office, as well as additional Chinese fonts and dictionaries. ATZ Linux remains compatible with Debian and provides an official China-based mirror for software installation.",
+        "description": "ATZ Linux (铜豌豆 Linux) is a Chinese Linux distribution based on Debian's \"Stable\" branch. The project's main goal is to package software that is commonly used in China for easy installation; some examples of such software include QQ instant messaging utility, WeChat social media application, Baidu Netdisk file sharing tool, Sogou input method, NetEase cloud music software, Youdao dictionary, WPS Office, as well as additional Chinese fonts and dictionaries. ATZ Linux remains compatible with Debian and provides an official China-based mirror for software installation.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3700-3800",
-        "Download": "https://www.atzlinux.com/download-iso.htm"
+        "Download": "https://www.atzlinux.com/download-iso.htm",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Calam Arch Installer",
-        "url": "https://distrowatch.com/calam"
+        "url": "https://distrowatch.com/calam",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "gabeeOSLinux",
@@ -4069,7 +5045,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-2800",
-        "Download": "https://sourceforge.net/projects/gabeeoslinux/files/"
+        "Download": "https://sourceforge.net/projects/gabeeoslinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Plop Linux",
@@ -4086,7 +5066,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-3900",
-        "Download": "https://www.plop.at/en/ploplinux/downloads/full.html"
+        "Download": "https://www.plop.at/en/ploplinux/downloads/full.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "d77void GNU/Linux",
@@ -4103,7 +5087,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2600",
-        "Download": "https://sourceforge.net/projects/d77void/files/"
+        "Download": "https://sourceforge.net/projects/d77void/files/",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ventoy LiveCD",
@@ -4120,7 +5108,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "100-200",
-        "Download": "https://sourceforge.net/projects/ventoy/files/"
+        "Download": "https://sourceforge.net/projects/ventoy/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Crunchbangplusplus",
@@ -4137,11 +5129,19 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2300-2400",
-        "Download": "https://www.crunchbangplusplus.org/download.html"
+        "Download": "https://www.crunchbangplusplus.org/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Drauger OS",
-        "url": "https://distrowatch.com/drauger"
+        "url": "https://distrowatch.com/drauger",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LliureX",
@@ -4158,7 +5158,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5600-5700",
-        "Download": "https://releaseslliurexnet.gva.es/isos/25/"
+        "Download": "https://releaseslliurexnet.gva.es/isos/25/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Predator-OS",
@@ -4175,7 +5179,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-5300",
-        "Download": "https://predator-os.ir/download/"
+        "Download": "https://predator-os.ir/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bedrock Linux",
@@ -4192,7 +5200,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1-2",
-        "Download": "https://github.com/bedrocklinux/bedrocklinux-userland/releases"
+        "Download": "https://github.com/bedrocklinux/bedrocklinux-userland/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Berry Linux",
@@ -4209,7 +5221,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "700-800",
-        "Download": "http://berry-lab.net/edownload.html"
+        "Download": "http://berry-lab.net/edownload.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Parabola GNU/Linux-libre",
@@ -4226,7 +5242,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-500",
-        "Download": "https://wiki.parabola.nu/Get_Parabola"
+        "Download": "https://wiki.parabola.nu/Get_Parabola",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Quarkos",
@@ -4243,7 +5263,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-1800",
-        "Download": "https://sourceforge.net/projects/quark-os/files/"
+        "Download": "https://sourceforge.net/projects/quark-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Robolinux",
@@ -4260,7 +5284,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "http://sourceforge.net/projects/robolinux/files/"
+        "Download": "http://sourceforge.net/projects/robolinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "VyOS",
@@ -4277,7 +5305,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "400-500",
-        "Download": "https://community-downloads.vyos.dev/stream/2025.11/vyos-2025.11-generic-amd64.iso"
+        "Download": "https://community-downloads.vyos.dev/stream/2025.11/vyos-2025.11-generic-amd64.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Blade OS",
@@ -4294,7 +5326,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3100",
-        "Download": "https://sourceforge.net/projects/blade-os/files/"
+        "Download": "https://sourceforge.net/projects/blade-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TTOS Linux",
@@ -4311,7 +5347,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4900-5000",
-        "Download": "https://sourceforge.net/projects/ttos-linux/files/"
+        "Download": "https://sourceforge.net/projects/ttos-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "UBports",
@@ -4328,7 +5368,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "532",
-        "Download": "https://devices.ubuntu-touch.io/"
+        "Download": "https://devices.ubuntu-touch.io/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "XeroLinux",
@@ -4345,7 +5389,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "15-20",
         "Image Size (MB)": "3100-4000",
-        "Download": "https://iso.xerolinux.xyz/demo/"
+        "Download": "https://iso.xerolinux.xyz/demo/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "3CX Phone System",
@@ -4358,11 +5406,15 @@
         "Category": "Telephony",
         "Status": "Active",
         "Popularity": "285",
-        "description": "3CX Phone System is a specialist, Debian-based Linux distribution designed to run a complete unified communications platform. The 3CX client, included in the distribution, is a secure, scalable business phone system and contact center solution designed for companies with 25+ users; it can be hosted on-premise, in a private cloud or through a managed service \u2013 all for a single annual rate, with no per-user charges and no third-party data sharing. The ISO image includes a free license for the 3CX PBX edition. The ISO image contains the standard Debian installer which installs a minimal system with the nginx web server, PostgreSQL database, iptables firewall and Secure Shell. Options not relevant to 3CX have been removed from the distribution.",
+        "description": "3CX Phone System is a specialist, Debian-based Linux distribution designed to run a complete unified communications platform. The 3CX client, included in the distribution, is a secure, scalable business phone system and contact center solution designed for companies with 25+ users; it can be hosted on-premise, in a private cloud or through a managed service – all for a single annual rate, with no per-user charges and no third-party data sharing. The ISO image includes a free license for the 3CX PBX edition. The ISO image contains the standard Debian installer which installs a minimal system with the nginx web server, PostgreSQL database, iptables firewall and Secure Shell. Options not relevant to 3CX have been removed from the distribution.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-700",
-        "Download": "https://downloads-global.3cx.com/downloads/debian12iso/debian-amd64-netinst-3cx.iso"
+        "Download": "https://downloads-global.3cx.com/downloads/debian12iso/debian-amd64-netinst-3cx.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Elive",
@@ -4379,7 +5431,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3900",
-        "Download": "https://www.elivecd.org/download/beta/"
+        "Download": "https://www.elivecd.org/download/beta/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Netrunner",
@@ -4396,7 +5452,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2600-2700",
-        "Download": "https://pub.netrunner.com/"
+        "Download": "https://pub.netrunner.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "secureblue",
@@ -4413,7 +5473,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4600-6400",
-        "Download": "https://secureblue.dev/install"
+        "Download": "https://secureblue.dev/install",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Aeon Desktop",
@@ -4430,7 +5494,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://download.opensuse.org/tumbleweed/appliances/"
+        "Download": "https://download.opensuse.org/tumbleweed/appliances/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Archriot",
@@ -4447,7 +5515,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "https://github.com/CyphrRiot/ArchRiot/releases"
+        "Download": "https://github.com/CyphrRiot/ArchRiot/releases",
+        "rolling_release": true,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Flatcar Container Linux",
@@ -4464,7 +5536,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-500",
-        "Download": "https://alpha.release.flatcar-linux.net/amd64-usr/current/"
+        "Download": "https://alpha.release.flatcar-linux.net/amd64-usr/current/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "NuTyX",
@@ -4480,7 +5556,11 @@
         "description": "NuTyX is a French Linux distribution (with multi-language support) built from Linux From Scratch and Beyond Linux From Scratch, with a custom package manager called \"cards\". The package manager can install individual binary packages, a group of related binary packages (e.g. desktop packages, such as KDE or Xfce), and compile source packages from \"ports\". The distribution is designed for intermediate and advanced Linux users.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
-        "Image Size (MB)": ""
+        "Image Size (MB)": "",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AnuBitux",
@@ -4497,7 +5577,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5800-5900",
-        "Download": "https://anubitux.org/download-anubitux/"
+        "Download": "https://anubitux.org/download-anubitux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CAINE",
@@ -4514,7 +5598,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3900-4000",
-        "Download": "http://www.caine-live.net/page5/page5.html"
+        "Download": "http://www.caine-live.net/page5/page5.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Catbird Linux",
@@ -4531,7 +5619,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4400-4500",
-        "Download": "https://sourceforge.net/projects/catbirdlinux/files/"
+        "Download": "https://sourceforge.net/projects/catbirdlinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CRUX",
@@ -4548,7 +5640,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1700",
-        "Download": "https://crux.nu/files/rc/"
+        "Download": "https://crux.nu/files/rc/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LinuxCNC",
@@ -4565,7 +5661,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4100-4200",
-        "Download": "https://www.linuxcnc.org/iso/"
+        "Download": "https://www.linuxcnc.org/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Parted Magic",
@@ -4581,7 +5681,11 @@
         "description": "Parted Magic is a small live CD/USB/PXE with its elemental purpose being to partition hard drives. Although GParted and Parted are the main programs, the CD/USB also offers other applications, such as Partition Image, TestDisk, fdisk, sfdisk, dd, ddrescue, etc. In August 2013 the distribution became a commercial product and is no longer available as a free download.",
         "Beginner-friendly": false,
         "Price (US$)": "13",
-        "Image Size (MB)": "1500-1600"
+        "Image Size (MB)": "1500-1600",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PelicanHPC GNU Linux",
@@ -4598,7 +5702,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1600",
-        "Download": "http://sourceforge.net/projects/pelicanhpc/files/"
+        "Download": "http://sourceforge.net/projects/pelicanhpc/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "UOS",
@@ -4615,7 +5723,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5000-5100",
-        "Download": "https://www.chinauos.com/resource/download-professional"
+        "Download": "https://www.chinauos.com/resource/download-professional",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Daphile",
@@ -4632,7 +5744,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "200-300",
-        "Download": "http://www.daphile.com/#download"
+        "Download": "http://www.daphile.com/#download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OsoLinux",
@@ -4649,7 +5765,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "https://sourceforge.net/projects/oso/files/"
+        "Download": "https://sourceforge.net/projects/oso/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Live Raizo",
@@ -4666,7 +5786,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://sourceforge.net/projects/live-raizo/files/"
+        "Download": "https://sourceforge.net/projects/live-raizo/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "pearOS",
@@ -4683,7 +5807,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "https://pearos.xyz/downloads"
+        "Download": "https://pearos.xyz/downloads",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Peropesis",
@@ -4700,7 +5828,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "200-300",
-        "Download": "https://peropesis.org/get-peropesis"
+        "Download": "https://peropesis.org/get-peropesis",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PLD Linux Distribution",
@@ -4717,7 +5849,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://pld-linux.org/Mirrors"
+        "Download": "http://pld-linux.org/Mirrors",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TileOS",
@@ -4734,7 +5870,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2100",
-        "Download": "https://downloads.tile-os.com/testing/"
+        "Download": "https://downloads.tile-os.com/testing/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ubuntu Pack",
@@ -4751,7 +5891,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4600",
-        "Download": "http://sourceforge.net/projects/ualinux/files/"
+        "Download": "http://sourceforge.net/projects/ualinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": true,
+        "proprietary_friendly": true
     },
     {
         "name": "Vine Linux",
@@ -4768,7 +5912,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "--",
         "Image Size (MB)": "",
-        "Download": "http://www.vinelinux.org/download.html"
+        "Download": "http://www.vinelinux.org/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DEKUVE",
@@ -4785,7 +5933,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4800-4900",
-        "Download": "https://dekuve.top/en/dekuve-21.html"
+        "Download": "https://dekuve.top/en/dekuve-21.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Lakka",
@@ -4802,7 +5954,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "300-700",
-        "Download": "http://www.lakka.tv/get/"
+        "Download": "http://www.lakka.tv/get/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LinuxConsole",
@@ -4819,7 +5975,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1900",
-        "Download": "http://jukebox.linuxconsole.org/official/"
+        "Download": "http://jukebox.linuxconsole.org/official/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SolydXK",
@@ -4836,7 +5996,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2300",
-        "Download": "https://downloads.solydxk.com/nightly/>ISO</a></td>\n    <td><a href="
+        "Download": "https://downloads.solydxk.com/nightly/>ISO</a></td>\n    <td><a href=",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Escuelas Linux",
@@ -4853,15 +6017,27 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7400-7500",
-        "Download": "https://sourceforge.net/projects/escuelaslinux/files/"
+        "Download": "https://sourceforge.net/projects/escuelaslinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "KANOTIX",
-        "url": "https://distrowatch.com/kanotix"
+        "url": "https://distrowatch.com/kanotix",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OSMC",
-        "url": "https://distrowatch.com/osmc"
+        "url": "https://distrowatch.com/osmc",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Pearl Linux OS",
@@ -4878,7 +6054,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3800-3900",
-        "Download": "https://sourceforge.net/projects/pearl-linux-13-preslee/files/"
+        "Download": "https://sourceforge.net/projects/pearl-linux-13-preslee/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "SME Server",
@@ -4895,7 +6075,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-3100",
-        "Download": "http://wiki.contribs.org/SME_Server:Download"
+        "Download": "http://wiki.contribs.org/SME_Server:Download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Venom Linux",
@@ -4912,7 +6096,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1900-2000",
-        "Download": "https://sourceforge.net/projects/venomlinux/files/"
+        "Download": "https://sourceforge.net/projects/venomlinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vincent OS",
@@ -4929,7 +6117,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://sourceforge.net/projects/vincent-os/files/"
+        "Download": "https://sourceforge.net/projects/vincent-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Runtu",
@@ -4946,7 +6138,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "http://sourceforge.net/projects/runtu/files/"
+        "Download": "http://sourceforge.net/projects/runtu/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ximper Linux",
@@ -4963,7 +6159,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "6700-7600",
-        "Download": "https://download.etersoft.ru/pub/Etersoft/XimperLinux/Current/ISO/"
+        "Download": "https://download.etersoft.ru/pub/Etersoft/XimperLinux/Current/ISO/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Astra Linux",
@@ -4979,7 +6179,11 @@
         "description": "Astra Linux is a Russian commercial Linux distribution based on the \"Stable\" branch of Debian, developed by Russia's Astra Group. It was originally created to meet the needs of the Russian army and intelligence agencies, but was later widely adopted by the educational, healthcare and other state institutions, as well as many industrial companies, in order to reduce dependence on Microsoft Windows and other Western software products. Astra's flagship \"Special\" edition is a commercial product available for desktops, servers, mobile and embedded devices; it comes with support options and the highest level of security certification. The company also provides the unsupported, free-to-use \"Common\" edition which is based on an older version of Debian.",
         "Beginner-friendly": false,
         "Price (US$)": "",
-        "Image Size (MB)": "6900-7000"
+        "Image Size (MB)": "6900-7000",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "GoboLinux",
@@ -4996,7 +6200,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2300-2400",
-        "Download": "http://gobolinux.org/downloads.html"
+        "Download": "http://gobolinux.org/downloads.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Skywave Linux",
@@ -5013,7 +6221,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-4100",
-        "Download": "https://sourceforge.net/projects/skywavelinux/files/"
+        "Download": "https://sourceforge.net/projects/skywavelinux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Hyperbola GNU/Linux-libre",
@@ -5030,7 +6242,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "https://wiki.hyperbola.info/doku.php?id=en:main:downloads"
+        "Download": "https://wiki.hyperbola.info/doku.php?id=en:main:downloads",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "NethSecurity",
@@ -5047,7 +6263,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "50-60",
-        "Download": "https://nethsecurity.org/download"
+        "Download": "https://nethsecurity.org/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Porteus Kiosk",
@@ -5063,7 +6283,11 @@
         "description": "Porteus Kiosk is a lightweight Gentoo-based Linux operating system which has been downscaled and confined to allow the use of one application only - the Firefox web browser. The browser has been locked down to prevent users from tampering with settings or downloading and installing software. When the kiosk boots, it automatically opens Firefox to the user's preferred home page. The browsing history is not kept, no passwords are saved, and many menu items have been disabled for increased security. When Firefox is restarted all caches are cleared and the browser reopens with a clean session. Note: Up to version 5.5.0 Porteus Kiosk was free to download and use. Version 6.0.0 and up require an on-line account to download and a paid subscription to activate.",
         "Beginner-friendly": false,
         "Price (US$)": "25-40",
-        "Image Size (MB)": ""
+        "Image Size (MB)": "",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Vitalinux",
@@ -5080,7 +6304,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5900-6000",
-        "Download": "https://mirror.vitalinux.educa.aragon.es/isos/"
+        "Download": "https://mirror.vitalinux.educa.aragon.es/isos/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Canaima GNU/Linux",
@@ -5097,7 +6325,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4200-8100",
-        "Download": "http://repositorio.softwarelibre.gob.ve/canaima/iso/kavanayen/"
+        "Download": "http://repositorio.softwarelibre.gob.ve/canaima/iso/kavanayen/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Exherbo",
@@ -5114,7 +6346,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://exherbo.org/docs/gettingstarted.html"
+        "Download": "http://exherbo.org/docs/gettingstarted.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Fatdog64 Linux",
@@ -5131,7 +6367,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-700",
-        "Download": "http://distro.ibiblio.org/fatdog/iso/"
+        "Download": "http://distro.ibiblio.org/fatdog/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LangitKetujuh OS",
@@ -5148,7 +6388,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4000-6200",
-        "Download": "https://langitketujuh.id/os/download/"
+        "Download": "https://langitketujuh.id/os/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Rockstor",
@@ -5165,7 +6409,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-900",
-        "Download": "https://rockstor.com/dls.html"
+        "Download": "https://rockstor.com/dls.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Zenned",
@@ -5182,7 +6430,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3100-3200",
-        "Download": "https://zenned.gitlab.io/manuals/installation/usb/make/index.html"
+        "Download": "https://zenned.gitlab.io/manuals/installation/usb/make/index.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kumander Linux",
@@ -5199,7 +6451,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "https://www.kumander.org/download-kumander-linux"
+        "Download": "https://www.kumander.org/download-kumander-linux",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Pentoo",
@@ -5216,7 +6472,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2200-5700",
-        "Download": "https://www.pentoo.ch/isos/daily-autobuilds/"
+        "Download": "https://www.pentoo.ch/isos/daily-autobuilds/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "RebeccaBlackOS",
@@ -5233,10 +6493,14 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1500-1600",
-        "Download": "https://sourceforge.net/projects/rebeccablackos/files/"
+        "Download": "https://sourceforge.net/projects/rebeccablackos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
-        "name": "A\u00e7orOS",
+        "name": "AçorOS",
         "url": "https://distrowatch.com/acoros",
         "OS Type": "Linux",
         "Based on": "Debian (Stable)",
@@ -5246,11 +6510,15 @@
         "Category": "Desktop,Live Medium",
         "Status": "Active",
         "Popularity": "343",
-        "description": "A\u00e7orOS is a set of minimalist live Linux distributions based on Debian's \"Stable\" branch. Created in collaboration with the developers of Peppermint Linux, A\u00e7orOS offers four separate images with Cinnamon, LXQt, Openbox and Xfce user interfaces. The distribution's focus is on ease of use, simplified system installation and configuration, and carefully designed visual appearance.",
+        "description": "AçorOS is a set of minimalist live Linux distributions based on Debian's \"Stable\" branch. Created in collaboration with the developers of Peppermint Linux, AçorOS offers four separate images with Cinnamon, LXQt, Openbox and Xfce user interfaces. The distribution's focus is on ease of use, simplified system installation and configuration, and carefully designed visual appearance.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-2400",
-        "Download": "https://sourceforge.net/projects/acor-os/files/AcorOS-6.0/"
+        "Download": "https://sourceforge.net/projects/acor-os/files/AcorOS-6.0/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Plamo Linux",
@@ -5267,7 +6535,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-13000",
-        "Download": "https://repository.plamolinux.org/isos/"
+        "Download": "https://repository.plamolinux.org/isos/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Secure-K OS",
@@ -5284,7 +6556,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-1500",
-        "Download": "https://github.com/LumIT-Labs/open-securekos/releases"
+        "Download": "https://github.com/LumIT-Labs/open-securekos/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "AlterOS",
@@ -5301,7 +6577,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5200-5300",
-        "Download": "https://repo.alter-os.ru/release/AlterOS/x64/9/"
+        "Download": "https://repo.alter-os.ru/release/AlterOS/x64/9/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CROWZ",
@@ -5318,7 +6598,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-900",
-        "Download": "https://sourceforge.net/projects/crowz/files/"
+        "Download": "https://sourceforge.net/projects/crowz/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "HamoniKR",
@@ -5335,7 +6619,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-4400",
-        "Download": "https://hamonikr.org/download_paektu"
+        "Download": "https://hamonikr.org/download_paektu",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "UBLinux",
@@ -5352,7 +6640,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4400-4500",
-        "Download": "https://download.ublinux.ru/iso/"
+        "Download": "https://download.ublinux.ru/iso/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Uncom OS",
@@ -5369,7 +6661,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "6 - 75",
         "Image Size (MB)": "3600-3700",
-        "Download": "https://uncom.tech/download"
+        "Download": "https://uncom.tech/download",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Ditana GNU/Linux",
@@ -5386,7 +6682,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1400-1500",
-        "Download": "https://ditana.org/download/"
+        "Download": "https://ditana.org/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Quirinux",
@@ -5403,7 +6703,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4100-4200",
-        "Download": "https://repo.quirinux.org/dev/isos/"
+        "Download": "https://repo.quirinux.org/dev/isos/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Xebian",
@@ -5420,7 +6724,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1800-1900",
-        "Download": "https://xebian.org/download/xebian-unstable-amd64.hybrid.iso"
+        "Download": "https://xebian.org/download/xebian-unstable-amd64.hybrid.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Dynebolic",
@@ -5437,7 +6745,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1500-1600",
-        "Download": "https://mirrors.ircam.fr/pub/dynebolic/development/"
+        "Download": "https://mirrors.ircam.fr/pub/dynebolic/development/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "rlxos",
@@ -5454,7 +6766,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2200-2300",
-        "Download": "https://rlxos.dev/downloads/"
+        "Download": "https://rlxos.dev/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Network Security Toolkit",
@@ -5471,7 +6787,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5000-5100",
-        "Download": "http://sourceforge.net/projects/nst/files/"
+        "Download": "http://sourceforge.net/projects/nst/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Recalbox",
@@ -5488,7 +6808,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-1600",
-        "Download": "https://www.recalbox.com/download/stable/allimages/"
+        "Download": "https://www.recalbox.com/download/stable/allimages/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Zentyal Server",
@@ -5505,7 +6829,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "http://download.zentyal.com/"
+        "Download": "http://download.zentyal.com/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "CloudLinux OS",
@@ -5522,7 +6850,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "4-18 per month",
         "Image Size (MB)": "1100-14100",
-        "Download": "https://www.repo.cloudlinux.com/cloudlinux/9/iso/x86_64/"
+        "Download": "https://www.repo.cloudlinux.com/cloudlinux/9/iso/x86_64/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Flora Linux-libre",
@@ -5539,7 +6871,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1200-1300",
-        "Download": "https://sourceforge.net/projects/flora-linux-libre/files/trixie-xfce/"
+        "Download": "https://sourceforge.net/projects/flora-linux-libre/files/trixie-xfce/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LxPup",
@@ -5556,7 +6892,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-500",
-        "Download": "https://sourceforge.net/projects/lxpup/files/"
+        "Download": "https://sourceforge.net/projects/lxpup/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "mAid",
@@ -5573,7 +6913,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2400-2600",
-        "Download": "https://sourceforge.net/projects/maid-linux/files/"
+        "Download": "https://sourceforge.net/projects/maid-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OmegaLinux",
@@ -5590,7 +6934,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1800-1900",
-        "Download": "https://github.com/ohjhas/omega-linux/releases"
+        "Download": "https://github.com/ohjhas/omega-linux/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "DAT Linux",
@@ -5607,7 +6955,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3300-3400",
-        "Download": "https://sourceforge.net/projects/dat-linux/files/"
+        "Download": "https://sourceforge.net/projects/dat-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Fluxuan Linux",
@@ -5624,7 +6976,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-1000",
-        "Download": "https://sourceforge.net/projects/fluxuan/files/"
+        "Download": "https://sourceforge.net/projects/fluxuan/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "LibraZiK",
@@ -5641,7 +6997,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4200-4300",
-        "Download": "https://repos.librazik.org/ISO/"
+        "Download": "https://repos.librazik.org/ISO/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Thinstation",
@@ -5658,7 +7018,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-600",
-        "Download": "https://sourceforge.net/projects/thinstation/files/6.1.0/"
+        "Download": "https://sourceforge.net/projects/thinstation/files/6.1.0/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "XCP-ng",
@@ -5675,7 +7039,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-700",
-        "Download": "https://updates.xcp-ng.org/isos/8.3/"
+        "Download": "https://updates.xcp-ng.org/isos/8.3/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "YunoHost",
@@ -5692,7 +7060,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-1000",
-        "Download": "https://repo.yunohost.org/images/"
+        "Download": "https://repo.yunohost.org/images/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Huayra GNU/Linux",
@@ -5709,7 +7081,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "5700-5800",
-        "Download": "https://iso.huayra.educar.gob.ar/release/6.5/"
+        "Download": "https://iso.huayra.educar.gob.ar/release/6.5/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Lernstick",
@@ -5726,7 +7102,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "9000-19000",
-        "Download": "https://www.bfh.ch/de/forschung/forschungsbereiche/lernstick/downloads/"
+        "Download": "https://www.bfh.ch/de/forschung/forschungsbereiche/lernstick/downloads/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Linux Schools",
@@ -5743,7 +7123,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3200",
-        "Download": "http://sourceforge.net/projects/karoshi/files/"
+        "Download": "http://sourceforge.net/projects/karoshi/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "StratOS Linux",
@@ -5760,7 +7144,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2100-2300",
-        "Download": "https://downloads.stratos-linux.org/"
+        "Download": "https://downloads.stratos-linux.org/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "TurnKey Linux",
@@ -5777,7 +7165,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "300-500",
-        "Download": "http://www.turnkeylinux.org/mirrors"
+        "Download": "http://www.turnkeylinux.org/mirrors",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Asahi Linux",
@@ -5794,7 +7186,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "https://asahilinux.org/fedora/"
+        "Download": "https://asahilinux.org/fedora/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BOSS GNU/Linux",
@@ -5811,7 +7207,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2800-2900",
-        "Download": "https://bosslinux.in/sites/default/files/ISOImages/BOSS-10.0-DE-amd64-DVD-v2-17062025.iso"
+        "Download": "https://bosslinux.in/sites/default/files/ISOImages/BOSS-10.0-DE-amd64-DVD-v2-17062025.iso",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Smoothwall Express",
@@ -5828,7 +7228,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "200-400",
-        "Download": "http://sourceforge.net/projects/smoothwall/files/SmoothWall/"
+        "Download": "http://sourceforge.net/projects/smoothwall/files/SmoothWall/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "UBOS",
@@ -5845,7 +7249,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "400-600",
-        "Download": "https://depot.ubosfiles.net/green/x86_64/images/index.html"
+        "Download": "https://depot.ubosfiles.net/green/x86_64/images/index.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Bicom Systems SERVERware",
@@ -5862,7 +7270,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "",
         "Image Size (MB)": "3400-3500",
-        "Download": "https://downloads.bicomsystems.com/serverware/5.0/?C=M&O=D"
+        "Download": "https://downloads.bicomsystems.com/serverware/5.0/?C=M&O=D",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Circle Linux",
@@ -5879,7 +7291,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-7400",
-        "Download": "https://mirror.cclinux.org/pub/circle/10.0/isos/"
+        "Download": "https://mirror.cclinux.org/pub/circle/10.0/isos/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "EterTICs GNU/Linux",
@@ -5896,7 +7312,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3000-3100",
-        "Download": "https://gnuetertics.org/compartir/etertics/"
+        "Download": "https://gnuetertics.org/compartir/etertics/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "PrimTux",
@@ -5913,7 +7333,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "4300-4400",
-        "Download": "http://primtux.fr/telecharger-primtux/"
+        "Download": "http://primtux.fr/telecharger-primtux/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Nemesis Linux",
@@ -5930,7 +7354,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-600",
-        "Download": "https://sourceforge.net/projects/nemesis-linux/files/"
+        "Download": "https://sourceforge.net/projects/nemesis-linux/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Salix",
@@ -5947,7 +7375,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1300-1400",
-        "Download": "https://sourceforge.net/projects/salix/files/"
+        "Download": "https://sourceforge.net/projects/salix/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OviOS Linux",
@@ -5964,7 +7396,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "600-700",
-        "Download": "https://sourceforge.net/projects/ovios/files/"
+        "Download": "https://sourceforge.net/projects/ovios/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "paldo GNU/Linux",
@@ -5981,7 +7417,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "",
-        "Download": "http://www.paldo.org/index-section-downloads.html"
+        "Download": "http://www.paldo.org/index-section-downloads.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Maemo Leste",
@@ -5998,7 +7438,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "500-800",
-        "Download": "https://maedevu.maemo.org/images/"
+        "Download": "https://maedevu.maemo.org/images/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Raspberry Slideshow",
@@ -6015,7 +7459,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "730-730",
-        "Download": "https://sourceforge.net/projects/raspberrypictureframe/files/"
+        "Download": "https://sourceforge.net/projects/raspberrypictureframe/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Skudonet",
@@ -6032,7 +7480,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-900",
-        "Download": "https://github.com/skudonet/skdlb/releases"
+        "Download": "https://github.com/skudonet/skdlb/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "FUSS",
@@ -6049,7 +7501,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7000-12000",
-        "Download": "https://iso.fuss.bz.it/fuss13/"
+        "Download": "https://iso.fuss.bz.it/fuss13/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Raspberry Digital Signage",
@@ -6066,7 +7522,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "800-900",
-        "Download": "https://sourceforge.net/projects/raspberrysign/files/"
+        "Download": "https://sourceforge.net/projects/raspberrysign/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "MODOS",
@@ -6083,7 +7543,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1000-1100",
-        "Download": "https://sourceforge.net/projects/g0ll0z-smollos/files/"
+        "Download": "https://sourceforge.net/projects/g0ll0z-smollos/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Qlustar",
@@ -6100,7 +7564,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1100-1200",
-        "Download": "https://qlustar.com/download/"
+        "Download": "https://qlustar.com/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Serbian GNU/Linux",
@@ -6117,7 +7585,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2000-2600",
-        "Download": "https://sourceforge.net/projects/serbian2014/files/"
+        "Download": "https://sourceforge.net/projects/serbian2014/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Gooroom Platform",
@@ -6134,7 +7606,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1800-1900",
-        "Download": "https://gooroom.kr/content/downloads/iso.php"
+        "Download": "https://gooroom.kr/content/downloads/iso.php",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Side GNU/Linux",
@@ -6151,7 +7627,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1700",
-        "Download": "https://sourceforge.net/projects/lxdeside/files/"
+        "Download": "https://sourceforge.net/projects/lxdeside/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Kwort Linux",
@@ -6168,7 +7648,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1700-1800",
-        "Download": "https://kwort.org/download.html"
+        "Download": "https://kwort.org/download.html",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Milis Linux",
@@ -6185,7 +7669,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2700-2800",
-        "Download": "https://mls.akdeniz.edu.tr/en/download/"
+        "Download": "https://mls.akdeniz.edu.tr/en/download/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "OSINT VM",
@@ -6202,7 +7690,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "1600-1700",
-        "Download": "https://github.com/tracelabs/tlosint-vm/releases"
+        "Download": "https://github.com/tracelabs/tlosint-vm/releases",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "BRGV-OS",
@@ -6219,7 +7711,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "3100-3200",
-        "Download": "https://sourceforge.net/projects/brgv-os/files/"
+        "Download": "https://sourceforge.net/projects/brgv-os/files/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Freeduc",
@@ -6232,11 +7728,15 @@
         "Category": "Desktop,Education",
         "Status": "Active",
         "Popularity": "404",
-        "description": "Freeduc is a French, Debian-based Linux distribution designed to run from an external USB device. Originally created in 2001 by Organization for Free Software in Education and Teaching (OFSET) with the objective of promoting the development of free software for educational purposes, it is now maintained by Linux enthusiasts at Lyc\u00e9e Jean Bart in Dunkerque, France. The Freeduc images are provided in two variants, \"heavy\" and \"simple\", both of which offer exactly the same software, but the former is designed for 16 GB USB drives and includes storage space for newly created files. The distribution uses the Cinnamon desktop.",
+        "description": "Freeduc is a French, Debian-based Linux distribution designed to run from an external USB device. Originally created in 2001 by Organization for Free Software in Education and Teaching (OFSET) with the objective of promoting the development of free software for educational purposes, it is now maintained by Linux enthusiasts at Lycée Jean Bart in Dunkerque, France. The Freeduc images are provided in two variants, \"heavy\" and \"simple\", both of which offer exactly the same software, but the former is designed for 16 GB USB drives and includes storage space for newly created files. The distribution uses the Cinnamon desktop.",
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "2500-2600",
-        "Download": "https://usb.freeduc.org/freeduc-usb/freeduc-jbart/25.02/"
+        "Download": "https://usb.freeduc.org/freeduc-usb/freeduc-jbart/25.02/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "ELEGANCE",
@@ -6253,7 +7753,11 @@
         "Beginner-friendly": false,
         "Price (US$)": "Free",
         "Image Size (MB)": "7700-7800",
-        "Download": "https://miroir.tuxweb.fr/"
+        "Download": "https://miroir.tuxweb.fr/",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Windows 11",
@@ -6270,7 +7774,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "139.00",
         "Image Size (MB)": "5500-6500",
-        "Download": "https://www.microsoft.com/software-download/windows11"
+        "Download": "https://www.microsoft.com/software-download/windows11",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Windows 10",
@@ -6287,7 +7795,11 @@
         "Beginner-friendly": true,
         "Price (US$)": "Paid License",
         "Image Size (MB)": "4500-5800",
-        "Download": "https://www.microsoft.com/software-download/windows10"
+        "Download": "https://www.microsoft.com/software-download/windows10",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     },
     {
         "name": "Windows Server 2022",
@@ -6304,6 +7816,10 @@
         "Beginner-friendly": false,
         "Price (US$)": "1069.00 (Standard)",
         "Image Size (MB)": "4700-5200",
-        "Download": "https://www.microsoft.com/evalcenter/evaluate-windows-server-2022"
+        "Download": "https://www.microsoft.com/evalcenter/evaluate-windows-server-2022",
+        "rolling_release": false,
+        "classic_design": false,
+        "modern_design": false,
+        "proprietary_friendly": false
     }
 ]

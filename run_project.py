@@ -33,6 +33,7 @@ def main():
     # 3. Database setup (init & seed)
     print("\n--- [3/4] Database Setup ---")
     if (backend_path / "setup_db.py").exists():
+        run_command([sys.executable, "enrich_os_data.py"], cwd="backend")
         run_command([sys.executable, "setup_db.py"], cwd="backend")
 
     # 4. Start development servers
