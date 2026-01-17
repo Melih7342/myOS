@@ -20,10 +20,14 @@ function Postpage() {
       navigate('/');
     }
 
+    if (user === null) {
+      return;
+    }
+
     // Fetch post and its comments
     fetchPost(id);
     fetchComments(id);
-  }, [id, navigate]);
+  }, [id, user, navigate]);
 
   const fetchPost = async (id) => {
     if (!id) return;
@@ -44,6 +48,7 @@ function Postpage() {
 
       const data = await response.json();
       setPost(data);
+      console.log(data);
     } catch (error) {
       console.error('Error fetching the post:', error);
       setPostError('Could not load the post. Please try again later.');
@@ -70,7 +75,7 @@ function Postpage() {
       }
 
       const data = await response.json();
-      setComments(data.comments);
+      setComments(data);
     } catch (error) {
       console.error('Error fetching the comments for the post:', error);
       setCommentsError('Could not load the comments for the post. Please try again later.');
@@ -102,6 +107,18 @@ function Postpage() {
     }
   };
 
+  // Datum formatieren
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return {
+      date: date.toLocaleDateString('de-DE'),
+      time: date.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }),
+    };
+  };
+
+  // Get formatted post date only if post exists
+  const postDate = post ? formatDate(post.timestamp) : { date: '', time: '' };
+
   return (
     <>
       <NAVBAR />
@@ -118,11 +135,12 @@ function Postpage() {
           <div className='d-flex flex-column gap-2'>
             <h4>{post.title}</h4>
             <div className='d-flex gap-3 mb-3'>
-              <span className='me-5'>{post.author}</span>
-              <span>{post.date}</span>
+              <span className='me-5'>{post.author.username}</span>
+              <span>{postDate.date}</span>
+              <span>{postDate.time}</span>
             </div>
             <p>{post.content}</p>
-            {user.username === post.author ? (
+            {user.username === post.author.username ? (
               <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
                 <button
                   className='btn btn-primary px-4 py-2'
@@ -179,17 +197,20 @@ function Postpage() {
           <div className='d-flex flex-column gap-2'>
             <h5>Comments</h5>
             <div className='d-flex flex-column gap-4'>
-              {comments.map((comment) => (
-                <div>
-                  <div className='d-flex gap-3 mb-3'>
-                    <span className='me-5'>{comment.author}</span>
-                    <span>{comment.date}</span>
+              {comments.map((comment) => {
+                // Format each comment's date
+                const commentDate = formatDate(comment.timestamp);
+                return (
+                  <div>
+                    <div className='d-flex gap-3 mb-3'>
+                      <span className='me-5'>{comment.author.username}</span>
+                      <span>{commentDate.date}</span>
+                      <span>{commentDate.time}</span>
+                    </div>
+                    <p>{comment.content}</p>
                   </div>
-                  <p>
-                    {comment.content}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

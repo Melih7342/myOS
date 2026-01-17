@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 
@@ -7,37 +7,51 @@ function Commentpage() {
   const { postId } = useParams();
   
   const [post, setPost] = useState(null);
-  const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // Lade Post und Comments
+  // Load Post
   useEffect(() => {
-    Promise.all([
-      fetch(`http://localhost:3100/forum/posts/${postId}`, { credentials: 'include' }),
-      fetch(`http://localhost:3100/forum/posts/${postId}/comments`, { credentials: 'include' })
-    ])
-      .then(([postRes, commentsRes]) => {
-        if (!postRes.ok || !commentsRes.ok) throw new Error('Failed to fetch data');
-        return Promise.all([postRes.json(), commentsRes.json()]);
-      })
-      .then(([postData, commentsData]) => {
-        setPost(postData);
-        setComments(commentsData);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    if (!postId) {
+      navigate('/');
+    }
+
+    fetchPost(postId)
   }, [postId]);
+
+  const fetchPost = async (id) => {
+    if (!id) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      // the url could be different!!!
+      const response = await fetch(`http://localhost:3100/forum/posts/${id}`, {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch the post: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setPost(data);
+    } catch (error) {
+      console.error('Error fetching the post:', error);
+      setError('Could not load the post. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Kommentar absenden
   const handleSubmitComment = async () => {
     if (!newComment.trim()) {
-      alert('Bitte schreibe einen Kommentar');
+      alert('Please write your comment!');
       return;
     }
 
@@ -55,27 +69,14 @@ function Commentpage() {
       });
 
       if (!response.ok) throw new Error('Failed to post comment');
+      else navigate(`/post/${postId}`);
 
-      const newCommentData = await response.json();
-      
-      // Kommentar zur Liste hinzufügen
-      setComments([...comments, newCommentData]);
-      setNewComment('');
-      alert('Kommentar erfolgreich gepostet!');
+      alert('Comment posted sucessfully!');
     } catch (err) {
-      alert('Fehler beim Posten des Kommentars: ' + err.message);
+      alert('Error in posting a comment: ' + err.message);
     } finally {
       setSubmitting(false);
     }
-  };
-
-  // Datum formatieren
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    return {
-      date: date.toLocaleDateString('de-DE'),
-      time: date.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
-    };
   };
 
   if (loading) {
@@ -105,8 +106,6 @@ function Commentpage() {
     );
   }
 
-  const postDate = formatDate(post.timestamp);
-
   return (
     <>
       <NAVBAR />
@@ -119,39 +118,11 @@ function Commentpage() {
         <div className='d-flex flex-column gap-2'>
           <h4>{post.title}</h4>
           <div className='d-flex gap-3 mb-3'>
-            <span className='me-5'>{post.author?.username || 'Anonymous'}</span>
-            <span>{postDate.date}</span>
-            <span>{postDate.time}</span>
+            <span className='me-5'>{post.author.username}</span>
+            <span>{post.date}</span>
           </div>
           <p>{post.content}</p>
         </div>
-
-        {/* Bestehende Kommentare anzeigen */}
-        {comments.length > 0 && (
-          <div className='d-flex flex-column gap-3'>
-            <h5>Kommentare ({comments.length})</h5>
-            {comments.map((comment) => {
-              const commentDate = formatDate(comment.timestamp);
-              return (
-                <div 
-                  key={comment.id} 
-                  className='p-3 border rounded'
-                  style={{ backgroundColor: '#f8f9fa' }}
-                >
-                  <div className='d-flex gap-3 mb-2' style={{ fontSize: '0.9rem' }}>
-                    <span><b>{comment.author?.username || 'Anonymous'}</b></span>
-                    <span className='text-muted'>{commentDate.date}</span>
-                    <span className='text-muted'>{commentDate.time}</span>
-                    {comment.edited_at && (
-                      <span className='text-muted fst-italic'>(bearbeitet)</span>
-                    )}
-                  </div>
-                  <p className='mb-0'>{comment.content}</p>
-                </div>
-              );
-            })}
-          </div>
-        )}
 
         {/* Neuen Kommentar schreiben */}
         <div className='d-flex flex-column gap-2'>
@@ -166,7 +137,7 @@ function Commentpage() {
               style={{ height: '150px', boxShadow: '0px 0px 10px -5px black inset' }}
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              placeholder='Schreibe deinen Kommentar...'
+              placeholder='Write your comment...'
               disabled={submitting}
             ></textarea>
           </div>
@@ -179,7 +150,7 @@ function Commentpage() {
                 borderColor: '#004E72',
                 borderRadius: '0.6rem',
               }}
-              onClick={() => navigate('/forum')}
+              onClick={() => navigate(`/post/${postId}`)}
               disabled={submitting}
             >
               Back
@@ -194,7 +165,7 @@ function Commentpage() {
               onClick={handleSubmitComment}
               disabled={submitting}
             >
-              {submitting ? 'Wird gepostet...' : 'Save'}
+              {submitting ? 'Saving...' : 'Save'}
             </button>
           </div>
         </div>

@@ -120,7 +120,7 @@ export function ForumPart({ posts, loading, error, deletePost, navigate }) {
         ) : posts.length === 0 ? (
           <div className='alert alert-info' role='alert'>
             You haven't created any posts yet.
-            <button className='btn btn-link p-0 ms-2' onClick={() => navigate('/create-post')}>
+            <button className='btn btn-link p-0 ms-2' onClick={() => navigate('/post')}>
               Create your first post
             </button>
           </div>
