@@ -1,6 +1,5 @@
 from security_utils import get_security_info
 
-
 def recommend_distros(user_answers, all_distros):
     scored_results = []
 
@@ -94,7 +93,10 @@ def recommend_distros(user_answers, all_distros):
         if get_first_val('price') == 'Yes' and 'free' not in price:
             score = 0
 
-        if score > 0:
+        # Capping score at 100
+        final_score = min(score, 100)
+
+        if final_score > 0:
             security_info = get_security_info(distro)
 
             scored_results.append({
@@ -103,7 +105,7 @@ def recommend_distros(user_answers, all_distros):
                 "description": distro.get("description", "No description"),
                 "match_score": score,
                 "logo_name": distro.get("logo_name"),
-                "match_percent": min(score, 100),
+                "match_percent": final_score,
                 "category": distro.get("category"),
                 "security_info": security_info,
                 "image_size": distro.get("image_size"),
@@ -111,7 +113,6 @@ def recommend_distros(user_answers, all_distros):
                 "price": distro.get("price")
             })
 
-    # Sort by score descending
     scored_results.sort(key=lambda x: x['match_score'], reverse=True)
 
     return scored_results[:3]
@@ -119,11 +120,8 @@ def recommend_distros(user_answers, all_distros):
 
 def get_avg_size(size_string):
     try:
-        # Standardize string: replace comma, split range
         clean_str = size_string.replace(',', '')
         parts = clean_str.split('-')
-
-        # Extract numbers from parts like "2048MB" or "2GB"
         numbers = []
         for p in parts:
             num_only = ''.join(filter(str.isdigit, p))
