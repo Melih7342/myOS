@@ -21,7 +21,7 @@ function Footer() {
             </Link>
             
             <a 
-              href="https://discord.gg/yourlink" 
+              href="https://discord.gg/dzfmZtAuJ3" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn btn-sm text-white px-3"
