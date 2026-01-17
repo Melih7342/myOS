@@ -39,7 +39,11 @@ def seed():
                     image_size=item.get('Image Size (MB)'),
                     download_url=item.get('Download'),
                     beginner_friendly=item.get('Beginner-friendly', False),
-                    logo_name=logo_name
+                    logo_name=logo_name,
+                    rolling_release = item.get('rolling_release', False),
+                    classic_design = item.get('classic_design', False),
+                    modern_design = item.get('modern_design', False),
+                    proprietary_friendly = item.get('proprietary_friendly', False)
                 )
                 db.session.add(new_distro)
 
