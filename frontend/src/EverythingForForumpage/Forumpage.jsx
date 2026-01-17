@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { MessageCircle, Calendar, User } from "lucide-react";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Forumpage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedPosts, setExpandedPosts] = useState(new Set());
+    const navigate = useNavigate();
 
   useEffect(() => {
     fetchPosts();
@@ -94,7 +96,7 @@ function Forumpage() {
                     </p>
 
                     <button
-                      onClick={() => toggleComments(post.id)}
+                      onClick={() => navigate("/post/" + post.id)}
                       className="btn btn-sm btn-outline-primary"
                     >
                       <MessageCircle size={16} className="me-1" />
