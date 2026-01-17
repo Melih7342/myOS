@@ -6,7 +6,7 @@ import { useAuth } from "../SharedComponents/authContext";
 
 const DiscordLink = ({ className }) => (
   <a
-    href="https://discord.gg/JjKvRccAsH"
+    href="https://discord.gg/dzfmZtAuJ3"
     target="_blank"
     rel="noopener noreferrer"
     className={`btn d-flex align-items-center gap-2 ${className}`}

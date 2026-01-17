@@ -54,6 +54,29 @@ function Accountpage() {
     await refreshAuth();
   };
 
+  // To delete the post for the user!
+  const handleDeletePost = async (postId) => {
+    try {
+      const response = await fetch(`http://localhost:3100/forum/posts/${postId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        fetchUserPosts();
+      } else {
+        alert('Error deleting post.');
+      }
+    } catch (error) {
+      console.error('Delete Error:', error);
+      alert('Network error.');
+    }
+  };
+
   useEffect(() => {
     if (!loading && !user) {
       navigate('/');
@@ -120,7 +143,7 @@ function Accountpage() {
 
         <AccountButtons logout={handleLogout} deleteAccount={handleDeleteAccount} />
 
-        <ForumPart posts={userPosts} loading={postsLoading} error={postsError} />
+        <ForumPart posts={userPosts} loading={postsLoading} error={postsError} deletePost={handleDeletePost} navigate={navigate} />
       </div>
     </>
   );

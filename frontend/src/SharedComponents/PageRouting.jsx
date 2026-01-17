@@ -14,6 +14,7 @@ const Postpage = lazy(() => import('../EverythingForPostpage/Postpage'));
 const PostReviewpage = lazy(() => import('../EverythingForPostReviewpage/PostReviewpage'));
 const Commentpage = lazy(() => import('../EverythingForCommentpage/Commentpage'));
 const NotFound = lazy(() => import("./NotFound"));
+const Glossarypage = lazy(() => import("../EverythingForGlossaryPage/GlossaryPage"));
 
 function PageRouting() {
   return (
@@ -29,9 +30,11 @@ function PageRouting() {
             <Route path='/detail/:id' element={<Detailpage />} />
             <Route path='/catalog' element={<Catalogpage />} />
             <Route path='/post' element={<Postpage />} />
-            <Route path='/postReview' element={<PostReviewpage />} />
             <Route path='/comment/:postId' element={<Commentpage />} />
+            <Route path='/post/:id' element={<PostReviewpage />} />
+            <Route path='/comment' element={<Commentpage />} />
             <Route path='*' element={<NotFound />} />
+            <Route path='/glossary' element={<Glossarypage />} />
           </Routes>
         </AuthProvider>
       </Suspense>

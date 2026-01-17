@@ -7,6 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
+
 def seed():
     # 1. Load the JSON data
     with open('os.json', 'r') as f:
@@ -14,13 +15,13 @@ def seed():
 
     with app.app_context():
         # 2. Optional: Clear the table so you don't get duplicates while testing
-        db.drop_all() 
+        db.drop_all()
         db.create_all()
 
         for item in distros_data:
             # Check if distro already exists to avoid errors
             exists = Distribution.query.filter_by(name=item.get('name')).first()
-            url = item.get('url', '') 
+            url = item.get('url', '')
             logo_name = url.strip('/').split('/')[-1]
             if not exists:
                 new_distro = Distribution(
@@ -41,10 +42,11 @@ def seed():
                     logo_name=logo_name
                 )
                 db.session.add(new_distro)
-        
+
         # 3. Save everything to the database
         db.session.commit()
         print(f"Successfully added {len(distros_data)} distros to the database!")
+
 
 if __name__ == "__main__":
     seed()
