@@ -19,7 +19,14 @@ function Footer() {
             >
               <i className="bi bi-grid-3x3-gap me-1"></i> Catalog
             </Link>
-            
+
+            <Link 
+              to="/glossary"
+              className="text-decoration-none text-muted me-4"
+            >
+              <i className="bi bi-book me-1"></i> Glossary
+            </Link>
+
             <a 
               href="https://discord.gg/dzfmZtAuJ3" 
               target="_blank" 
