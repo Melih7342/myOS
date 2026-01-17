@@ -5,35 +5,31 @@ def recommend_distros(user_answers, all_distros):
 
     for distro in all_distros:
         score = 0
-        # Scoring System:
-        # Must-have --> 20 points
-        # Very important --> 15 points
-        # Important --> 10 points
-        # Nice to have --> 5 points
-        # 100 points are the maximum
 
+        # Extract basic info from distro object
         category = (distro.get('category') or "").lower()
         price = (distro.get('price') or "").lower()
         image_size_str = (distro.get('image_size') or "0")
+        based_on = (distro.get('based_on') or "").lower()
 
         def get_first_val(key):
             val = user_answers.get(key, [])
             return val[0] if isinstance(val, list) and len(val) > 0 else val
 
-        # 1. Use Case
+        # 1. Use Case (20 pts)
         selected_use_case = user_answers.get('use_case', [])
         if len(selected_use_case) > 0:
             if selected_use_case[0].lower() in category:
                 score += 20
 
-        # 2. Experience
+        # 2. Experience (15 pts)
         exp = get_first_val('experience')
         if exp == 'Beginner' and distro.get('beginner_friendly'):
             score += 15
         elif exp == 'Intermediate' and distro.get('beginner_friendly'):
             score += 5
 
-        # 3. Popularity
+        # 3. Popularity (15 pts)
         pop_pref = get_first_val('popularity')
         try:
             pop_value = int(distro.get('popularity') or 999)
@@ -45,36 +41,71 @@ def recommend_distros(user_answers, all_distros):
         elif pop_pref == "Would be nice" and pop_value <= 20:
             score += 5
 
-        # 4. Hardware
+        # 4. Hardware (15 pts)
         if get_first_val('hardware') == 'Old' and 'old computers' in category:
             score += 15
 
-        # 5. GUI
+        # 5. GUI (15 pts)
         if get_first_val('gui') == 'Yes' and 'desktop' in category:
             score += 15
 
-        # 6. Light Weight
+        # 6. Light Weight (10 pts)
         if get_first_val('weight') == 'Yes' and get_avg_size(image_size_str) <= 1000:
             score += 10
 
-        # 7. Live Medium
+        # 7. Live Medium (10 pts)
         if get_first_val('livetest') == 'Yes' and 'live medium' in category:
             score += 10
 
-        # 8. Knockout: Price
+        # 8. Update Frequency (10 pts)
+        update_pref = get_first_val('update_frequency')
+        is_rolling = distro.get('rolling_release')
+        if update_pref == "Very important (Rolling Release)" and is_rolling:
+            score += 10
+        elif update_pref == "Not important (Stable Release)" and not is_rolling:
+            score += 10
+
+        # 9. Design (10 pts)
+        design_pref = get_first_val('design')
+        if design_pref == "Classic (like Windows)" and distro.get('classic_design'):
+            score += 10
+        elif design_pref == "Modern (like macOS/Gnome)" and distro.get('modern_design'):
+            score += 10
+
+        # 10. Philosophy (10 pts)
+        philosophy_pref = get_first_val('philosophy')
+        is_friendly = distro.get('proprietary_friendly')
+        if philosophy_pref == "Proprietary is fine" and is_friendly:
+            score += 10
+        elif philosophy_pref == "Open Source only" and not is_friendly:
+            score += 10
+
+        # 11. System Base (10 pts)
+        base_pref = get_first_val('system_base')
+        if base_pref == "Debian / Ubuntu based" and ("debian" in based_on or "ubuntu" in based_on):
+            score += 10
+        elif base_pref == "Arch based" and "arch" in based_on:
+            score += 10
+        elif base_pref == "Fedora based" and "fedora" in based_on:
+            score += 10
+
+        # 12. Knockout: Price
         if get_first_val('price') == 'Yes' and 'free' not in price:
             score = 0
 
-        if score > 0:
+        # Capping score at 100
+        final_score = min(score, 100)
+
+        if final_score > 0:
             security_info = get_security_info(distro)
-            
+
             scored_results.append({
                 "id": distro.get("id"),
                 "name": distro.get("name"),
                 "description": distro.get("description", "No description"),
                 "match_score": score,
                 "logo_name": distro.get("logo_name"),
-                "match_percent": min(score, 100),
+                "match_percent": final_score,
                 "category": distro.get("category"),
                 "security_info": security_info,
                 "image_size": distro.get("image_size"),
@@ -89,8 +120,13 @@ def recommend_distros(user_answers, all_distros):
 
 def get_avg_size(size_string):
     try:
-        parts = size_string.split('-')
-        numbers = [int(s.strip().replace(',', '')) for s in parts if s.strip().isdigit()]
+        clean_str = size_string.replace(',', '')
+        parts = clean_str.split('-')
+        numbers = []
+        for p in parts:
+            num_only = ''.join(filter(str.isdigit, p))
+            if num_only:
+                numbers.append(int(num_only))
 
         if len(numbers) == 2:
             return sum(numbers) / 2

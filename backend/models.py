@@ -23,6 +23,10 @@ class Distribution(db.Model):
     logo_name = db.Column(db.String(100), nullable=True)
     beginner_friendly = db.Column(db.Boolean, default=False)
     youtube_link = db.Column(db.String(500), nullable=True)
+    rolling_release = db.Column(db.Boolean, default=False)
+    classic_design = db.Column(db.Boolean, default=False)
+    modern_design = db.Column(db.Boolean, default=False)
+    proprietary_friendly = db.Column(db.Boolean, default=False)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -30,6 +30,7 @@ function PageRouting() {
             <Route path='/detail/:id' element={<Detailpage />} />
             <Route path='/catalog' element={<Catalogpage />} />
             <Route path='/post' element={<Postpage />} />
+            <Route path='/comment/:postId' element={<Commentpage />} />
             <Route path='/post/:id' element={<PostReviewpage />} />
             <Route path='/post/:postId/comment' element={<Commentpage />} />
             <Route path='*' element={<NotFound />} />
