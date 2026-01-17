@@ -1,17 +1,62 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from '../SharedComponents/authContext.jsx';
 
 function Postpage() {
   const navigate = useNavigate();
+  const { id } = useParams();
   const { user } = useAuth();
   const [title, setTitle] = useState('Distro for Gaming');
   const [content, setContent] = useState('Im seasrching for a distro!');
   const [loading, setLoading] = useState(false);
+  const [loadingPost, setLoadingPost] = useState(false); // Separate loading for fetching post
   const [error, setError] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
 
-  console.log(useAuth());
+  // Fetch post data if we're editing (id exists in URL)
+  useEffect(() => {
+    if (id && user) {
+      fetchPostForEditing(id);
+    }
+  }, [id, user]);
+
+  const fetchPostForEditing = async (postId) => {
+    setLoadingPost(true);
+    try {
+      const response = await fetch(`http://localhost:3100/forum/posts/${postId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch post: ${response.status}`);
+      }
+
+      const postData = await response.json();
+
+      // Check if current user is the author
+      if (user.username !== postData.author.username) {
+        setError('You can only edit your own posts');
+        navigate(-1);
+        return;
+      }
+
+      // Set form with existing data
+      setTitle(postData.title);
+      setContent(postData.content);
+      setIsEditing(true);
+    } catch (error) {
+      console.error('Error fetching post:', error);
+      setError('Failed to load post for editing');
+      navigate('/forum');
+    } finally {
+      setLoadingPost(false);
+    }
+  };
 
   const handleBack = () => {
     // Navigate back or to a specific page
@@ -35,27 +80,28 @@ function Postpage() {
     setError('');
 
     try {
-
       const postData = {
         username: user.username,
         title: title.trim(),
         content: content.trim(),
       };
 
-      const responseGet = await fetch('http://localhost:3100/forum/posts', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      console.log(responseGet);
+      let url = 'http://localhost:3100/forum/posts';
+      let method = 'POST';
+
+      // If editing, use PUT method and include post ID
+      if (isEditing && id) {
+        url = `http://localhost:3100/forum/posts/${id}`;
+        method = 'PUT';
+      }
 
       // Send POST request to backend
-      const response = await fetch('http://localhost:3100/forum/posts', {
-        method: 'POST',
+      const response = await fetch(url, {
+        method,
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(postData),
       });
 
@@ -65,18 +111,36 @@ function Postpage() {
         throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      if (response.status === 200 || response.status === 201) {
-        // Navigate to another page after successful post
-        navigate('/account'); // Change this to your desired route
-        // OR navigate(`/post/${response.data.id}`); // If your backend returns the post ID
+      // Redirect after successful save
+      if (isEditing) {
+        // If editing, go back to the post view
+        navigate(`/post/${id}`);
+      } else {
+        // If creating new, go to account or forum
+        navigate('/account');
       }
     } catch (error) {
       console.error('Error saving post:', error);
-      setError('Failed to save post. Please try again.');
+      setError(`Failed to ${isEditing ? 'update' : 'save'} post. Please try again.`);
     } finally {
       setLoading(false);
     }
   };
+
+  // Show loading while fetching post for editing
+  if (loadingPost) {
+    return (
+      <>
+        <NAVBAR />
+        <div style={{ marginTop: '8rem', textAlign: 'center' }}>
+          <div className='spinner-border text-primary' role='status'>
+            <span className='visually-hidden'>Loading post...</span>
+          </div>
+          <p>Loading post for editing...</p>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -86,7 +150,7 @@ function Postpage() {
         style={{ color: '#004E72', marginTop: '8rem', padding: '0rem 10rem' }}
       >
         <h3>Post</h3>
-        <p>Write you post here:</p>
+        <p>{isEditing ? 'Edit your post here:' : 'Write your post here:'}</p>
         <div>
           <label className='form-label'>
             <b>Title</b>
@@ -144,10 +208,12 @@ function Postpage() {
                   role='status'
                   aria-hidden='true'
                 ></span>
-                Saving...
+                {isEditing ? 'Updating...' : 'Saving...'}
               </>
+            ) : isEditing ? (
+              'Update Post'
             ) : (
-              'Save'
+              'Save Post'
             )}
           </button>
         </div>

@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from '../SharedComponents/authContext';
 
-function Postpage() {
+function PostReviewpage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useAuth();
@@ -48,7 +48,6 @@ function Postpage() {
 
       const data = await response.json();
       setPost(data);
-      console.log(data);
     } catch (error) {
       console.error('Error fetching the post:', error);
       setPostError('Could not load the post. Please try again later.');
@@ -107,6 +106,29 @@ function Postpage() {
     }
   };
 
+  // To delete the comment.
+  const handleDeleteComment = async (commentId) => {
+    try {
+      const response = await fetch(`http://localhost:3100/forum/comments/${commentId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        fetchComments(id);
+      } else {
+        alert('Error deleting comment.');
+      }
+    } catch (error) {
+      console.error('Delete Error:', error);
+      alert('Network error.');
+    }
+  };
+
   // Datum formatieren
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
@@ -140,6 +162,7 @@ function Postpage() {
               <span>{postDate.time}</span>
             </div>
             <p>{post.content}</p>
+
             {user.username === post.author.username ? (
               <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
                 <button
@@ -150,6 +173,7 @@ function Postpage() {
                     borderColor: '#004E72',
                     borderRadius: '0.6rem',
                   }}
+                  onClick={() => navigate(`/postEdit/${post.id}`)}
                 >
                   Edit
                 </button>
@@ -201,13 +225,42 @@ function Postpage() {
                 // Format each comment's date
                 const commentDate = formatDate(comment.timestamp);
                 return (
-                  <div>
+                  <div key={comment.id}>
                     <div className='d-flex gap-3 mb-3'>
                       <span className='me-5'>{comment.author.username}</span>
                       <span>{commentDate.date}</span>
                       <span>{commentDate.time}</span>
                     </div>
                     <p>{comment.content}</p>
+                    {user.username === comment.author.username ? (
+                      <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
+                        <button
+                          className='btn btn-primary px-4 py-2'
+                          style={{
+                            background: 'transparent',
+                            color: '#004E72',
+                            borderColor: '#004E72',
+                            borderRadius: '0.6rem',
+                          }}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className='btn btn-primary px-4 py-2'
+                          style={{
+                            background: 'transparent',
+                            color: '#FF2132',
+                            borderColor: '#FF2132',
+                            borderRadius: '0.6rem',
+                          }}
+                          onClick={() => handleDeleteComment(comment.id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 );
               })}
@@ -219,4 +272,4 @@ function Postpage() {
   );
 }
 
-export default Postpage;
+export default PostReviewpage;
