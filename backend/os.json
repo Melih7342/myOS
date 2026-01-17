@@ -340,10 +340,6 @@
         "Download": "https://sourceforge.net/projects/antix-linux/files/"
     },
     {
-        "name": "Q4OS",
-        "url": "https://distrowatch.com/q4os"
-    },
-    {
         "name": "Bazzite",
         "url": "https://distrowatch.com/bazzite",
         "OS Type": "Linux",
