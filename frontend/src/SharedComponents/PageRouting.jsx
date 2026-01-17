@@ -30,7 +30,7 @@ function PageRouting() {
             <Route path='/catalog' element={<Catalogpage />} />
             <Route path='/post' element={<Postpage />} />
             <Route path='/postReview' element={<PostReviewpage />} />
-            <Route path='/comment' element={<Commentpage />} />
+            <Route path='/comment/:postId' element={<Commentpage />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </AuthProvider>

@@ -274,11 +274,18 @@ def get_user_posts(username):
 # Post a comment under a post
 @app.route('/forum/posts/<int:post_id>/comments', methods=['POST'])
 def add_comment(post_id):
-    data = request.get_json()
-    user = User.query.filter_by(username=data.get('username')).first()
-
-    if not user:
+    # Session-basierte Auth statt username im Body
+    if "user_id" not in session:
         return jsonify({"message": "Login required"}), 401
+    
+    post = Post.query.get_or_404(post_id)
+    
+    data = request.get_json()
+    
+    if not data.get('content'):
+        return jsonify({"error": "Content is required"}), 400
+    
+    user = User.query.get(session["user_id"])
 
     new_comment = Comment(
         content=data.get('content'),
@@ -289,7 +296,18 @@ def add_comment(post_id):
     db.session.add(new_comment)
     db.session.commit()
 
-    return jsonify({"message": "Reply sent!"}), 201
+    return jsonify({
+        "id": new_comment.id,
+        "content": new_comment.content,
+        "timestamp": new_comment.timestamp.isoformat(),
+        "edited_at": None,
+        "post_id": new_comment.post_id,
+        "user_id": new_comment.user_id,
+        "author": {
+            "id": user.id,
+            "username": user.username
+        }
+    }), 201
 
 
 # Get all comments to a post
@@ -304,14 +322,17 @@ def get_comments(post_id):
         output.append({
             "id": comment.id,
             "content": comment.content,
-            "author": comment.author.username,
-            "date": comment.timestamp.strftime("%Y-%m-%d %H:%M")
+            "timestamp": comment.timestamp.isoformat(),
+            "edited_at": comment.edited_at.isoformat() if comment.edited_at else None,
+            "post_id": comment.post_id,
+            "user_id": comment.user_id,
+            "author": {
+                "id": comment.author.id,
+                "username": comment.author.username
+            }
         })
 
-    return jsonify({
-        "post_title": post.title,
-        "comments": output
-    })
+    return jsonify(output), 200
 
 
 # Get single post by ID
@@ -323,8 +344,12 @@ def get_single_post(post_id):
         "id": post.id,
         "title": post.title,
         "content": post.content,
-        "author": post.author.username,
-        "date": post.timestamp.strftime("%Y-%m-%d %H:%M")
+        "timestamp": post.timestamp.isoformat(),
+        "user_id": post.user_id,
+        "author": {
+            "id": post.author.id,
+            "username": post.author.username
+        }
     }), 200
 
 # Update post
