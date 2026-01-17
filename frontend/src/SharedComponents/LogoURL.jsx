@@ -6,9 +6,9 @@ export const getDistroLogo = (distro) => {
 
   if (osType === "windows") {
     if (name.includes("11")) {
-      return "/windows_logos/window_11.png";
+      return "/windows_logos/windows_11.png";
     } else if (name.includes("10")) {
-      return "/windows_logos/window_10.png";
+      return "/windows_logos/windows_10.svg";
     } else if (name.includes("2022")) {
       return "/windows_logos/Windows_Server_2022.png";
     }

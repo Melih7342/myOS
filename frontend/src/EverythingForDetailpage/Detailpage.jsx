@@ -3,6 +3,7 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
 import { useAuth } from "../SharedComponents/authContext";
 import {getDistroLogo} from "../SharedComponents/LogoURL.jsx";
+import InfoTooltip from '../SharedComponents/InfoTooltip.jsx';
 
 function Detailpage() {
   const navigate = useNavigate();
@@ -93,7 +94,8 @@ function Detailpage() {
 
                 <div className='row gap-3 pb-3' style={{fontSize: '13pt'}}>
                     <p className='col'>OS type: <b>{distro.os_type || 'N/A'}</b></p>
-                    <p className='col'>Category: <b>{distro.category ? distro.category.split(',').join(', ') : 'N/A'}</b></p>
+                    <p className='col'> <InfoTooltip link="/glossary" /> 
+                      Category: <b>{distro.category ? distro.category.split(',').join(', ') : 'N/A'}</b></p>
                 </div>
 
                 <p style={{fontSize: '11pt', lineHeight: '1.6'}}>
@@ -102,7 +104,11 @@ function Detailpage() {
 
                 <div className='d-flex gap-5 pb-2'>
                   <span>Based on: <b>{distro.based_on ? distro.based_on.split(',').join(', ') : 'N/A'}</b></span>
-                  <span>Desktop: <b>{distro.desktop ? distro.desktop.split(',').join(', ') : 'N/A'}</b></span>
+                  <span>
+                    <InfoTooltip text="The Desktop Environment is the graphical interface you see, including the menus, icons, and windows."
+                    link="/glossary" />
+                    Desktop: <b>{distro.desktop ? distro.desktop.split(',').join(', ') : 'N/A'}</b>
+                  </span>
                 </div>
                 <div className='d-flex gap-5 pb-4'>
                     <span>Price: <b>{distro.price || 'Free'}</b></span>
