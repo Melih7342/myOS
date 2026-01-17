@@ -28,7 +28,9 @@ def main():
         if not (frontend_path / "node_modules").exists():
             run_command("npm install", cwd="frontend", shell=True)
         else:
-            print("node_modules already exists, skipping.")
+            lucide_path = frontend_path / "node_modules" / "lucide-react"
+            if not lucide_path.exists():
+                run_command("npm install", cwd="frontend", shell=True)
 
     # 3. Database setup (init & seed)
     print("\n--- [3/4] Database Setup ---")
