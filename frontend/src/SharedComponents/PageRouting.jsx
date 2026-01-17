@@ -34,6 +34,7 @@ function PageRouting() {
             <Route path='/postEdit/:id' element={<Postpage />} />
             <Route path='/post/:id' element={<PostReviewpage />} />
             <Route path='/post/:postId/comment' element={<Commentpage />} />
+            <Route path='/post/:postId/comment/:commentId' element={<Commentpage />} />
             <Route path='*' element={<NotFound />} />
             <Route path='/glossary' element={<Glossarypage />} />
             <Route path='/forum' element={<Forumpage />} />

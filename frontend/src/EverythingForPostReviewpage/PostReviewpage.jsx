@@ -242,6 +242,7 @@ function PostReviewpage() {
                             borderColor: '#004E72',
                             borderRadius: '0.6rem',
                           }}
+                          onClick={() => navigate(`/post/${post.id}/comment/${comment.id}`)}
                         >
                           Edit
                         </button>
