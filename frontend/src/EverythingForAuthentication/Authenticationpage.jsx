@@ -17,7 +17,7 @@ function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -40,11 +40,27 @@ function AuthPage() {
     if (result.ok) {
       if (isLogin) {
         setSuccessMessage("Login successful: " + result.data.username);
-         await refreshAuth();
-        navigate("/");
+        await refreshAuth();
+
+        setTimeout(() => {
+          navigate("/");
+        }, 500);
       } else {
-        setSuccessMessage("Registration successful: " + result.data.username);
-        setIsLogin(true);
+        setSuccessMessage("Registration successful! Logging you in...");
+
+        setTimeout(async () => {
+          const loginResult = await auth(username, password, true);
+
+          if (loginResult.ok) {
+            await refreshAuth();
+            navigate("/");
+          } else {
+            setIsLogin(true);
+            setErrorMessage("Please log in with your new account.");
+          }
+          setIsSubmitting(false);
+        }, 800);
+        return;
       }
     } else {
       setErrorMessage("Error: " + result.data.message);
@@ -53,16 +69,16 @@ function AuthPage() {
     setIsSubmitting(false);
   };
 
+  const toggleMode = () => {
+    setIsLogin(!isLogin);
+    setUsername("");
+    setPassword("");
+    setErrorMessage("");
+    setSuccessMessage("");
+  };
+
   return (
     <>
-      {/*
-      Navbar: Is at the top of every single page.
-
-      AuthComponent: This is the component that handles both Login and Registration forms. This is just a block
-      that is centered in the middle of the page, where we can either log in or register, depending on the "isLogin" state.
-
-      We pass down all necessary states and functions as props to the AuthComponent.
-      */}
       <Navbar />
 
       <AuthComponent
@@ -72,14 +88,12 @@ function AuthPage() {
         password={password}
         setPassword={setPassword}
         handleSubmit={handleSubmit}
-        toggleMode={() => setIsLogin(!isLogin)}
+        toggleMode={toggleMode}
         isSubmitting={isSubmitting}
         errorMessage={errorMessage}
         successMessage={successMessage}
       />
-
     </>
-    
   );
 }
 
