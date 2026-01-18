@@ -105,7 +105,7 @@ export function ForumPart({ posts, loading, error, deletePost, navigate }) {
   return (
     <>
       <div>
-        <h4>Forum</h4>
+        <h4>My Posts</h4>
         {loading ? (
           <div className='text-center py-4'>
             <div className='spinner-border text-primary' role='status'>

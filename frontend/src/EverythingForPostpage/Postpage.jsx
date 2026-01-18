@@ -8,7 +8,7 @@ function Postpage() {
   const { id } = useParams();
   const { user } = useAuth();
   const [title, setTitle] = useState('Distro for Gaming');
-  const [content, setContent] = useState('Im seasrching for a distro!');
+  const [content, setContent] = useState('Im searching for a distro!');
   const [loading, setLoading] = useState(false);
   const [loadingPost, setLoadingPost] = useState(false); // Separate loading for fetching post
   const [error, setError] = useState('');
