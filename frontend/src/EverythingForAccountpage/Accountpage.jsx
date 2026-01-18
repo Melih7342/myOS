@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 import {
   AccountHeader,
   AccountButtons,
@@ -133,7 +134,7 @@ function Accountpage() {
     <>
       <NAVBAR />
 
-      <div className='container' style={{ color: '#004E72', marginTop: '8rem' }}>
+      <div className='container' style={{ color: '#004E72', marginTop: '8rem', marginBottom: '4rem' }}>
         <AccountHeader
           username={user.username}
           favoriteOS={user.favorite_os_name}
@@ -145,6 +146,7 @@ function Accountpage() {
 
         <ForumPart posts={userPosts} loading={postsLoading} error={postsError} deletePost={handleDeletePost} navigate={navigate} />
       </div>
+      <Footer />
     </>
   );
 }

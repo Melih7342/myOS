@@ -18,8 +18,8 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="text-center mt-5">
-          <h1>Etwas ist schiefgelaufen</h1>
-          <p>Bitte Seite neu laden oder später versuchen.</p>
+          <h1>Something went wrong!</h1>
+          <p>Please reload page.</p>
         </div>
       );
     }

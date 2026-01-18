@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
+import Footer from "../SharedComponents/FooterComponent.jsx";
 import { useAuth } from '../SharedComponents/authContext.jsx';
 
 function Postpage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user } = useAuth();
-  const [title, setTitle] = useState('Distro for Gaming');
-  const [content, setContent] = useState('Im seasrching for a distro!');
+  const [title, setTitle] = useState('...');
+  const [content, setContent] = useState('...');
   const [loading, setLoading] = useState(false);
   const [loadingPost, setLoadingPost] = useState(false); // Separate loading for fetching post
   const [error, setError] = useState('');
@@ -218,6 +219,7 @@ function Postpage() {
           </button>
         </div>
       </div>
+      
     </>
   );
 }
