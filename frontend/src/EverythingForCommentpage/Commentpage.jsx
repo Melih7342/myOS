@@ -229,11 +229,8 @@ function Commentpage() {
           </div>
           <div className='d-flex flex-row justify-content-end gap-4 mt-3'>
             <button
-              className='btn btn-primary px-4 py-2'
+              className='secondaryButton px-4 py-2'
               style={{
-                background: 'transparent',
-                color: '#004E72',
-                borderColor: '#004E72',
                 borderRadius: '0.6rem',
               }}
               onClick={() => navigate(`/post/${postId}`)}
@@ -242,9 +239,8 @@ function Commentpage() {
               Back
             </button>
             <button
-              className='btn btn-primary px-4 py-2'
+              className='primaryButton px-4 py-2'
               style={{
-                background: '#004E72',
                 color: '#FEFEFE',
                 borderRadius: '0.6rem',
               }}

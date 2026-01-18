@@ -214,6 +214,11 @@ function Detailpage() {
                   </p>
                 )}
               </div>
+                      Download Link ↗
+                    </a>
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="col-md-4 d-flex justify-content-center align-items-start mt-5 mt-md-0">
@@ -250,6 +255,7 @@ function Detailpage() {
                 )}
               </div>
             </div>
+          </div>
           </div>
 
           <div className="mt-5 pb-5">

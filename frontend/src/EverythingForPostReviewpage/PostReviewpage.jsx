@@ -183,30 +183,25 @@ function PostReviewpage() {
       <NAVBAR />
 
       <div
-        className="container d-flex flex-column gap-3"
-        style={{ color: "#004E72", marginTop: "8rem", padding: "0rem 10rem" }}
+        className='container d-flex flex-column gap-3'
+        style={{ color: '#004E72', marginTop: '8rem', padding: '0rem 10rem' }}
       >
-        <div className="d-flex flex-column gap-2">
+        <div className='d-flex flex-column gap-2'>
           <h4>{post.title}</h4>
-          <div className="d-flex gap-3 mb-3">
-            <span className="me-5">
-              {post.author?.username || "Deleted User"}
-            </span>
+          <div className='d-flex gap-3 mb-3'>
+            <span className='me-5'>{post.author?.username || 'Deleted User'}</span>
             <span>{postDate.date}</span>
             <span>{postDate.time}</span>
           </div>
-          <p style={{ whiteSpace: "pre-wrap" }}>{post.content}</p>
+          <p style={{ whiteSpace: 'pre-wrap' }}>{post.content}</p>
 
-          <div className="d-flex flex-row justify-content-end gap-4 mb-4">
+          <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
             <button
-              className="btn btn-primary px-4 py-2"
+              className='secondaryButton px-4 py-2'
               style={{
-                background: "transparent",
-                color: "#004E72",
-                borderColor: "#004E72",
-                borderRadius: "0.6rem",
+                borderRadius: '0.6rem',
               }}
-              onClick={() => navigate("/forum")}
+              onClick={() => navigate('/forum')}
             >
               Back to Forum
             </button>
@@ -214,24 +209,18 @@ function PostReviewpage() {
             {user && post.author && user.username === post.author.username ? (
               <>
                 <button
-                  className="btn btn-primary px-4 py-2"
+                  className='secondaryButton px-4 py-2'
                   style={{
-                    background: "transparent",
-                    color: "#004E72",
-                    borderColor: "#004E72",
-                    borderRadius: "0.6rem",
+                    borderRadius: '0.6rem',
                   }}
                   onClick={() => navigate(`/postEdit/${post.id}`)}
                 >
                   Edit
                 </button>
                 <button
-                  className="btn btn-primary px-4 py-2"
+                  className='tertiaryButton px-4 py-2'
                   style={{
-                    background: "transparent",
-                    color: "#FF2132",
-                    borderColor: "#FF2132",
-                    borderRadius: "0.6rem",
+                    borderRadius: '0.6rem',
                   }}
                   onClick={() => handleDeletePost(post.id)}
                 >
@@ -240,12 +229,9 @@ function PostReviewpage() {
               </>
             ) : (
               <button
-                className="btn btn-primary px-4 py-2"
+                className='secondaryButton px-4 py-2'
                 style={{
-                  background: "transparent",
-                  color: "#004E72",
-                  borderColor: "#004E72",
-                  borderRadius: "0.6rem",
+                  borderRadius: '0.6rem',
                 }}
                 onClick={handleCommentClick}
               >
@@ -255,46 +241,46 @@ function PostReviewpage() {
           </div>
         </div>
 
-        <div className="d-flex flex-column gap-2">
+        <div className='d-flex flex-column gap-2'>
           <h5>Comments {comments.length > 0 && `(${comments.length})`}</h5>
           {comments.length === 0 ? (
-            <p className="text-muted">
-              No comments yet. Be the first to comment!
-            </p>
+            <p className='text-muted'>No comments yet. Be the first to comment!</p>
           ) : (
-            <div className="d-flex flex-column gap-4">
+            <div className='d-flex flex-column gap-4'>
               {comments.map((comment) => {
                 const commentDate = formatDate(comment.timestamp);
                 return (
-                  <div key={comment.id} className="border-bottom pb-3">
-                    <div className="d-flex gap-3 mb-2">
-                      <span className="fw-semibold">
-                        {comment.author?.username || "Deleted User"}
+                  <div key={comment.id} className='border-bottom pb-3'>
+                    <div className='d-flex gap-3 mb-2'>
+                      <span className='fw-semibold'>
+                        {comment.author?.username || 'Deleted User'}
                       </span>
-                      <span className="text-muted">{commentDate.date}</span>
-                      <span className="text-muted">{commentDate.time}</span>
+                      <span className='text-muted'>{commentDate.date}</span>
+                      <span className='text-muted'>{commentDate.time}</span>
                     </div>
-                    <p style={{ whiteSpace: "pre-wrap" }}>{comment.content}</p>
-                    {user &&
-                      comment.author &&
-                      user.username === comment.author.username && (
-                        <div className="d-flex flex-row justify-content-end gap-3">
-                          <button
-                            className="btn btn-sm btn-outline-primary"
-                            onClick={() =>
-                              navigate(`/post/${post.id}/comment/${comment.id}`)
-                            }
-                          >
-                            Edit
-                          </button>
-                          <button
-                            className="btn btn-sm btn-outline-danger"
-                            onClick={() => handleDeleteComment(comment.id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      )}
+                    <p style={{ whiteSpace: 'pre-wrap' }}>{comment.content}</p>
+                    {user && comment.author && user.username === comment.author.username && (
+                      <div className='d-flex flex-row justify-content-end gap-3'>
+                        <button
+                          className='secondaryButton px-3 py-1'
+                          style={{
+                            borderRadius: '0.5rem',
+                          }}
+                          onClick={() => navigate(`/post/${post.id}/comment/${comment.id}`)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className='tertiaryButton px-3 py-1'
+                          style={{
+                            borderRadius: '0.5rem',
+                          }}
+                          onClick={() => handleDeleteComment(comment.id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    )}
                   </div>
                 );
               })}

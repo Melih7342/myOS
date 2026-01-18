@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../pictures/css/button.css';
 
 export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
   const navigate = useNavigate();
@@ -49,11 +50,10 @@ export function AccountHeader({ username, favoriteOS, favoriteId, onRemove }) {
           </p>
           <button
             onClick={() => navigate('/catalog')}
-            className='btn btn-sm'
+            className='primaryButton'
             style={{
-              background: '#004E72',
-              color: '#ffffff',
-              borderRadius: '0.5rem',
+              color: '#FEFEFE',
+              borderRadius: '0.6rem',
               padding: '0.4rem 1rem',
               fontWeight: '600',
             }}
@@ -72,11 +72,8 @@ export function AccountButtons({ logout, deleteAccount }) {
       <div className='d-flex flex-row gap-4 mb-4'>
         <button
           onClick={logout}
-          className='btn btn-primary px-4 py-2'
+          className='secondaryButton px-4 py-2'
           style={{
-            background: 'transparent',
-            color: '#004E72',
-            borderColor: '#004E72',
             borderRadius: '0.6rem',
           }}
         >
@@ -85,11 +82,8 @@ export function AccountButtons({ logout, deleteAccount }) {
 
         <button
           onClick={deleteAccount}
-          className='btn btn-primary px-4 py-2'
+          className='tertiaryButton px-4 py-2'
           style={{
-            background: 'transparent',
-            color: '#FF2132',
-            borderColor: '#FF2132',
             borderRadius: '0.6rem',
           }}
         >
@@ -105,7 +99,7 @@ export function ForumPart({ posts, loading, error, deletePost, navigate }) {
   return (
     <>
       <div>
-        <h4>Forum</h4>
+        <h4>My Posts</h4>
         {loading ? (
           <div className='text-center py-4'>
             <div className='spinner-border text-primary' role='status'>
@@ -129,21 +123,27 @@ export function ForumPart({ posts, loading, error, deletePost, navigate }) {
             {posts.map((post) => (
               <div
                 key={post.id}
-                className='list-group-item d-flex flex-column p-4 rounded'
-                style={{ backgroundColor: '#B3E5FC' }}
+                className='list-group-item d-flex flex-column p-4'
+                style={{ backgroundColor: '#B3E5FC', borderRadius: '0.8rem', }}
               >
                 <h5>{post.title}</h5>
                 {post.date && <p>Posted on: {post.date}</p>}
                 <p>{post.content}</p>
                 <div className='d-flex justify-content-end gap-2'>
                   <button
-                    className='btn btn-outline-primary btn-sm'
+                    className='secondaryButton px-4 py-2'
+                    style={{
+                      borderRadius: '0.6rem',
+                    }}
                     onClick={() => navigate(`/post/${post.id}`)}
                   >
                     View
                   </button>
                   <button
-                    className='btn btn-outline-danger btn-sm'
+                    className='tertiaryButton px-4 py-2'
+                    style={{
+                      borderRadius: '0.6rem',
+                    }}
                     onClick={() => deletePost(post.id)}
                   >
                     Delete
