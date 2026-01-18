@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { MessageCircle, Calendar, User } from "lucide-react";
+import { Calendar, User } from "lucide-react";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../SharedComponents/authContext.jsx";
 
 function Forumpage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [expandedPosts, setExpandedPosts] = useState(new Set());
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
     fetchPosts();
@@ -19,19 +20,8 @@ function Forumpage() {
         credentials: "include",
       });
       const data = await response.json();
-
-      const postsWithComments = await Promise.all(
-        data.map(async (post) => {
-          const commentsResponse = await fetch(
-            `http://localhost:3100/forum/posts/${post.id}/comments`,
-            { credentials: "include" },
-          );
-          const comments = await commentsResponse.json();
-          return { ...post, comments };
-        }),
-      );
-
-      setPosts(postsWithComments);
+      
+      setPosts(data);
     } catch (error) {
       console.error("Error fetching posts:", error);
     } finally {
@@ -39,16 +29,12 @@ function Forumpage() {
     }
   };
 
-  const toggleComments = (postId) => {
-    setExpandedPosts((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(postId)) {
-        newSet.delete(postId);
-      } else {
-        newSet.add(postId);
-      }
-      return newSet;
-    });
+  const handleCreatePost = () => {
+    if (!user) {
+      navigate("/auth");
+    } else {
+      navigate("/post");
+    }
   };
 
   if (loading) {
@@ -68,7 +54,21 @@ function Forumpage() {
           <div className="col-lg-8">
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h1 className="mb-4 fw-bold">Forum</h1>
-              <button className="btn btn-sm btn-outline-primary" onClick={() => navigate("/post")}>Create Post</button>
+              <div className="d-flex gap-2">
+                <button
+                  className="btn btn-sm btn-outline-primary"
+                  onClick={() => navigate("/")}
+                >
+                  Back
+                </button>
+
+                <button
+                  className="btn btn-sm btn-outline-primary"
+                  onClick={handleCreatePost}
+                >
+                  Create Post
+                </button>
+              </div>
             </div>
 
             {posts.length === 0 ? (
@@ -105,41 +105,6 @@ function Forumpage() {
                       Check Comments
                     </button>
                   </div>
-
-                  {expandedPosts.has(post.id) && post.comments.length > 0 && (
-                    <div className="border-top bg-light p-3">
-                      {post.comments.map((comment) => (
-                        <div
-                          key={comment.id}
-                          className="bg-white border rounded p-3 mb-2"
-                        >
-                          <div className="d-flex align-items-center gap-2 text-muted small mb-1">
-                            <User size={12} />
-                            <strong className="text-dark">
-                              {comment.author?.username || "Deleted User"}
-                            </strong>
-                            <span>•</span>
-                            <span>
-                              {new Date(comment.timestamp).toLocaleDateString()}
-                            </span>
-                            {comment.edited_at && (
-                              <>
-                                <span>•</span>
-                                <em>edited</em>
-                              </>
-                            )}
-                          </div>
-
-                          <p
-                            className="mb-0"
-                            style={{ whiteSpace: "pre-wrap" }}
-                          >
-                            {comment.content}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
               ))
             )}

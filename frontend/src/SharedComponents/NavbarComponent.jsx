@@ -75,33 +75,32 @@ function Navbar() {
       </div>
 
       <div className="ms-auto d-flex align-items-center gap-2">
-      {user ? (
-        <div className="d-flex align-items-center gap-3">
+        {user ? (
+          <div className="d-flex align-items-center gap-3">
+            <button
+              className="btn"
+              onClick={() => navigate("/account")}
+              style={{
+                background: "transparent",
+                color: "#004e72",
+                fontWeight: "bold",
+              }}
+            >
+              {user.username}
+            </button>
+          </div>
+        ) : (
           <button
-            className="btn"
-            onClick={() => navigate("/account")}
-            style={{
-              background: "transparent",
-              color: "#004e72",
-              fontWeight: "bold",
-            }}
+            className="btn ms-auto"
+            onClick={() => navigate("/auth")}
+            style={{ background: "#004e72", color: "#FEFEFE" }}
           >
-            {user.username}
+            Log in
           </button>
-          {/* Optional: Logout Button */}
-        </div>
-      ) : (
-        <button
-          className="btn ms-auto"
-          onClick={() => navigate("/auth")}
-          style={{ background: "#004e72", color: "#FEFEFE" }}
-        >
-          Log in
-        </button>
-      )}
-      
-      <DiscordLink />
-        </div>
+        )}
+
+        <DiscordLink />
+      </div>
     </nav>
   );
 }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import NAVBAR from '../SharedComponents/NavbarComponent.jsx';
-import { useAuth } from '../SharedComponents/authContext';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import { useAuth } from "../SharedComponents/authContext";
 
 function PostReviewpage() {
   const navigate = useNavigate();
@@ -9,265 +9,297 @@ function PostReviewpage() {
   const { user } = useAuth();
 
   const [post, setPost] = useState();
-  const [postLoading, setPostLoading] = useState(true);
-  const [postError, setPostError] = useState(null);
-  const [comments, setComments] = useState();
-  const [commentsLoading, setCommentsLoading] = useState(true);
-  const [commentsError, setCommentsError] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!id) {
-      navigate('/');
-    }
-
-    if (user === null) {
+      navigate("/");
       return;
     }
 
-    // Fetch post and its comments
-    fetchPost(id);
-    fetchComments(id);
-  }, [id, user, navigate]);
+    // parallel loading instead of post and then comments
+    fetchPostAndComments(id);
+  }, [id, navigate]);
 
-  const fetchPost = async (id) => {
-    if (!id) return;
-
-    setPostLoading(true);
-    setPostError(null);
+  const fetchPostAndComments = async (postId) => {
+    setLoading(true);
+    setError(null);
 
     try {
-      // the url could be different!!!
-      const response = await fetch(`http://localhost:3100/forum/posts/${id}`, {
-        method: 'GET',
-        credentials: 'include',
-      });
+      const [postResponse, commentsResponse] = await Promise.all([
+        fetch(`http://localhost:3100/forum/posts/${postId}`, {
+          method: "GET",
+          credentials: "include",
+        }),
+        fetch(`http://localhost:3100/forum/posts/${postId}/comments`, {
+          method: "GET",
+          credentials: "include",
+        }),
+      ]);
 
-      if (!response.ok) {
-        throw new Error(`Failed to fetch the post: ${response.status}`);
+      // Check responses
+      if (!postResponse.ok) {
+        throw new Error(`Failed to fetch post: ${postResponse.status}`);
+      }
+      if (!commentsResponse.ok) {
+        throw new Error(`Failed to fetch comments: ${commentsResponse.status}`);
       }
 
-      const data = await response.json();
-      setPost(data);
+      // Parse both responses
+      const [postData, commentsData] = await Promise.all([
+        postResponse.json(),
+        commentsResponse.json(),
+      ]);
+
+      setPost(postData);
+      setComments(commentsData);
     } catch (error) {
-      console.error('Error fetching the post:', error);
-      setPostError('Could not load the post. Please try again later.');
+      console.error("Error fetching data:", error);
+      setError("Could not load the post and comments. Please try again later.");
     } finally {
-      setPostLoading(false);
+      setLoading(false);
     }
   };
 
-  const fetchComments = async (id) => {
-    if (!id) return;
-
-    setCommentsLoading(true);
-    setCommentsError(null);
-
-    try {
-      // the url could be different!!!
-      const response = await fetch(`http://localhost:3100/forum/posts/${id}/comments`, {
-        method: 'GET',
-        credentials: 'include',
-      });
-
-      if (!response.ok) {
-        throw new Error(`Failed to fetch the comments for the post: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setComments(data);
-    } catch (error) {
-      console.error('Error fetching the comments for the post:', error);
-      setCommentsError('Could not load the comments for the post. Please try again later.');
-    } finally {
-      setCommentsLoading(false);
-    }
-  };
-
-  // To delete the post.
   const handleDeletePost = async (postId) => {
+    if (!confirm("Are you sure you want to delete this post?")) return;
+
     try {
-      const response = await fetch(`http://localhost:3100/forum/posts/${postId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        `http://localhost:3100/forum/posts/${postId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(user),
         },
-        credentials: 'include',
-        body: JSON.stringify(user),
-      });
+      );
 
       if (response.ok) {
-        navigate('/account');
+        navigate("/forum");
       } else {
-        alert('Error deleting post.');
+        alert("Error deleting post.");
       }
     } catch (error) {
-      console.error('Delete Error:', error);
-      alert('Network error.');
+      console.error("Delete Error:", error);
+      alert("Network error.");
     }
   };
 
-  // To delete the comment.
   const handleDeleteComment = async (commentId) => {
+    if (!confirm("Are you sure you want to delete this comment?")) return;
+
     try {
-      const response = await fetch(`http://localhost:3100/forum/comments/${commentId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        `http://localhost:3100/forum/comments/${commentId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(user),
         },
-        credentials: 'include',
-        body: JSON.stringify(user),
-      });
+      );
 
       if (response.ok) {
-        fetchComments(id);
+        setComments(comments.filter((c) => c.id !== commentId));
       } else {
-        alert('Error deleting comment.');
+        alert("Error deleting comment.");
       }
     } catch (error) {
-      console.error('Delete Error:', error);
-      alert('Network error.');
+      console.error("Delete Error:", error);
+      alert("Network error.");
     }
   };
 
-  // Datum formatieren
+  const handleCommentClick = () => {
+    if (!user) {
+      navigate("/auth");
+    } else {
+      navigate(`/post/${post.id}/comment`);
+    }
+  };
+
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
     return {
-      date: date.toLocaleDateString('de-DE'),
-      time: date.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }),
+      date: date.toLocaleDateString("de-DE"),
+      time: date.toLocaleTimeString("de-DE", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
     };
   };
 
-  // Get formatted post date only if post exists
-  const postDate = post ? formatDate(post.timestamp) : { date: '', time: '' };
+  const postDate = post ? formatDate(post.timestamp) : { date: "", time: "" };
+
+  if (loading) {
+    return (
+      <>
+        <NAVBAR />
+        <div
+          className="container d-flex flex-column gap-3"
+          style={{ color: "#004E72", marginTop: "8rem", padding: "0rem 10rem" }}
+        >
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary mb-3" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading post and comments...</p>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (error || !post) {
+    return (
+      <>
+        <NAVBAR />
+        <div
+          className="container d-flex flex-column gap-3"
+          style={{ color: "#004E72", marginTop: "8rem", padding: "0rem 10rem" }}
+        >
+          <div className="alert alert-danger">{error || "Post not found"}</div>
+          <button
+            className="btn btn-primary"
+            onClick={() => navigate("/forum")}
+          >
+            Back to Forum
+          </button>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
       <NAVBAR />
 
       <div
-        className='container d-flex flex-column gap-3'
-        style={{ color: '#004E72', marginTop: '8rem', padding: '0rem 10rem' }}
+        className="container d-flex flex-column gap-3"
+        style={{ color: "#004E72", marginTop: "8rem", padding: "0rem 10rem" }}
       >
-        {postLoading ? (
-          <div>The Post is Loading ...</div>
-        ) : postError ? (
-          <div>{postError}</div>
-        ) : (
-          <div className='d-flex flex-column gap-2'>
-            <h4>{post.title}</h4>
-            <div className='d-flex gap-3 mb-3'>
-              <span className='me-5'>{post.author?.username || "Deleted User"}</span>
-              <span>{postDate.date}</span>
-              <span>{postDate.time}</span>
-            </div>
-            <p>{post.content}</p>
+        <div className="d-flex flex-column gap-2">
+          <h4>{post.title}</h4>
+          <div className="d-flex gap-3 mb-3">
+            <span className="me-5">
+              {post.author?.username || "Deleted User"}
+            </span>
+            <span>{postDate.date}</span>
+            <span>{postDate.time}</span>
+          </div>
+          <p style={{ whiteSpace: "pre-wrap" }}>{post.content}</p>
+
+          <div className="d-flex flex-row justify-content-end gap-4 mb-4">
+            <button
+              className="btn btn-primary px-4 py-2"
+              style={{
+                background: "transparent",
+                color: "#004E72",
+                borderColor: "#004E72",
+                borderRadius: "0.6rem",
+              }}
+              onClick={() => navigate("/forum")}
+            >
+              Back to Forum
+            </button>
 
             {user && post.author && user.username === post.author.username ? (
-              <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
+              <>
                 <button
-                  className='btn btn-primary px-4 py-2'
+                  className="btn btn-primary px-4 py-2"
                   style={{
-                    background: 'transparent',
-                    color: '#004E72',
-                    borderColor: '#004E72',
-                    borderRadius: '0.6rem',
+                    background: "transparent",
+                    color: "#004E72",
+                    borderColor: "#004E72",
+                    borderRadius: "0.6rem",
                   }}
                   onClick={() => navigate(`/postEdit/${post.id}`)}
                 >
                   Edit
                 </button>
                 <button
-                  className='btn btn-primary px-4 py-2'
+                  className="btn btn-primary px-4 py-2"
                   style={{
-                    background: 'transparent',
-                    color: '#FF2132',
-                    borderColor: '#FF2132',
-                    borderRadius: '0.6rem',
+                    background: "transparent",
+                    color: "#FF2132",
+                    borderColor: "#FF2132",
+                    borderRadius: "0.6rem",
                   }}
                   onClick={() => handleDeletePost(post.id)}
                 >
                   Delete
                 </button>
-              </div>
+              </>
             ) : (
-              <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
-                <button
-                  className='btn btn-primary px-4 py-2'
-                  style={{
-                    background: 'transparent',
-                    color: '#004E72',
-                    borderColor: '#004E72',
-                    borderRadius: '0.6rem',
-                  }}
-                  onClick={() => navigate(`/post/${post.id}/comment`)}
-                >
-                  Comment
-                </button>
-              </div>
+              <button
+                className="btn btn-primary px-4 py-2"
+                style={{
+                  background: "transparent",
+                  color: "#004E72",
+                  borderColor: "#004E72",
+                  borderRadius: "0.6rem",
+                }}
+                onClick={handleCommentClick}
+              >
+                Comment
+              </button>
             )}
           </div>
-        )}
-        {commentsLoading ? (
-          <div>The Comments are Loading ...</div>
-        ) : commentsError ? (
-          <div>{commentsError}</div>
-        ) : comments.length === 0 ? (
-          <div>
-            <h5>Comments</h5>
-            <p>No comment is still for this post yet.</p>
-          </div>
-        ) : (
-          <div className='d-flex flex-column gap-2'>
-            <h5>Comments</h5>
-            <div className='d-flex flex-column gap-4'>
+        </div>
+
+        <div className="d-flex flex-column gap-2">
+          <h5>Comments {comments.length > 0 && `(${comments.length})`}</h5>
+          {comments.length === 0 ? (
+            <p className="text-muted">
+              No comments yet. Be the first to comment!
+            </p>
+          ) : (
+            <div className="d-flex flex-column gap-4">
               {comments.map((comment) => {
-                // Format each comment's date
                 const commentDate = formatDate(comment.timestamp);
                 return (
-                  <div key={comment.id}>
-                    <div className='d-flex gap-3 mb-3'>
-                      <span className='me-5'>{comment.author?.username || "Deleted User"}</span>
-                      <span>{commentDate.date}</span>
-                      <span>{commentDate.time}</span>
+                  <div key={comment.id} className="border-bottom pb-3">
+                    <div className="d-flex gap-3 mb-2">
+                      <span className="fw-semibold">
+                        {comment.author?.username || "Deleted User"}
+                      </span>
+                      <span className="text-muted">{commentDate.date}</span>
+                      <span className="text-muted">{commentDate.time}</span>
                     </div>
-                    <p>{comment.content}</p>
-                    {user && comment.author && user.username === comment.author.username ? (
-                      <div className='d-flex flex-row justify-content-end gap-4 mb-4'>
-                        <button
-                          className='btn btn-primary px-4 py-2'
-                          style={{
-                            background: 'transparent',
-                            color: '#004E72',
-                            borderColor: '#004E72',
-                            borderRadius: '0.6rem',
-                          }}
-                          onClick={() => navigate(`/post/${post.id}/comment/${comment.id}`)}
-                        >
-                          Edit
-                        </button>
-                        <button
-                          className='btn btn-primary px-4 py-2'
-                          style={{
-                            background: 'transparent',
-                            color: '#FF2132',
-                            borderColor: '#FF2132',
-                            borderRadius: '0.6rem',
-                          }}
-                          onClick={() => handleDeleteComment(comment.id)}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    ) : (
-                      ''
-                    )}
+                    <p style={{ whiteSpace: "pre-wrap" }}>{comment.content}</p>
+                    {user &&
+                      comment.author &&
+                      user.username === comment.author.username && (
+                        <div className="d-flex flex-row justify-content-end gap-3">
+                          <button
+                            className="btn btn-sm btn-outline-primary"
+                            onClick={() =>
+                              navigate(`/post/${post.id}/comment/${comment.id}`)
+                            }
+                          >
+                            Edit
+                          </button>
+                          <button
+                            className="btn btn-sm btn-outline-danger"
+                            onClick={() => handleDeleteComment(comment.id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      )}
                   </div>
                 );
               })}
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </>
   );
