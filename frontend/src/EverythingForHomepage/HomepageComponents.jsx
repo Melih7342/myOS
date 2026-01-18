@@ -119,9 +119,9 @@ export function TopOS_Forum() {
   const navigate = useNavigate();
 
   const topDistros = [
-    { id: 378, name: "Windows 11", img: windows11 },
+    { id: 377, name: "Windows 11", img: windows11 },
     { id: 9, name: "Ubuntu", img: ubuntu },
-    { id: 379, name: "Windows 10", img: windows10 },
+    { id: 378, name: "Windows 10", img: windows10 },
     { id: 1, name: "CachyOS", img: cachyos },
     { id: 2, name: "Linux Mint", img: mint },
   ];
