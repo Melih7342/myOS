@@ -1,26 +1,3 @@
-@font-face {
-    font-family: 'Rubik';
-    src: url('../../../public/fonts/Rubik-Regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('../../../public/fonts/Rubik-Light.woff2') format('woff2');
-    font-weight: lighter;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('../../../public/fonts/Rubik-SemiBold.woff2') format('woff2');
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('../../../public/fonts/Rubik-Bold.woff2') format('woff2');
-    font-weight: bolder;
-}
-
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
