@@ -34,78 +34,80 @@ export function Heroblock() {
   }
 
   return (
-    <div className="container mt-5">
+    <div className='container mt-5'>
       <div
-        className="card shadow-lg rounded-4 p-4 text-center bg-info bg-opacity-25"
-        style={{ background: "#b3e5fc" }}
+        className='card shadow-lg rounded-4 p-4 text-center bg-info bg-opacity-25'
+        style={{ background: '#b3e5fc' }}
       >
-        <h3 className="mb-4" style={{ color: "#004e72" }}>
+        <h3 className='mb-4' style={{ color: '#004e72' }}>
           Answer questions and get operating systems
         </h3>
 
-        <div className="row text-center mb-4">
-          <div className="col-md-4">
+        <div className='row text-center mb-4'>
+          <div className='col-md-4'>
             <img
               src={step1}
-              alt="Create account"
-              className="d-block mx-auto mb-3"
+              alt='Create account'
+              className='d-block mx-auto mb-3'
               style={{ width: 80, height: 80 }}
             />
-            <p style={{ color: "#004e72" }}>
+            <p style={{ color: '#004e72' }}>
               <strong>1.</strong> Create an account
             </p>
           </div>
 
-          <div className="col-md-4">
+          <div className='col-md-4'>
             <img
               src={step2}
-              alt="Answer questions"
-              className="d-block mx-auto mb-3"
+              alt='Answer questions'
+              className='d-block mx-auto mb-3'
               style={{ width: 80, height: 80 }}
             />
-            <p style={{ color: "#004e72" }}>
+            <p style={{ color: '#004e72' }}>
               <strong>2.</strong> Answer some questions
             </p>
           </div>
 
-          <div className="col-md-4">
+          <div className='col-md-4'>
             <img
               src={step3}
-              alt="Get OS suggestions"
-              className="d-block mx-auto mb-3"
+              alt='Get OS suggestions'
+              className='d-block mx-auto mb-3'
               style={{ width: 80, height: 80 }}
             />
-            <p style={{ color: "#004e72" }}>
+            <p style={{ color: '#004e72' }}>
               <strong>3.</strong> We suggest the best OS for you
             </p>
           </div>
         </div>
 
-        <div className="d-flex justify-content-center gap-3">
-           <button
-            className="btn btn-primary px-4"
-            onClick={() => navigate("/quizpage")}
-            style={{ background: "#004e72", color: "#FEFEFE" }}
+        <div className='d-flex justify-content-center gap-3'>
+          <button
+            className='primaryButton px-4 py-2'
+            onClick={() => navigate('/quizpage')}
+            style={{ color: '#FEFEFE', borderRadius: '0.6rem' }}
           >
             Get Started
           </button>
 
           <button
-            className="btn btn-outline-primary px-4"
+            className='secondaryButton px-4 py-2'
+            style={{ borderRadius: '0.6rem' }}
             onClick={() => {
               if (user) {
-                navigate("/account");
+                navigate('/account');
               } else {
-                navigate("/auth");
+                navigate('/auth');
               }
             }}
           >
-            {user ? "My Account" : "Log In"}
+            {user ? 'My Account' : 'Log In'}
           </button>
 
           <button
-            className="btn btn-outline-primary px-4"
-            onClick={() => navigate("/catalog")}
+            className='secondaryButton px-4 py-2'
+            style={{ borderRadius: '0.6rem' }}
+            onClick={() => navigate('/catalog')}
           >
             Look at Catalog
           </button>
