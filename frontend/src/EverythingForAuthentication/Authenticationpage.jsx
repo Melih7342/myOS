@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../pictures/css/Homepage.css";
 import Navbar from "../SharedComponents/NavbarComponent.jsx";
 import AuthComponent from "./AuthComponent.jsx";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 
 import { auth } from "./AuthRequests.js";
 import { validateAuthInput } from "./AuthValidator.js";
@@ -76,7 +77,9 @@ function AuthPage() {
         errorMessage={errorMessage}
         successMessage={successMessage}
       />
+
     </>
+    
   );
 }
 

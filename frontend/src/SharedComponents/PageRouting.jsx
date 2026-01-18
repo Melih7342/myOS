@@ -38,6 +38,7 @@ function PrefetchPages() {
         import("../EverythingForCatalogpage/Catalogpage");
         import("../EverythingForQuizpage/Quizpage");
         import("../EverythingForDetailpage/Detailpage");
+        import("./NotFound");
       }
       
       if (location.pathname === '/forum') {
@@ -47,7 +48,7 @@ function PrefetchPages() {
       }
       
       import("../EverythingForAccountpage/Accountpage");
-    }, 1000);
+    }, 300);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);

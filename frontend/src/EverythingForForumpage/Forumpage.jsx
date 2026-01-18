@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Calendar, User } from "lucide-react";
 import NAVBAR from "../SharedComponents/NavbarComponent.jsx";
+import Footer from "../SharedComponents/FooterComponent.jsx";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../SharedComponents/authContext.jsx";
 
@@ -114,6 +115,7 @@ function Forumpage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
