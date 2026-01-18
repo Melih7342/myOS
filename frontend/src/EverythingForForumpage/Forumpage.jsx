@@ -38,6 +38,17 @@ function Forumpage() {
     }
   };
 
+  const handleUserClick = (author) => {
+    if (author && author !== 'Deleted User') {
+      // Check if it's the current user
+      if (user && user.username === author) {
+        navigate('/account');
+      } else {
+        navigate(`/user/${author}`);
+      }
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -87,7 +98,22 @@ function Forumpage() {
                     <div className='d-flex gap-3 text-muted small mb-3'>
                       <div className='d-flex align-items-center gap-1'>
                         <User size={14} />
-                        <span>{post.author || 'Deleted User'}</span>
+                        {post.author && post.author !== 'Deleted User' ? (
+                          <span
+                            onClick={() => handleUserClick(post.author)}
+                            style={{
+                              cursor: 'pointer',
+                              textDecoration: 'underline',
+                              color: '#004E72'
+                            }}
+                            onMouseEnter={(e) => e.target.style.color = '#e6b400'}
+                            onMouseLeave={(e) => e.target.style.color = '#004E72'}
+                          >
+                            {post.author}
+                          </span>
+                        ) : (
+                          <span>{post.author || 'Deleted User'}</span>
+                        )}
                       </div>
                       <div className='d-flex align-items-center gap-1'>
                         <Calendar size={14} />

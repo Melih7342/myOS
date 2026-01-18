@@ -8,6 +8,7 @@ const Authpage = lazy(() => import("../EverythingForAuthentication/Authenticatio
 const Quizpage = lazy(() => import("../EverythingForQuizpage/Quizpage"));
 const Resultpage = lazy(() => import("../EverythingForResultpage/Resultpage"));
 const Accountpage = lazy(() => import("../EverythingForAccountpage/Accountpage"));
+const AccountpageOtherUsers = lazy(() => import("../EverythingForAccountpage/AccountpageOtherUsers"));
 const Detailpage = lazy(() => import("../EverythingForDetailpage/Detailpage"));
 const Catalogpage = lazy(() => import("../EverythingForCatalogpage/Catalogpage.jsx"));
 const Postpage = lazy(() => import('../EverythingForPostpage/Postpage'));
@@ -45,6 +46,7 @@ function PrefetchPages() {
         import('../EverythingForPostpage/Postpage');
         import('../EverythingForPostReviewpage/PostReviewpage');
         import('../EverythingForCommentpage/Commentpage');
+        import('../EverythingForAccountpage/AccountpageOtherUsers');
       }
       
       import("../EverythingForAccountpage/Accountpage");
@@ -68,6 +70,7 @@ function PageRouting() {
             <Route path='/quizpage' element={<Quizpage />} />
             <Route path='/result' element={<Resultpage />} />
             <Route path='/account' element={<Accountpage />} />
+            <Route path='/user/:username' element={<AccountpageOtherUsers />} />
             <Route path='/detail/:id' element={<Detailpage />} />
             <Route path='/catalog' element={<Catalogpage />} />
             <Route path='/post' element={<Postpage />} />

@@ -126,6 +126,17 @@ function PostReviewpage() {
     }
   };
 
+  const handleUserClick = (username) => {
+    if (username && username !== 'Deleted User') {
+      // Check if it's the current user
+      if (user && user.username === username) {
+        navigate('/account');
+      } else {
+        navigate(`/user/${username}`);
+      }
+    }
+  };
+
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
     return {
@@ -189,7 +200,24 @@ function PostReviewpage() {
         <div className='d-flex flex-column gap-2'>
           <h4>{post.title}</h4>
           <div className='d-flex gap-3 mb-3'>
-            <span className='me-5'>{post.author?.username || 'Deleted User'}</span>
+            {post.author?.username && post.author.username !== 'Deleted User' ? (
+              <span
+                className='me-5'
+                onClick={() => handleUserClick(post.author.username)}
+                style={{
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  color: '#004E72',
+                  fontWeight: '500'
+                }}
+                onMouseEnter={(e) => e.target.style.color = '#e6b400'}
+                onMouseLeave={(e) => e.target.style.color = '#004E72'}
+              >
+                {post.author.username}
+              </span>
+            ) : (
+              <span className='me-5'>{post.author?.username || 'Deleted User'}</span>
+            )}
             <span>{postDate.date}</span>
             <span>{postDate.time}</span>
           </div>
@@ -249,12 +277,28 @@ function PostReviewpage() {
             <div className='d-flex flex-column gap-4'>
               {comments.map((comment) => {
                 const commentDate = formatDate(comment.timestamp);
+                const commentAuthor = comment.author?.username || 'Deleted User';
+                
                 return (
                   <div key={comment.id} className='border-bottom pb-3'>
                     <div className='d-flex gap-3 mb-2'>
-                      <span className='fw-semibold'>
-                        {comment.author?.username || 'Deleted User'}
-                      </span>
+                      {commentAuthor !== 'Deleted User' ? (
+                        <span
+                          className='fw-semibold'
+                          onClick={() => handleUserClick(commentAuthor)}
+                          style={{
+                            cursor: 'pointer',
+                            textDecoration: 'underline',
+                            color: '#004E72'
+                          }}
+                          onMouseEnter={(e) => e.target.style.color = '#e6b400'}
+                          onMouseLeave={(e) => e.target.style.color = '#004E72'}
+                        >
+                          {commentAuthor}
+                        </span>
+                      ) : (
+                        <span className='fw-semibold'>{commentAuthor}</span>
+                      )}
                       <span className='text-muted'>{commentDate.date}</span>
                       <span className='text-muted'>{commentDate.time}</span>
                     </div>

@@ -271,6 +271,33 @@ def get_user_posts(username):
 
     return jsonify(output)
 
+@app.route('/api/users/<username>', methods=['GET'])
+def get_user_profile(username):
+    """Get public user profile information"""
+    user = User.query.filter_by(username=username).first()
+    
+    if not user:
+        return jsonify({"message": "User not found"}), 404
+    
+    user_posts = Post.query.filter_by(user_id=user.id).order_by(Post.timestamp.desc()).all()
+    
+    posts_data = []
+    for post in user_posts:
+        posts_data.append({
+            "id": post.id,
+            "title": post.title,
+            "content": post.content,
+            "date": post.timestamp.strftime("%Y-%m-%d %H:%M"),
+            "comment_count": len(post.comments)
+        })
+    
+    return jsonify({
+        "username": user.username,
+        "favorite_os_name": user.favorite_distro.name if user.favorite_distro else None,
+        "favorite_distro_id": user.favorite_distro_id,
+        "posts": posts_data
+    }), 200
+
 # Post a comment under a post
 @app.route('/forum/posts/<int:post_id>/comments', methods=['POST'])
 def add_comment(post_id):
