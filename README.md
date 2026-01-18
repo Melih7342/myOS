@@ -28,7 +28,10 @@ Linux / macOS:
   python3 -m venv venv
   source venv/bin/activate
 
-**2. Launch the Application**
+**2. Setup ENV-File**
+You have an .env.example file, in which you have 2 variables. For the youtobe-api key, you need to get a key from the official site, as for the SECRET_KEY, a random 26 chars long string is enough. When you have both keys, just rename the file to .env
+
+**3. Launch the Application**
 The automation script installs dependencies (Python & Node), initializes the database, and starts the servers.
 
 Windows:
